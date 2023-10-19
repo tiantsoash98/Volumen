@@ -1,0 +1,20 @@
+*, 
+*::before, 
+*::after, 
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-primary);
+}

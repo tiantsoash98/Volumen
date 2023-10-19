@@ -1,0 +1,19 @@
+:root {
+    // Base
+    --vw: 100vw;
+    --vh: 100vh;
+    --unit-vw: calc(var(--vw) / 100);
+    --unit-vh: calc(var(--vh) / 100);
+    --unit-fx: calc(var(--vw)/ 1440);
+    --unit-fy: calc(var(--vh)/ 996);
+
+    // Colors
+    --brand-primary: #E1E5D6;
+    --brand-secondary: #222324;
+    --background-color: var(--color-primary);
+    --text-color: var(--brand-secondary);
+
+    // Fonts
+    --font-family-primary: 'PP Neue Montreal TT';
+    --font-weight: 500;
+}
