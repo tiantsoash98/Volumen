@@ -1,3 +1,3 @@
 @mixin font-size($font-size){
-    font-size: calc( $font-size * var(--unit-fx));
+    font-size: responsive-size($font-size);
 }

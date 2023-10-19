@@ -1,0 +1,7 @@
+@function responsive-size($value, $direction: 'vw'){
+    @if($direction == 'vh'){
+        @return calc( $value * var(--unit-fy));
+    }
+    
+    @return calc( $value * var(--unit-fx));
+}

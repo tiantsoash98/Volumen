@@ -5,7 +5,10 @@
     --unit-vw: calc(var(--vw) / 100);
     --unit-vh: calc(var(--vh) / 100);
     --unit-fx: calc(var(--vw)/ 1440);
-    --unit-fy: calc(var(--vh)/ 996);
+    --unit-fy: calc(var(--vh)/ 960);
+
+    //Grid
+    --base-grid-margin-x: 32;
 
     // Colors
     --brand-primary: #E1E5D6;
@@ -16,4 +19,7 @@
     // Fonts
     --font-family-primary: 'PP Neue Montreal TT';
     --font-weight: 500;
+
+    // Easing
+    --alias-easeOutSlow: cubic-bezier(.43,.195,.02,1);
 }

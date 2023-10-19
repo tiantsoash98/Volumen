@@ -4,13 +4,21 @@
     font-weight: 500;
 }
 
+
 body {
     font-family: var(--font-family-primary), 'Arial', serif;
     font-weight: var(--font-weight)
 }
 
+
+
 h1 {
     @include font-size(54);
     font-weight: var(--font-weight);
     letter-spacing: -1px;
+    line-height: 1.1;
+}
+
+p {
+    @include font-size(20);
 }
