@@ -23,7 +23,7 @@
     &__logo-wrapper {
         position: relative;
         width: 100%;
-        margin-top: responsive-size(96);
+        margin-top: responsive-size(var(--large-title-padding-top));
     }
     &__logo {
         width: 100%;

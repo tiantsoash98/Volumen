@@ -1,7 +1,7 @@
 .hero {
     &__large-title {
         width: 100%;
-        padding-top: responsive-size(96);
+        padding-top: responsive-size(var(--large-title-padding-top));
     }
     &__logo {
         width: 100%;
