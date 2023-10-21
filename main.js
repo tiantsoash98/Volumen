@@ -3,9 +3,12 @@ import animateOnPageLoaded from './src/features/animateOnPageLoaded'
 import mouseFollower from './src/features/mouseFollower'
 import heroImageOverlay from './src/features/heroImageOverlay'
 import smoothScroll from './src/features/smoothScroll'
+import imageScrollAnimation from './src/features/imageScrollAnimation'
 
+// Show loading animation
 animateWhilePageLoading()
 
+// On loaded
 window.addEventListener('load', () => {
   // Run when page loaded
   setTimeout(() => animateOnPageLoaded(), 3000)
@@ -14,3 +17,4 @@ window.addEventListener('load', () => {
 
 mouseFollower()
 smoothScroll()
+imageScrollAnimation()

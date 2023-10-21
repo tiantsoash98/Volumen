@@ -13,7 +13,7 @@ function animateOnPageLoaded(){
     })
     
     timeline.to('.loader__frame', {opacity: 0 })
-    timeline.to('.loader__logo', {opacity: 0, duration: 1 })
+    timeline.to('.loader__logo', {opacity: 0 }, '<+=0.1s')
     timeline.to('.loader', {display: 'none' })
 }
 

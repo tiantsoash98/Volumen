@@ -18,11 +18,11 @@ $mf-color-text:#fff !default;
     &:before {
         content:"";
         position:absolute;
-        top:-24px;
-        left:-24px;
+        top:-36px;
+        left:-36px;
         display:block;
-        width:48px;
-        height:48px;
+        width:72px;
+        height:72px;
         transform:scale(0.2);
 
         background:currentColor;

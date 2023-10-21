@@ -2,27 +2,26 @@ import $ from 'jquery';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-function heroImageOverlay(){
+function imageScrollAnimation() {
     gsap.registerPlugin(ScrollTrigger)
 
-    $(".hero__wrapper").each(function (index) {
+    $(".image-scroll__wrapper").each(function (index) {
         let triggerElement = $(this);
-        let targetElement = $(".hero__overlay");
+        let targetElement = this.querySelector('.image-scroll');
     
         let tl = gsap.timeline({
             scrollTrigger: {
                 trigger: triggerElement,
                 //trigger element - viewport
-                start: "top top",
-                end: "center top",
-                scrub: 1
+                start: "top bottom",
+                end: "top top",
+                scrub: true,
             }
         });
-        tl.to(targetElement, {
-            opacity: 0.9,
-            duration: 1
+        tl.from(targetElement, {
+            scale: 1.2
         })
     });
 }
 
-export default heroImageOverlay
+export default imageScrollAnimation
