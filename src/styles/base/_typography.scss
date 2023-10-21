@@ -12,13 +12,13 @@ body {
 }
 
 
-
 h1 {
     @include font-size(72);
     font-weight: var(--font-weight);
     letter-spacing: -1px;
     line-height: 1.1;
 }
+
 
 p {
     @include font-size(20);
