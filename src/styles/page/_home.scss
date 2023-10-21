@@ -9,6 +9,7 @@
     }
     &__wrapper{
         margin-top: responsive-size(var(--base-grid-margin));
+        margin-bottom: -100vh;
     }
     &__image-wrapper {
         position: sticky;
@@ -16,6 +17,7 @@
         left: 0;
         z-index: -1;
         height: 100vh;
+
     }
     &__image{
         width: 100%;
@@ -36,5 +38,8 @@
     }
     &__content {
         color: var(--brand-primary);
+    }
+    &__spacer {
+        height: 100vh;
     }
 }
