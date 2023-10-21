@@ -13,7 +13,7 @@ function imageScrollAnimation() {
             scrollTrigger: {
                 trigger: triggerElement,
                 //trigger element - viewport
-                start: "top bottom",
+                start: "top 80%",
                 end: "top top",
                 scrub: true,
             }

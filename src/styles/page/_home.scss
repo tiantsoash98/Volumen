@@ -38,3 +38,44 @@
         height: 100vh;
     }
 }
+
+.repertoire {
+    background-color: var(--brand-primary);
+    padding-top: responsive-size(var(--base-grid-margin));
+
+    &__menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__items {
+        margin-top: responsive-size(var(--base-grid-margin));
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: responsive-size(var(--base-grid-margin));
+        row-gap: responsive-size(calc(var(--base-grid-margin) * 2));
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+        max-height: 95vh;
+
+        &--3 {
+            grid-column: 1/-1;
+        }
+        &--4 {
+            grid-column: 2/-1;
+            max-height: 85vh;
+        }
+    }
+    &__details {
+        padding-top: responsive-size(calc(var(--base-grid-margin) * 0.75));
+        display: flex;
+        justify-content: space-between;
+    }
+    &__end-wrapper{
+        margin-top: responsive-size(calc(var(--base-grid-margin) * 3));
+        text-align: center;
+    }
+}
