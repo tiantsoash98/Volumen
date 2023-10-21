@@ -12,9 +12,9 @@
     --unit-grid-margin: calc(var(--base-grid-margin) * var(--unit-fx));
 
     // Colors
-    --brand-primary: #E1E5D6;
+    --brand-primary: #cccdcb;
     --brand-secondary: #222324;
-    --background-color: var(--color-primary);
+    --background-color: var(--brand-primary);
     --text-color: var(--brand-secondary);
 
     // Fonts

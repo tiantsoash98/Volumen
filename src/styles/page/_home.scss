@@ -35,6 +35,6 @@
         padding-bottom: responsive-size(calc(2 * var(--base-grid-margin)));
     }
     &__content {
-        color: white;
+        color: var(--brand-primary);
     }
 }

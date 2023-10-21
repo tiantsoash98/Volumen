@@ -5,6 +5,8 @@
     width: 100%;
     padding: responsive-size(var(--base-grid-margin));
     padding-bottom: 0;
+    mix-blend-mode: difference;
+    color: var(--brand-primary);
 
     display: flex;
     justify-content: space-between;
@@ -39,7 +41,7 @@
     &__dot {
         width: responsive-size(10);
         height: responsive-size(10);
-        background-color: var(--brand-secondary);
+        background-color: var(--brand-primary);
         border-radius: 50%;
     }
 }
