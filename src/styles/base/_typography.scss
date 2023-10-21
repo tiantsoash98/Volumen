@@ -7,7 +7,8 @@
 
 body {
     font-family: var(--font-family-primary), 'Arial', serif;
-    font-weight: var(--font-weight)
+    font-weight: var(--font-weight);
+    @include font-size(20);
 }
 
 

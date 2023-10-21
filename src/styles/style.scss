@@ -4,7 +4,12 @@
 
 @import './base/base';
 @import './base/typography';
+@import './base/spacing';
 
 @import './component/loader';
+@import './component/page-wrapper';
+@import './component/header';
 
 @import './layout/home';
+
+@import './page/home';

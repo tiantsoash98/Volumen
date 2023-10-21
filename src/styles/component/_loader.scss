@@ -1,9 +1,16 @@
 .loader {
+    --bottom-y: 0;
+    --y-percent: 0;
+    display: flex;
     position: fixed;
     inset: 0;
+    z-index: var(--z-index-loader);
     width: 100vw;
     height: 100%;
-    padding: responsive-size(var(--base-grid-margin-x));
+    padding-top: responsive-size(var(--base-grid-margin));
+    padding-bottom: responsive-size(var(--base-grid-margin));
+    padding-left: responsive-size(var(--base-grid-margin));
+    padding-right: responsive-size(var(--base-grid-margin));
 
     &__frame {
         position: absolute;
@@ -11,13 +18,19 @@
         left: 0;
         height: 100%;
         width: 100%;
+        background-color: var(--brand-primary);
     }
     &__logo-wrapper {
+        position: relative;
         width: 100%;
-        padding-top: responsive-size(96, 'vh');
+        margin-top: responsive-size(96);
     }
     &__logo {
         width: 100%;
         fill: currentColor;
+        position: absolute;
+        left: 0;
+        bottom: calc(var(--bottom-y) * 1%);
+        transform: translateY(calc(var(--y-percent) * 1%));
     }
 }

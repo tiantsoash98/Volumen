@@ -8,7 +8,8 @@
     --unit-fy: calc(var(--vh)/ 960);
 
     //Grid
-    --base-grid-margin-x: 32;
+    --base-grid-margin: 32;
+    --unit-grid-margin: calc(var(--base-grid-margin) * var(--unit-fx));
 
     // Colors
     --brand-primary: #E1E5D6;
@@ -20,6 +21,10 @@
     --font-family-primary: 'PP Neue Montreal TT';
     --font-weight: 500;
 
+    // Z-index
+    --z-index-loader: 1000;
+    --z-index-nav: 100;
+
     // Easing
-    --alias-easeOutSlow: cubic-bezier(.43,.195,.02,1);
+    --default-ease: '.43,.195,.02,1';
 }

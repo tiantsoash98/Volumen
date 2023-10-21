@@ -1,0 +1,20 @@
+.hero {
+    &__large-title {
+        width: 100%;
+        padding-top: responsive-size(96);
+    }
+    &__logo {
+        width: 100%;
+        fill: currentColor;     
+    }
+}
+
+.vision {
+    margin-top: responsive-size(32);
+
+    &__image{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
