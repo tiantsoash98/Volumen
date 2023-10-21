@@ -48,6 +48,9 @@
         justify-content: space-between;
         align-items: center;
     }
+    &__see-all {
+        text-decoration: underline;
+    }
     &__items {
         margin-top: responsive-size(var(--base-grid-margin));
 
@@ -76,6 +79,7 @@
     }
     &__end-wrapper{
         margin-top: responsive-size(calc(var(--base-grid-margin) * 3));
+        margin-bottom: responsive-size(calc(var(--base-grid-margin) * 3));
         text-align: center;
     }
 }
