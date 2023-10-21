@@ -6,7 +6,7 @@ import smoothScroll from './src/features/smoothScroll'
 import imageScrollAnimation from './src/features/imageScrollAnimation'
 
 // Show loading animation
-// animateWhilePageLoading()
+animateWhilePageLoading()
 
 // On loaded
 window.addEventListener('load', () => {
