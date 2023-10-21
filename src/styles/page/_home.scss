@@ -7,14 +7,34 @@
         width: 100%;
         fill: currentColor;     
     }
-}
-
-.vision {
-    margin-top: responsive-size(32);
-
+    &__wrapper{
+        margin-top: responsive-size(var(--base-grid-margin));
+    }
+    &__image-wrapper {
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        height: 100vh;
+    }
     &__image{
         width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+    &__overlay{
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--brand-secondary);
+        opacity: 0;
+    }
+    &__content-wrapper {
+        padding-left: responsive-size(var(--base-grid-margin));
+        padding-bottom: responsive-size(calc(2 * var(--base-grid-margin)));
+    }
+    &__content {
+        color: white;
     }
 }

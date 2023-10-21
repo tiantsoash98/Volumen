@@ -14,7 +14,9 @@
     "vite": "^4.4.5"
   },
   "dependencies": {
+    "@studio-freight/lenis": "^1.0.27",
     "gsap": "^3.12.2",
+    "jquery": "^3.7.1",
     "mouse-follower": "^1.1.2"
   }
 }

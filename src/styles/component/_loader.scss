@@ -1,7 +1,7 @@
 .loader {
     --bottom-y: 0;
     --y-percent: 0;
-    display: flex;
+    display: none;
     position: fixed;
     inset: 0;
     z-index: var(--z-index-loader);
