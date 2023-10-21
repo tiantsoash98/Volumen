@@ -1,4 +1,3 @@
-import './src/styles/style.scss'
 import animateWhilePageLoading from './src/features/animateWhilePageLoading'
 import animateOnPageLoaded from './src/features/animateOnPageLoaded'
 
