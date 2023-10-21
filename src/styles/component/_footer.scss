@@ -1,5 +1,6 @@
 .footer {
     color: var(--brand-secondary);
+    padding-top: responsive-size(var(--base-grid-margin));
 
     &__links-wrapper {
         width: 100%;
