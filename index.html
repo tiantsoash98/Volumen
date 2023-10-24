@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./src/styles/style.scss">
   </head>
   <body>
+    <script type="module" src="/main.js"></script>
     <div class="loader">
       <div class="loader__frame"></div>
       <div class="loader__logo-wrapper">
@@ -22,7 +23,7 @@
       </div>   
       </div>
     </div>
-    <div class="page-wrapper smooth-wrapper">
+    <div class="page-wrapper smooth-wrapper" data-cursor="-exclusion">
       <header class="header">
         <div class="header__logo-wrapper">
           <svg class="header__logo" viewBox="0 0 1378 276" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -70,7 +71,7 @@
             <img class="hero__image image-scroll" src="./src/assets/img/milad-fakurian-ICTjWYzpoc0-unsplash.jpg" role="presentation">
           </div>
           <div class="hero__content-wrapper">
-            <h1 class="hero__content">
+            <h1 class="hero__content text-reveal">
               <div class="hero__line-wrap">We envision, therefore we create,</div>
               <div class="hero__line-wrap">sculpting the infinite possibilities</div>
               <div class="hero__line-wrap">in never-ending dimensions.</div>
@@ -85,7 +86,7 @@
             <a class="repertoire__see-all" href="#">See all</a>
           </div>
           <div class="repertoire__items">
-            <article class="repertoire__item repertoire__item--1">
+            <article class="repertoire__item repertoire__item--1" >
               <figure class="repertoire__item-image-wrapper image-scroll__wrapper">
                 <img class="image-scroll" src="./src/assets/img/img-1.jpg" alt="The Sphere">
               </figure>
@@ -94,7 +95,7 @@
                 <div class="repertoire__year">2023</div>
               </div>
             </article>
-            <article class="repertoire__item repertoire__item--2">
+            <article class="repertoire__item repertoire__item--2" >
               <figure class="repertoire__item-image-wrapper image-scroll__wrapper">
                 <img class="image-scroll" src="./src/assets/img/img-2.jpg" alt="The Square">
               </figure>
@@ -112,7 +113,7 @@
                 <div class="repertoire__year">2018</div>
               </div>
             </article>
-            <article class="repertoire__item repertoire__item--4">
+            <article class="repertoire__item repertoire__item--4" >
               <figure class="repertoire__item-image-wrapper image-scroll__wrapper">
                 <img class="image-scroll" src="./src/assets/img/img-4.jpg" alt="The Circle">
               </figure>
@@ -162,6 +163,6 @@
         </div>
       </footer>
     </div>
-    <script type="module" src="/main.js"></script>
+    
   </body>
 </html>

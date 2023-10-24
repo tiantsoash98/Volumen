@@ -4,6 +4,7 @@ import mouseFollower from './src/features/mouseFollower'
 import heroImageOverlay from './src/features/heroImageOverlay'
 import smoothScroll from './src/features/smoothScroll'
 import imageScrollAnimation from './src/features/imageScrollAnimation'
+import textRevealAnimation from './src/features/textRevealAnimation'
 
 // Show loading animation
 animateWhilePageLoading()
@@ -18,3 +19,4 @@ window.addEventListener('load', () => {
 mouseFollower()
 smoothScroll()
 imageScrollAnimation()
+textRevealAnimation()
