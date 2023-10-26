@@ -1,38 +1,38 @@
 @font-face {
     font-family: var(--font-family-primary);
     src: url("../assets/fonts/PPNeueMontreal-Medium.woff2");
-    font-weight: 500;
+    font-weight: var(--font-weight);
 }
 
 
 body {
     font-family: var(--font-family-primary), 'Arial', serif;
     font-weight: var(--font-weight);
-    @include font-size(20);
+    @include font-size(var(--paragraph-text));
 }
 
 
 h1 {
-    @include font-size(72);
+    @include font-size(var(--title-1));
     font-weight: var(--font-weight);
     letter-spacing: -1px;
     line-height: 1.1;
 }
 
 h2 {
-    @include font-size(54);
+    @include font-size(var(--title-2));
     font-weight: var(--font-weight);
     letter-spacing: -1px;
     line-height: 1.1;
 }
 
 h3 {
-    @include font-size(32);
+    @include font-size(var(--title-3));
     font-weight: var(--font-weight);
     letter-spacing: 0;
     line-height: 1.1;
 }
 
 p {
-    @include font-size(20);
+    @include font-size(var(--paragraph-text));
 }

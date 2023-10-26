@@ -1,12 +1,26 @@
-@mixin font-size($font-size){
-    font-size: responsive-size($font-size);
+@mixin font-size($font-size, $min-size: ""){
+    @if $min-size != "" {
+        font-size: max($min-size, responsive-size($font-size));
+    }
+    @else{
+        font-size: responsive-size($font-size);
+    }
+    
 }
 
 // For media max-width
-@mixin media($breakpoint) {
-    @media screen and (max-width: map-get($map: $breakpoints, $key: $breakpoint)){
-        @content;
+@mixin media($breakpoint, $orientation: "") {
+    @if $orientation != "" {
+        @media screen and (max-width: map-get($map: $breakpoints, $key: $breakpoint)) and (orientation: $orientation){
+            @content;
+        }
     }
+    @else {
+        @media screen and (max-width: map-get($map: $breakpoints, $key: $breakpoint)){
+            @content;
+        }
+    }
+    
 }
 
 // For media min-width

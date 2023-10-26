@@ -30,6 +30,11 @@
     &__content-wrapper {
         padding-left: responsive-size(var(--base-grid-margin));
         padding-bottom: responsive-size(calc(2 * var(--base-grid-margin)));
+        padding-right: responsive-size(calc(12 * var(--base-grid-margin)));
+
+        @include media(small, portrait) {
+            padding-right: responsive-size(calc(4 * var(--base-grid-margin)));
+        }
     }
     &__content {
         color: var(--brand-primary);

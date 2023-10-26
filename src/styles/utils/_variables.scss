@@ -5,7 +5,7 @@ $breakpoints:(
     large: 1280px,
     medium: 991px, // tablet
     small: 767px, // mobile landscape
-    extra-small: 478px, // mobile portrait
+    extra-small: 576px, // mobile portrait
     tiny: 320px, // tiny screens
 );
 
@@ -32,24 +32,52 @@ $breakpoints:(
     --font-family-primary: 'PP Neue Montreal TT';
     --font-weight: 500;
 
-    // z-index
-    --z-index-loader: 1000;
-    --z-index-nav: 100;
+    // Typescale
+    --title-1: 72;
+    --title-2: 54;
+    --title-3: 32;
+    --paragraph-text: 20;
 
-    // Easing
-    --default-ease: '.43,.195,.02,1';
-    --alias-default-ease: cubic-bezier(.43,.195,.02,1);
-
-    // Custom
-    --large-title-padding-top: 96;
-
-    // Breakpoint
+    // Breakpoints
     --br-xxl:   #{map-get($map: $breakpoints, $key: ultra-large)};
     --br-xl:    #{map-get($map: $breakpoints, $key: extra-large)};
     --br-lg:    #{map-get($map: $breakpoints, $key: large)};
     --br-md:    #{map-get($map: $breakpoints, $key: medium)};
     --br-sm:    #{map-get($map: $breakpoints, $key: small)};
     --br-xxs:   #{map-get($map: $breakpoints, $key: tiny)};
+
+    // z-index
+    --z-index-loader: 1000;
+    --z-index-nav: 100;
+
+    // Easing
+    --default-ease: '.43,.194,.021,1';
+    --alias-default-ease: cubic-bezier(.43,.195,.02,1);
+
+    // Custom
+    --large-title-padding-top: 96;
 }
 
 
+
+/*==============================================================
+    Responsive
+==============================================================*/
+// Media orientation portrait & Screen width below 767px
+@media screen and (max-width: map-get($map: $breakpoints, $key: small))  and (orientation: portrait){
+    :root{
+        --unit-fx: calc(var(--vw)/ 375);
+        --unit-fy: calc(var(--vh)/ 726);
+
+        --base-grid-margin: 12;
+
+        // Typescale
+        --title-1: 32;
+        --title-2: 24;
+        --title-3: 16;
+        --paragraph-text: 12;
+
+        // Custom
+        --large-title-padding-top: 56;
+    }
+}

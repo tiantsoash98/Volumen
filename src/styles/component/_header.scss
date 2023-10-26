@@ -14,11 +14,10 @@
     align-items: center;
 
     &__logo-wrapper {
-        width: responsive-size(76);
         flex: 1;
     }
     &__logo {
-        height: responsive-size(20);
+        height: responsive-size(var(--paragraph-text));
         fill: currentColor;
     }
     &__links-wrapper {
