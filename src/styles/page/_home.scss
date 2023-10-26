@@ -32,7 +32,7 @@
         padding-bottom: responsive-size(calc(2 * var(--base-grid-margin)));
     }
     &__content {
-        color: white;
+        color: var(--brand-primary);
     }
     &__spacer {
         height: 100vh;
@@ -53,11 +53,14 @@
     }
     &__items {
         margin-top: responsive-size(var(--base-grid-margin));
-
         display: grid;
         grid-template-columns: 1fr 1fr;
         column-gap: responsive-size(var(--base-grid-margin));
         row-gap: responsive-size(calc(var(--base-grid-margin) * 2));
+
+        @include media(small){
+            grid-template-columns: 1fr;
+        }
     }
     &__item {
         display: flex;
@@ -65,11 +68,15 @@
         max-height: 95vh;
 
         &--3 {
-            grid-column: 1/-1;
+            @include media-min-width(small){
+                grid-column: 1/-1;
+            }
         }
         &--4 {
-            grid-column: 2/-1;
-            max-height: 85vh;
+            @include media-min-width(small){
+                grid-column: 2/-1;
+                max-height: 85vh;
+            }
         }
     }
     &__details {

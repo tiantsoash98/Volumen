@@ -1,3 +1,14 @@
+// Breakpoints
+$breakpoints:(
+    ultra-large: 1920px,
+    extra-large: 1440px,
+    large: 1280px,
+    medium: 991px, // tablet
+    small: 767px, // mobile landscape
+    extra-small: 478px, // mobile portrait
+    tiny: 320px, // tiny screens
+);
+
 :root {
     // Base
     --vw: 100vw;
@@ -21,7 +32,7 @@
     --font-family-primary: 'PP Neue Montreal TT';
     --font-weight: 500;
 
-    // Z-index
+    // z-index
     --z-index-loader: 1000;
     --z-index-nav: 100;
 
@@ -29,7 +40,16 @@
     --default-ease: '.43,.195,.02,1';
     --alias-default-ease: cubic-bezier(.43,.195,.02,1);
 
-
     // Custom
     --large-title-padding-top: 96;
+
+    // Breakpoint
+    --br-xxl:   #{map-get($map: $breakpoints, $key: ultra-large)};
+    --br-xl:    #{map-get($map: $breakpoints, $key: extra-large)};
+    --br-lg:    #{map-get($map: $breakpoints, $key: large)};
+    --br-md:    #{map-get($map: $breakpoints, $key: medium)};
+    --br-sm:    #{map-get($map: $breakpoints, $key: small)};
+    --br-xxs:   #{map-get($map: $breakpoints, $key: tiny)};
 }
+
+
