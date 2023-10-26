@@ -17,6 +17,11 @@
         left: 0;
         z-index: -1;
         height: 100vh;
+
+        @include media(small, portrait){
+            position: relative;
+            height: 50vh;
+        }
     }
     &__overlay{
         position: absolute;
@@ -33,6 +38,7 @@
         padding-right: responsive-size(calc(12 * var(--base-grid-margin)));
 
         @include media(small, portrait) {
+            padding-top: responsive-size(var(--base-vertical-padding));
             padding-right: responsive-size(calc(4 * var(--base-grid-margin)));
         }
         @include media(extra-small, portrait) {
@@ -41,6 +47,10 @@
     }
     &__content {
         color: var(--brand-primary);
+
+        @include media(small, portrait){
+            color: var(--brand-secondary);
+        }
     }
     &__spacer {
         height: 100vh;
