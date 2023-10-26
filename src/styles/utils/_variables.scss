@@ -38,6 +38,7 @@ $breakpoints:(
     --title-2: 54;
     --title-3: 32;
     --paragraph-text: 20;
+    --super-large-text: 72;
 
     // Breakpoints
     --br-xxl:   #{map-get($map: $breakpoints, $key: ultra-large)};
@@ -50,6 +51,7 @@ $breakpoints:(
     // z-index
     --z-index-loader: 1000;
     --z-index-nav: 100;
+    --z-index-menu: 90;
 
     // Easing
     --default-ease: '.43,.194,.021,1';
@@ -78,6 +80,7 @@ $breakpoints:(
         --title-2: 24;
         --title-3: 16;
         --paragraph-text: 12;
+        --super-large-text: 40;
 
         // Custom
         --large-title-padding-top: 56;
@@ -90,9 +93,10 @@ $breakpoints:(
         --base-vertical-padding: calc(2 * var(--base-grid-margin));
 
         // Typescale
-        --title-1: 36;
-        --title-2: 30;
+        --title-1: 30;
+        --title-2: 26;
         --title-3: 22;
-        --paragraph-text: 18;
+        --paragraph-text: 16;
+        --super-large-text: 64;
     }
 }

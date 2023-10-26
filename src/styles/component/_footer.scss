@@ -30,10 +30,6 @@
         }
     }
     &__link {
-        @include media(small, portrait){
-            margin-bottom: responsive-size(calc(var(--base-vertical-padding)/4));
-        }
-
         & a {
             position: relative;
 
