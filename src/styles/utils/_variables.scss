@@ -20,6 +20,7 @@ $breakpoints:(
 
     //Grid
     --base-grid-margin: 32;
+    --base-vertical-padding: var(--base-grid-margin);
     --unit-grid-margin: calc(var(--base-grid-margin) * var(--unit-fx));
 
     // Colors
@@ -70,6 +71,7 @@ $breakpoints:(
         --unit-fy: calc(var(--vh)/ 726);
 
         --base-grid-margin: 12;
+        --base-vertical-padding: var( --base-grid-margin);
 
         // Typescale
         --title-1: 32;
@@ -79,5 +81,18 @@ $breakpoints:(
 
         // Custom
         --large-title-padding-top: 56;
+    }
+}
+
+// Media orientation portrait & Screen width below 576px
+@media screen and (max-width: map-get($map: $breakpoints, $key: extra-small))  and (orientation: portrait){
+    :root{
+        --base-vertical-padding: calc(2 * var(--base-grid-margin));
+
+        // Typescale
+        --title-1: 38;
+        --title-2: 30;
+        --title-3: 22;
+        --paragraph-text: 18;
     }
 }

@@ -2,11 +2,16 @@
     color: var(--brand-secondary);
     padding-top: responsive-size(var(--base-grid-margin));
 
-    &__links-wrapper {
+    &__details-wrapper {
         width: 100%;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         column-gap: responsive-size(var(--base-grid-margin));
+
+        @include media(small, portrait){
+            grid-template-columns: 1fr;
+            row-gap: responsive-size(var(--base-vertical-padding));
+        }
     }
     &__left-box {
         display: flex;
@@ -17,8 +22,18 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-end;
+
+        @include media(small, portrait){
+            flex-direction: column;
+            align-items: flex-start;
+            gap: responsive-size(var(--base-vertical-padding));
+        }
     }
     &__link {
+        @include media(small, portrait){
+            margin-bottom: responsive-size(calc(var(--base-vertical-padding)/4));
+        }
+
         & a {
             position: relative;
 
@@ -49,12 +64,18 @@
         }
     }
     &__credits-wrapper {
-        text-align: right;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        @include media(small, portrait){
+            align-items: flex-start;
+        }
     }
     &__logo-wrapper {
         position: relative;
         width: 100%;
-        margin-top: responsive-size(var(--base-grid-margin));
+        margin-top: responsive-size(var(--base-vertical-padding));
     }
     &__logo {
         width: 100%;

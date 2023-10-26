@@ -1,6 +1,6 @@
 @font-face {
     font-family: var(--font-family-primary);
-    src: url("../assets/fonts/PPNeueMontreal-Medium.woff2");
+    src: local(''), url("../assets/fonts/PPNeueMontreal-Medium.woff2") format("woff2");
     font-weight: var(--font-weight);
 }
 
