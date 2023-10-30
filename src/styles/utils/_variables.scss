@@ -24,8 +24,8 @@ $breakpoints:(
     --unit-grid-margin: calc(var(--base-grid-margin) * var(--unit-fx));
 
     // Colors
-    --brand-primary: #cccdcb;
-    --brand-secondary: #222324;
+    --brand-primary: #d8d8d7;
+    --brand-secondary: #1e1e1e;
     --background-color: var(--brand-primary);
     --text-color: var(--brand-secondary);
 
@@ -47,6 +47,12 @@ $breakpoints:(
     --br-md:    #{map-get($map: $breakpoints, $key: medium)};
     --br-sm:    #{map-get($map: $breakpoints, $key: small)};
     --br-xxs:   #{map-get($map: $breakpoints, $key: tiny)};
+    --br-min-width-xxl:   #{map-get($map: $breakpoints, $key: ultra-large) + 1px};
+    --br-min-width-xl:    #{map-get($map: $breakpoints, $key: extra-large) + 1px};
+    --br-min-width-lg:    #{map-get($map: $breakpoints, $key: large) + 1px};
+    --br-min-width-md:    #{map-get($map: $breakpoints, $key: medium) + 1px};
+    --br-min-width-sm:    #{map-get($map: $breakpoints, $key: small) + 1px};
+    --br-min-width-xxs:   #{map-get($map: $breakpoints, $key: tiny) + 1px};
 
     // z-index
     --z-index-loader: 1000;
@@ -59,6 +65,7 @@ $breakpoints:(
 
     // Custom
     --large-title-padding-top: 96;
+    --default-show-nav-menu-breakpoint: var(--br-min-width-sm);
 }
 
 

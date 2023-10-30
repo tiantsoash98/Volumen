@@ -6,6 +6,7 @@ import heroImageOverlay from './src/features/heroImageOverlay'
 import smoothScroll from './src/features/smoothScroll'
 import imageScrollAnimation from './src/features/imageScrollAnimation'
 import textRevealAnimation from './src/features/textRevealAnimation'
+import mobileNavbar from './src/features/mobileNavbar'
 
 // Show loading animation
 animateWhilePageLoading()
@@ -17,7 +18,8 @@ window.addEventListener('load', () => {
   heroImageOverlay()
 })
 
-mouseFollower()
 smoothScroll()
+mouseFollower()
 imageScrollAnimation()
 textRevealAnimation()
+mobileNavbar()

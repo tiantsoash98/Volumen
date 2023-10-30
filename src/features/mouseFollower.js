@@ -1,8 +1,6 @@
 import MouseFollower from "mouse-follower";
 import gsap from "gsap";
 
-
-
 function mouseFollower(){
     MouseFollower.registerGSAP(gsap);
 

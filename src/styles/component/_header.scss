@@ -5,7 +5,6 @@
     width: 100%;
     z-index: var( --z-index-nav);
     padding: responsive-size(var(--base-grid-margin));
-    padding-bottom: 0;
     mix-blend-mode: difference;
     color: var(--brand-primary);
 
@@ -101,9 +100,26 @@
         background-color: var(--brand-primary);
         border-radius: 50%;
     }
+    &__toogle {
+        position: relative;
+        overflow: hidden;
+    }
+    &__label {
+        position: relative;
+
+        &--menu {
+            position: relative;
+        }
+        &--close {
+            position: absolute;
+            top: 100%;
+            left: 0;
+        }
+    }
 }
 
 .menu{
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -136,8 +152,20 @@
         flex-direction: column;
         justify-content: flex-end;
     }
+    &__links-wrapper {
+        margin-bottom: responsive-size(var(--large-title-padding-top));
+    }
+    &__link-wrapper {
+        overflow: hidden;
+    }
     &__links {
         @include font-size(var(--super-large-text));
         line-height: 1;
+    }
+    &__bottom-wrapper {
+        @include font-size(var(--title-3));
+    }
+    &__socials {
+        margin-bottom: responsive-size(var(--large-title-padding-top));
     }
 }

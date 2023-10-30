@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 
 function textRevealAnimation(){
+    let showNavMenuBreakpoint = getComputedStyle(document.body).getPropertyValue('--default-show-nav-menu-breakpoint');
     let matchMedia = gsap.matchMedia();
     gsap.registerPlugin(ScrollTrigger)
 
@@ -11,7 +12,7 @@ function textRevealAnimation(){
         let triggerElement = $(this);
         let targetElement = $(this);
 
-        matchMedia.add("(min-width: 768px)", () => {
+        matchMedia.add(`(min-width : ${showNavMenuBreakpoint})`, () => {
             let tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: triggerElement,

@@ -39,9 +39,9 @@
         <nav class="header__large">
           <div class="header__links-wrapper">
             <ul class="header__links">
-              <li class="header__link"><a href="#">Index</a></li>
+              <li class="header__link"><a href="#">Home</a></li>
               <li class="header__link-separator">, </li>
-              <li class="header__link"><a href="#">Forms</a></li>
+              <li class="header__link"><a href="#">Repertoire</a></li>
               <li class="header__link-separator">, </li>
               <li class="header__link"><a href="#">About</a></li>
             </ul>
@@ -52,19 +52,32 @@
           </div>
         </nav>
         <nav class="header__mobile">
-          <button type="button" class="header__menu-toogle">
-            <span>Menu</span>
+          <button type="button" class="header__toogle nav__toogle" >
+            <div class="header__label header__label--menu">Menu</div>
+            <div class="header__label header__label--close">Close</div>
           </button>
         </nav>
       </header>
-      <aside class="menu">
+      <aside class="menu" aria-expanded="false">
         <div class="menu__frame"></div>
         <div class="menu__content-wrapper">
           <div class="menu__links-wrapper">
             <ul class="menu__links">
-              <li class="menu__link"><a href="#">Index</a></li>
-              <li class="menu__link"><a href="#">Forms</a></li>
-              <li class="menu__link"><a href="#">About</a></li>
+              <li class="menu__link menu__link--1">
+                <div class="menu__link-wrapper">
+                  <a href="#">Home</a>
+                </div>
+              </li>
+              <li class="menu__link menu__link--2">
+                <div class="menu__link-wrapper">
+                  <a href="#">Repertoire</a>
+                </div>
+              </li>
+              <li class="menu__link menu__link--3">
+                <div class="menu__link-wrapper">
+                  <a href="#">About</a>
+                </div>
+              </li>
             </ul>
           </div>
           <div class="menu__bottom-wrapper">
@@ -77,7 +90,6 @@
           </div>
 
         </div>
-        
       </aside>
 
       <section class="hero__large-title">
@@ -97,7 +109,7 @@
       <section class="hero__wrapper">
           <div class="hero__image-wrapper image-scroll__wrapper">
             <div class="hero__overlay"></div>
-            <img class="hero__image image-scroll" src="./src/assets/img/milad-fakurian-ICTjWYzpoc0-unsplash.jpg" role="presentation">
+            <img class="hero__image image-scroll" src="./src/assets/img/header-1.jpg" role="presentation">
           </div>
           <div class="hero__content-wrapper">
             <h1 class="hero__content text-reveal">
