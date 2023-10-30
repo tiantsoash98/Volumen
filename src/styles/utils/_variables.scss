@@ -47,6 +47,8 @@ $breakpoints:(
     --br-md:    #{map-get($map: $breakpoints, $key: medium)};
     --br-sm:    #{map-get($map: $breakpoints, $key: small)};
     --br-xxs:   #{map-get($map: $breakpoints, $key: tiny)};
+
+    // Min width values
     --br-min-width-xxl:   #{map-get($map: $breakpoints, $key: ultra-large) + 1px};
     --br-min-width-xl:    #{map-get($map: $breakpoints, $key: extra-large) + 1px};
     --br-min-width-lg:    #{map-get($map: $breakpoints, $key: large) + 1px};
@@ -65,7 +67,7 @@ $breakpoints:(
 
     // Custom
     --large-title-padding-top: 96;
-    --default-show-nav-menu-breakpoint: var(--br-min-width-sm);
+    --default-show-nav-menu-breakpoint: var(--br-sm);
 }
 
 
