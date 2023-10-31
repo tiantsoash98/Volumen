@@ -1,17 +1,13 @@
 .loader {
     --bottom-y: 0;
     --y-percent: 0;
-    // display: none;
     display: flex;
     position: fixed;
     inset: 0;
     z-index: var(--z-index-loader);
     width: 100vw;
     height: 100%;
-    padding-top: responsive-size(var(--base-grid-margin));
-    padding-bottom: responsive-size(var(--base-grid-margin));
-    padding-left: responsive-size(var(--base-grid-margin));
-    padding-right: responsive-size(var(--base-grid-margin));
+    padding: responsive-size(var(--space-sm));
 
     &__frame {
         position: absolute;

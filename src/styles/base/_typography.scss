@@ -35,4 +35,5 @@ h3 {
 
 p {
     @include font-size(var(--paragraph-text));
+    line-height: 1.3;
 }

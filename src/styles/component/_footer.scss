@@ -1,16 +1,16 @@
 .footer {
     color: var(--brand-secondary);
-    padding-top: responsive-size(var(--base-grid-margin));
+    margin-top: responsive-size(var(--space-xxl));
 
     &__details-wrapper {
         width: 100%;
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        column-gap: responsive-size(var(--base-grid-margin));
+        column-gap: responsive-size(var(--space-sm));
 
         @include media(small, portrait){
             grid-template-columns: 1fr;
-            row-gap: responsive-size(var(--base-vertical-padding));
+            row-gap: responsive-size(var(--space-sm));
         }
     }
     &__left-box {
@@ -26,7 +26,7 @@
         @include media(small, portrait){
             flex-direction: column;
             align-items: flex-start;
-            gap: responsive-size(var(--base-vertical-padding));
+            gap: responsive-size(var(--space-sm));
         }
     }
     &__link {
@@ -71,7 +71,7 @@
     &__logo-wrapper {
         position: relative;
         width: 100%;
-        margin-top: responsive-size(var(--base-vertical-padding));
+        margin-top: responsive-size(var(--space-xl));
     }
     &__logo {
         width: 100%;

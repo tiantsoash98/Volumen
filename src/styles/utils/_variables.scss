@@ -23,6 +23,12 @@ $breakpoints:(
     --base-vertical-padding: var(--base-grid-margin);
     --unit-grid-margin: calc(var(--base-grid-margin) * var(--unit-fx));
 
+    // Spacing
+    --space-sm: var(--base-grid-margin);
+    --space-md: calc(2 * var(--base-grid-margin));
+    --space-xl: calc(3 * var(--base-grid-margin));
+    --space-xxl: calc(4 * var(--base-grid-margin));
+
     // Colors
     --brand-primary: #d8d8d7;
     --brand-secondary: #1e1e1e;
@@ -37,8 +43,10 @@ $breakpoints:(
     --title-1: 72;
     --title-2: 54;
     --title-3: 32;
+    --title-4: 24;
     --paragraph-text: 20;
     --super-large-text: 72;
+    --display-text: 100;
 
     // Breakpoints
     --br-xxl:   #{map-get($map: $breakpoints, $key: ultra-large)};
@@ -66,7 +74,6 @@ $breakpoints:(
     --alias-default-ease: cubic-bezier(.43,.195,.02,1);
 
     // Custom
-    --large-title-padding-top: 96;
     --default-show-nav-menu-breakpoint: var(--br-sm);
 }
 
@@ -80,9 +87,7 @@ $breakpoints:(
     :root{
         --unit-fx: calc(var(--vw)/ 375);
         --unit-fy: calc(var(--vh)/ 726);
-
         --base-grid-margin: 12;
-        --base-vertical-padding: var( --base-grid-margin);
 
         // Typescale
         --title-1: 32;
@@ -90,17 +95,13 @@ $breakpoints:(
         --title-3: 16;
         --paragraph-text: 12;
         --super-large-text: 40;
-
-        // Custom
-        --large-title-padding-top: 56;
+        --display-text: 56;
     }
 }
 
 // Media orientation portrait & Screen width below 576px
 @media screen and (max-width: map-get($map: $breakpoints, $key: extra-small))  and (orientation: portrait){
     :root{
-        --base-vertical-padding: calc(2 * var(--base-grid-margin));
-
         // Typescale
         --title-1: 30;
         --title-2: 26;

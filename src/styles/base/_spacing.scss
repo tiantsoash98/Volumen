@@ -2,6 +2,20 @@
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: responsive-size(var(--base-grid-margin));
-    padding-right: responsive-size(var(--base-grid-margin));
+    padding-left: responsive-size(var(--space-sm));
+    padding-right: responsive-size(var(--space-sm));
+}
+
+.section {
+    margin-top: responsive-size(var(--space-sm));
+
+    &--no-margin-top{
+        margin-top: 0;
+    }
+    &--margin-md {
+        margin-top: responsive-size(var(--space-md));
+    }
+    &--margin-xl {
+        margin-top: responsive-size(var(--space-xl));
+    }
 }

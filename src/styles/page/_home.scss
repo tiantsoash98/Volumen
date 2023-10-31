@@ -1,14 +1,14 @@
 .hero {
     &__large-title {
         width: 100%;
-        padding-top: responsive-size(var(--large-title-padding-top));
+        padding-top: responsive-size(var(--space-xl));
     }
     &__logo {
         width: 100%;
         fill: currentColor;     
     }
     &__wrapper{
-        margin-top: responsive-size(var(--base-grid-margin));
+        margin-top: responsive-size(var(--space-sm));
         margin-bottom: -100vh;
     }
     &__image-wrapper {
@@ -33,16 +33,16 @@
         z-index: 1;
     }
     &__content-wrapper {
-        padding-left: responsive-size(var(--base-grid-margin));
-        padding-bottom: responsive-size(calc(2 * var(--base-grid-margin)));
+        padding-left: responsive-size(var(--space-sm));
+        padding-bottom: responsive-size(var(--space-md));
         padding-right: responsive-size(calc(12 * var(--base-grid-margin)));
 
         @include media(small, portrait) {
-            padding-top: responsive-size(var(--base-vertical-padding));
-            padding-right: responsive-size(calc(4 * var(--base-grid-margin)));
+            padding-top: responsive-size(var(--space-sm));
+            padding-right: responsive-size(var(--space-xl));
         }
         @include media(extra-small, portrait) {
-            padding-right: responsive-size(calc(2 * var(--base-grid-margin)));
+            padding-right: responsive-size(var(--space-md));
         }
     }
     &__content {
@@ -59,10 +59,10 @@
 
 .repertoire {
     background-color: var(--brand-primary);
-    padding-top: responsive-size(var(--base-vertical-padding));
+    padding-top: responsive-size(var(--space-sm));
 
     @include media(small, portrait){
-        padding-top: responsive-size(calc(2 * var(--base-vertical-padding)));
+        padding-top: responsive-size(var(--space-md));
     }
 
     &__menu {
@@ -74,11 +74,11 @@
         text-decoration: underline;
     }
     &__items {
-        margin-top: responsive-size(var(--base-vertical-padding));
+        margin-top: responsive-size(var(--space-sm));
         display: grid;
         grid-template-columns: 1fr 1fr;
-        column-gap: responsive-size(var(--base-grid-margin));
-        row-gap: responsive-size(calc(var(--base-grid-margin) * 2));
+        column-gap: responsive-size(var(--space-sm));
+        row-gap: esponsive-size(var(--space-md));
 
         @include media(small, portrait){
             grid-template-columns: 1fr;
@@ -107,8 +107,7 @@
         justify-content: space-between;
     }
     &__end-wrapper{
-        margin-top: responsive-size(calc(var(--base-vertical-padding) * 3));
-        margin-bottom: responsive-size(calc(var(--base-vertical-padding) * 3));
+        margin-top: responsive-size(var(--space-sm));
         text-align: center;
     }
 }
