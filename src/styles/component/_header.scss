@@ -4,13 +4,13 @@
     left: 0;
     width: 100%;
     z-index: var( --z-index-nav);
-    padding: responsive-size(var(--base-grid-margin));
+    padding: responsive-size(var(--space-sm));
     mix-blend-mode: difference;
     color: var(--brand-primary);
 
     display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
-    column-gap: responsive-size(var(--base-grid-margin));
+    column-gap: responsive-size(var(--space-sm));
 
     &__logo-wrapper {
         grid-column: span 3/span 3;
@@ -24,7 +24,7 @@
         grid-column: span 9/span 9;
         display: grid;
         grid-template-columns: repeat(9, minmax(0, 1fr));
-        column-gap: responsive-size(var(--base-grid-margin));
+        column-gap: responsive-size(var(--space-sm));
 
         @include media(small){
             display: none;
@@ -146,14 +146,14 @@
         position: relative;
         width: 100%;
         height: 100%;
-        padding: responsive-size(var(--base-grid-margin));
+        padding: responsive-size(var(--space-sm));
 
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
     }
     &__links-wrapper {
-        margin-bottom: responsive-size(var(--large-title-padding-top));
+        margin-bottom: responsive-size(var(--space-xl));
     }
     &__link-wrapper {
         overflow: hidden;
@@ -166,6 +166,6 @@
         @include font-size(var(--title-3));
     }
     &__socials {
-        margin-bottom: responsive-size(var(--large-title-padding-top));
+        margin-bottom: responsive-size(var(--space-xl));
     }
 }
