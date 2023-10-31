@@ -20,7 +20,6 @@ $breakpoints:(
 
     //Grid
     --base-grid-margin: 32;
-    --base-vertical-padding: var(--base-grid-margin);
     --unit-grid-margin: calc(var(--base-grid-margin) * var(--unit-fx));
 
     // Spacing
@@ -73,7 +72,7 @@ $breakpoints:(
     --default-ease: '.43,.194,.021,1';
     --alias-default-ease: cubic-bezier(.43,.195,.02,1);
 
-    // Custom
+    // Navbar 
     --default-show-nav-menu-breakpoint: var(--br-sm);
 }
 
@@ -93,9 +92,10 @@ $breakpoints:(
         --title-1: 32;
         --title-2: 24;
         --title-3: 16;
+        --title-4: 14;
         --paragraph-text: 12;
         --super-large-text: 40;
-        --display-text: 56;
+        --display-text: 48;
     }
 }
 
@@ -106,7 +106,9 @@ $breakpoints:(
         --title-1: 30;
         --title-2: 26;
         --title-3: 22;
+        --title-4: 18;
         --paragraph-text: 16;
         --super-large-text: 64;
+        --display-text: 64;
     }
 }
