@@ -78,7 +78,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         column-gap: responsive-size(var(--space-sm));
-        row-gap: esponsive-size(var(--space-md));
+        row-gap: responsive-size(var(--space-md));
 
         @include media(small, portrait){
             grid-template-columns: 1fr;
