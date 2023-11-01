@@ -29,5 +29,10 @@
         left: 0;
         bottom: calc(var(--bottom-y) * 1%);
         transform: translateY(calc(var(--y-percent) * 1%));
+
+        & path {
+            opacity: 0.3;
+            transform: translateY(-276px);
+        }
     }
 }

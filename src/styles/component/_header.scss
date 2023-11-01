@@ -12,6 +12,10 @@
     grid-template-columns: repeat(12, minmax(0, 1fr));
     column-gap: responsive-size(var(--space-sm));
 
+    & a {
+        color: var(--brand-primary);
+    }
+
     &__logo-wrapper {
         grid-column: span 3/span 3;
         height: responsive-size(var(--paragraph-text));
@@ -107,6 +111,10 @@
     &__label {
         position: relative;
 
+        &:hover{
+            cursor: pointer;
+        }
+
         &--menu {
             position: relative;
         }
@@ -130,6 +138,10 @@
     height: 100dvh;
     z-index: var(--z-index-menu);
     color: var(--brand-primary);
+
+    & a {
+        color: var(--brand-primary);
+    }
 
     &__frame {
         position: absolute;
