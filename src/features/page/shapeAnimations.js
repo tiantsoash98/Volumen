@@ -42,7 +42,7 @@ function visualOverlay(){
 function shapePageAnimations(){
     gsap.registerPlugin(ScrollTrigger)
     visualClipOnScroll()
-    visualOverlay()
+    // visualOverlay()
 }
 
 export default shapePageAnimations
