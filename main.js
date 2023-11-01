@@ -16,7 +16,7 @@ animateWhilePageLoading()
 // On loaded
 window.addEventListener('load', () => {
   // Run when page loaded
-  setTimeout(() => animateOnPageLoaded(), 2500);
+  setTimeout(() => animateOnPageLoaded(), 3000);
 
   // Text reveal animation
   textRevealAnimation();
