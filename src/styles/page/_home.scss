@@ -107,7 +107,8 @@
         justify-content: space-between;
     }
     &__end-wrapper{
-        margin-top: responsive-size(var(--space-sm));
+        margin-top: responsive-size(var(--space-xl));
+        margin-bottom: responsive-size(var(--space-xl));
         text-align: center;
     }
 }

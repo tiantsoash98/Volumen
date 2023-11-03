@@ -18,4 +18,16 @@
     &--margin-xl {
         margin-top: responsive-size(var(--space-xl));
     }
+    &--no-padding-top{
+        padding-top: 0;
+    }
+    &--padding-top-sm {
+        padding-top: responsive-size(var(--space-sm));
+    }
+    &--padding-top-md {
+        padding-top: responsive-size(var(--space-md));
+    }
+    &--padding-top-xl {
+        padding-top: responsive-size(var(--space-xl));
+    }
 }
