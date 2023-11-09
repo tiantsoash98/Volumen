@@ -6,7 +6,7 @@
     <title>The Sphere - Volumen</title>
     <link rel="stylesheet" href="./src/styles/style.scss">
 </head>
-<body>
+<body data-barba="wrapper">
     <script type="module" src="./main.js"></script>
     <div class="loader">
       <div class="loader__frame"></div>
@@ -23,7 +23,7 @@
       </div>   
       </div>
     </div>
-    <div class="page-wrapper page-wrapper--no-padding-top smooth-wrapper" data-cursor="-exclusion">
+    <main class="page-wrapper page-wrapper--no-padding-top smooth-wrapper" data-barba="container" data-barba-namespace="shape" data-cursor="-exclusion">
         <header class="header">
             <div class="header__logo-wrapper">
                 <a href="index.html">
@@ -234,6 +234,6 @@
               </div>
             </div>
           </footer>
-    </div>
+    </main>
 </body>
 </html>

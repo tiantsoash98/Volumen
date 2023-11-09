@@ -1,4 +1,5 @@
 import Lenis from '@studio-freight/lenis'
+import gsap from 'gsap'
 
 function smoothScroll() {
   const lenis = new Lenis({
@@ -13,12 +14,22 @@ function smoothScroll() {
     infinite: false,
   })
 
+  gsap.ticker.add((time)=>{
+    lenis.raf(time * 1000)
+  })
+
+  gsap.ticker.lagSmoothing(0)
+
   function raf(time) {
     lenis.raf(time)
     requestAnimationFrame(raf)
   }
 
   requestAnimationFrame(raf)
+
+  lenis.on('scroll', ScrollTrigger.update)
+
+
 }
 
 export default smoothScroll
