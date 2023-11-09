@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 
 
-function textRevealAnimation(){
+function textReveal(){
     SplitType.revert('.text-reveal');
     runSplit();
 }
@@ -45,4 +45,4 @@ function runAnimation(){
     });
 }
 
-export default textRevealAnimation
+export default textReveal

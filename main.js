@@ -3,6 +3,15 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import barba from '@barba/core';
 import Lenis from '@studio-freight/lenis';
 import CustomEase from 'gsap/CustomEase';
+import home from "./src/features/pages/home/home";
+import homeScroll from "./src/features/pages/home/home-scroll";
+import shape from "./src/features/pages/shape/shape";
+import shapeScroll from "./src/features/pages/shape/shape-scroll";
+import header from "./src/features/component/header/header";
+import headerScroll from "./src/features/component/header/header-scroll";
+import cursor from "./src/features/component/cursor/cursor";
+import textReveal from "./src/features/component/effects/textReveal";
+import imageScroll from "./src/features/component/effects/imageScroll";
 
 
 gsap.registerPlugin(ScrollTrigger, CustomEase);
@@ -61,14 +70,14 @@ function initPageTransitions(){
         // Reset all scroll triggers
         ScrollTrigger.getAll().forEach(t => t.kill());
       },
+      async beforeEnter(data){
+        initScroll();
+        initScript();
+      },
       async enter(data){
         // animate loading screen out
         pageTransitionOut(data.next);
       },
-      async beforeEnter(data){
-        initScroll();
-        initScript();
-      }
     }], 
     views: [
     {
@@ -90,18 +99,23 @@ function initPageTransitions(){
 // Init all pages
 function initScript(){
   // Run scripts
+  header()
+  headerScroll()
+  cursor()
+  textReveal()
+  imageScroll()
 
   // Check and run current page scripts
   const isHome = select('body').classList.contains('body--home')
   if(isHome){
-    // home()
-    // homeScroll()
+    home()
+    homeScroll()
   }
 
   const isShape = select('body').classList.contains('body--shape')
   if(isShape){
-    // shape()
-    // shapeScroll()
+    shape()
+    shapeScroll()
   }
 }
 

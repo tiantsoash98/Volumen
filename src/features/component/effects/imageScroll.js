@@ -2,7 +2,7 @@ import $ from 'jquery';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-function imageScrollAnimation() {
+function imageScroll() {
     gsap.registerPlugin(ScrollTrigger)
 
     $(".image-scroll__wrapper").each(function (index) {
@@ -24,4 +24,4 @@ function imageScrollAnimation() {
     });
 }
 
-export default imageScrollAnimation
+export default imageScroll
