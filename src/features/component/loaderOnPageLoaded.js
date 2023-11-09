@@ -2,7 +2,7 @@ import gsap from "gsap";
 import CustomEase from "gsap/CustomEase";
 
 
-function animateOnPageLoaded(){
+function loaderOnPageLoaded(){
     let defaultEase = getComputedStyle(document.body).getPropertyValue('--default-ease');
 
     gsap.registerPlugin(CustomEase) 
@@ -15,6 +15,8 @@ function animateOnPageLoaded(){
     timeline.to('.loader__frame', {opacity: 0 })
     timeline.to('.loader__logo', {opacity: 0 }, '<+=0.1s')
     timeline.to('.loader', {display: 'none' })
+
+    return timeline;
 }
 
-export default animateOnPageLoaded
+export default loaderOnPageLoaded

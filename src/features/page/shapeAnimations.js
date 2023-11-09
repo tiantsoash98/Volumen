@@ -3,21 +3,34 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import CustomEase from 'gsap/CustomEase';
 
-function onPageLoad(){
-    window.addEventListener('load', () => {
-        $(".shape-hero__wrapper").each(function (index) {
-            let defaultEase = getComputedStyle(document.body).getPropertyValue('--default-ease');
+function animateShapeHeader(){
+    // window.addEventListener('load', () => {
+    //     $(".shape-hero__wrapper").each(function (index) {
+    //         let defaultEase = getComputedStyle(document.body).getPropertyValue('--default-ease');
     
-            gsap.registerPlugin(CustomEase) 
-            CustomEase.create("customEase", defaultEase);
+    //         gsap.registerPlugin(CustomEase) 
+    //         CustomEase.create("customEase", defaultEase);
     
-            let timeline = gsap.timeline({
-                defaults: { duration: 1.5, ease: "customEase" },
-            })
+    //         let timeline = gsap.timeline({
+    //             defaults: { duration: 1.5, ease: "customEase" },
+    //         })
             
-            timeline.from('.shape-hero__img', {scale: 1.4, duration: 2})
-        });
-    })
+    //         timeline.from('.shape-hero__img', {scale: 1.4, duration: 2})
+    //     });
+    // })
+
+    $(".shape-hero__wrapper").each(function (index) {
+        let defaultEase = getComputedStyle(document.body).getPropertyValue('--default-ease');
+
+        gsap.registerPlugin(CustomEase) 
+        CustomEase.create("customEase", defaultEase);
+
+        let timeline = gsap.timeline({
+            defaults: { duration: 1.5, ease: "customEase" },
+        })
+        
+        timeline.from('.shape-hero__img', {scale: 1.4, duration: 2})
+    });
     
 }
 
@@ -80,7 +93,6 @@ function visualOverlay(){
 
 function shapePageAnimations(){
     gsap.registerPlugin(ScrollTrigger)
-    onPageLoad()
     headerOnScroll()
     visualClipOnScroll()
     visualOverlay()
