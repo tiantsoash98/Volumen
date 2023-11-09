@@ -46,18 +46,18 @@ function initPageTransitions(){
   barba.init({
     sync: true,
     timeout: 7000,
+    preventRunning: true,
     transitions: [{
       name: 'default-transitions',
-      once(data) {
+      async once(data) {
         // Init Scroll smoother
         initScroll();
         // Init all scripts
         initScript();
         // Init loader
-        initLoader();
+        await initLoader();
       },
       async afterOnce(data){
-        await delay(3000);
         loaderOut();
       },
       async leave(data){
@@ -168,6 +168,8 @@ function initLoader(){
     '--bottom-y': 100, 
     '--y-percent': 100 
   }, '+=0.6s')
+
+  return timeline;
 }
 
 // Animation - First Page Loader Out
@@ -188,6 +190,8 @@ function loaderOut(){
   .set('.loader', {
     display: 'none' 
   })
+
+  return timeline;
 }
 
 // Animation - Page transition In
@@ -205,6 +209,8 @@ function pageTransitionIn(data) {
   .to('.loader__frame', {
     opacity: 1
   })
+
+  return timeline;
 }
 
 // Animation - Page transition Out
@@ -221,6 +227,8 @@ function pageTransitionOut(data) {
   .set('.loader', {
     display: 'none' 
   })
+
+  return timeline;
 }
 
 function delay(n) {

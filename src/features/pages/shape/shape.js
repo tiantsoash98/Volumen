@@ -11,8 +11,7 @@ function shape(){
         defaults: { duration: 2, ease: "customEase" },
     })
     .from('.shape-hero__img', {
-        scale: 1.4,
-        delay: 4
+        scale: 1.3,
     })
 }
 
