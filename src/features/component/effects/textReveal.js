@@ -11,7 +11,7 @@ function textReveal(){
 
 function runSplit(){
     let currentElement = $('.text-reveal');
-    let splitText = new SplitType(currentElement, {types: 'lines, words'});
+    SplitType.create(currentElement, {types: 'lines, words'});
     runAnimation();
 }   
 

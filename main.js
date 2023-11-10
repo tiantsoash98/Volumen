@@ -50,11 +50,8 @@ function initPageTransitions(){
     transitions: [{
       name: 'default-transitions',
       async once(data) {
-        // Init Scroll smoother
         initScroll();
-        // Init all scripts
         initScript();
-        // Init loader
         await initLoader();
       },
       async afterOnce(data){
@@ -84,12 +81,20 @@ function initPageTransitions(){
       namespace: 'home',
       beforeEnter(){
         select('body').className = 'body body--home';
+      },
+      afterEnter(){
+        home()
+        homeScroll()
       }
     },
     {
       namespace: 'shape',
       beforeEnter(){
         select('body').className = 'body body--shape';
+      },
+      afterEnter(){
+        shape()
+        shapeScroll()
       }
     }]
   });
@@ -106,17 +111,17 @@ function initScript(){
   imageScroll()
 
   // Check and run current page scripts
-  const isHome = select('body').classList.contains('body--home')
-  if(isHome){
-    home()
-    homeScroll()
-  }
+  // const isHome = select('body').classList.contains('body--home')
+  // if(isHome){
+  //   home()
+  //   homeScroll()
+  // }
 
-  const isShape = select('body').classList.contains('body--shape')
-  if(isShape){
-    shape()
-    shapeScroll()
-  }
+  // const isShape = select('body').classList.contains('body--shape')
+  // if(isShape){
+  //   shape()
+  //   shapeScroll()
+  // }
 }
 
 // Init scroll
