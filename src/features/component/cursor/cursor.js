@@ -1,7 +1,7 @@
 import MouseFollower from "mouse-follower";
 import gsap from "gsap";
 
-function mouseFollower(){
+function cursor(){
     MouseFollower.registerGSAP(gsap);
 
     const cursor = new MouseFollower({
@@ -11,4 +11,4 @@ function mouseFollower(){
     });
 }
 
-export default mouseFollower
+export default cursor

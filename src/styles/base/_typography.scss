@@ -23,7 +23,7 @@ h2 {
     @include font-size(var(--title-2));
     font-weight: var(--font-weight);
     letter-spacing: -1px;
-    line-height: 1.1;
+    line-height: 1.2;
 }
 
 h3 {
@@ -35,5 +35,5 @@ h3 {
 
 p {
     @include font-size(var(--paragraph-text));
-    line-height: 1.3;
+    line-height: 1.4;
 }

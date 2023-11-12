@@ -2,8 +2,7 @@ import gsap from "gsap";
 import CustomEase from "gsap/CustomEase";
 import SplitType from "split-type";
 
-
-function mobileNavbar(){
+function header(){
     splitNavLinks();
 
     let defaultEase = getComputedStyle(document.body).getPropertyValue('--default-ease');
@@ -34,7 +33,7 @@ function mobileNavbar(){
         .set('.menu__links', {opacity: 1})
         .from('.menu__frame', {scaleY: 0} )
         .to('.header__label--menu, .header__label--close', {yPercent: -100}, '<')
-        .from('.menu__link--1 .char' , { yPercent: 100, stagger: 0.06 }, '<')
+        .from('.menu__link--1 .char' , { yPercent: 100, stagger: 0.06 }, '<+0.2')
         .from('.menu__link--2 .char' , { yPercent: 100, stagger: 0.06 }, '<')
         .from('.menu__link--3 .char' , { yPercent: 100, stagger: 0.06 }, '<')
         .from('.menu__bottom-wrapper', {opacity: 0}, '<+0.5')
@@ -69,7 +68,7 @@ function mobileNavbar(){
 }
 
 function splitNavLinks(){
-    const text = new SplitType('.menu__link-wrapper a')
+    SplitType.create('.menu__link-wrapper a')
 }
 
-export default mobileNavbar
+export default header

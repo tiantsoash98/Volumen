@@ -1,11 +1,5 @@
-@mixin font-size($font-size, $min-size: ""){
-    @if $min-size != "" {
-        font-size: max($min-size, responsive-size($font-size));
-    }
-    @else{
-        font-size: responsive-size($font-size);
-    }
-    
+@mixin font-size($font-size, $min-size: $min-font-size){
+    font-size: max(responsive-size($font-size), $min-size);
 }
 
 // For media max-width

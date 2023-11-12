@@ -9,6 +9,8 @@ $breakpoints:(
     tiny: 320px, // tiny screens
 );
 
+$min-font-size : 1.25rem;
+
 :root {
     // Base
     --vw: 100vw;
@@ -39,13 +41,14 @@ $breakpoints:(
     --font-weight: 500;
 
     // Typescale
-    --title-1: 72;
-    --title-2: 54;
-    --title-3: 32;
-    --title-4: 24;
-    --paragraph-text: 20;
-    --super-large-text: 72;
-    --display-text: 100;
+    --title-1: 56;
+    --title-2: 42;
+    --title-3: 24;
+    --title-4: 20;
+    --paragraph-text: 18;
+    --super-large-text: 64;
+    --display-text: 72;
+    --min-font-size: $min-font-size;
 
     // Breakpoints
     --br-xxl:   #{map-get($map: $breakpoints, $key: ultra-large)};
