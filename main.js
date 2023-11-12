@@ -109,19 +109,6 @@ function initScript(){
   cursor()
   textReveal()
   imageScroll()
-
-  // Check and run current page scripts
-  // const isHome = select('body').classList.contains('body--home')
-  // if(isHome){
-  //   home()
-  //   homeScroll()
-  // }
-
-  // const isShape = select('body').classList.contains('body--shape')
-  // if(isShape){
-  //   shape()
-  //   shapeScroll()
-  // }
 }
 
 // Init scroll

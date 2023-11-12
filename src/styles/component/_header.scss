@@ -11,6 +11,11 @@
     display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
     column-gap: responsive-size(var(--space-sm));
+    transition: opacity 1s var(--alias-default-ease) .2s;
+
+    &--scrolling {
+        opacity: 0;
+    }
 
     & a {
         color: var(--brand-primary);
