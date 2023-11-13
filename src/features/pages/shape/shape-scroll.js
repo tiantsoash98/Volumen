@@ -61,6 +61,7 @@ function shapeScroll(){
         scale: 1
     }, '<')
 
+
     gsap.timeline({
         defaults: { duration: 1 },
         scrollTrigger: {
@@ -119,6 +120,28 @@ function shapeScroll(){
         .to('.shape-visual__sticky-wrapper', {
             yPercent: 30
         }, '<')
+
+
+        // Content design by
+        SplitType.create('.shape-content__author', {types: 'chars', charClass: 'shape-content__author--char'});
+
+        gsap.timeline({
+            defaults: { duration: 1 },
+            scrollTrigger: {
+                trigger: ".shape-content__img-track",
+                //trigger element - viewport
+                start: "top top",
+                end: "10% top"
+            }
+        })
+        .from('.shape-content__by', {
+            opacity: 0
+        })
+        .from('.shape-content__author--char', {
+            yPercent: 100,
+            duration: 0.3,
+            stagger: 0.05,
+        });
     });
 
 

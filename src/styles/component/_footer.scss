@@ -9,14 +9,24 @@
         column-gap: responsive-size(var(--space-sm));
 
         @include media(small, portrait){
-            grid-template-columns: 1fr;
             row-gap: responsive-size(var(--space-sm));
         }
     }
     &__left-box {
         grid-column: span 6;
         display: flex;
-        align-items: flex-end;        
+        align-items: flex-end;
+        
+        @include media(small, portrait){
+            grid-column: 1/-1;
+            order: 2;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-top: responsive-size(var(--space-md));
+        }
+        @include media(tiny, portrait){
+            flex-direction: column;
+        }
     }
     &__time {
         margin-left: responsive-size(var(--space-sm));
@@ -29,6 +39,7 @@
         align-items: flex-end;
 
         @include media(small, portrait){
+            grid-column: 1/-1;
             flex-direction: column;
             align-items: flex-start;
             gap: responsive-size(var(--space-sm));
@@ -40,10 +51,19 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
+        
+        @include media(small, portrait){
+            flex-direction: column;
+            justify-content: flex-start;
+        }
     }
     &__credits{
         display: flex;
         flex-direction: column;
+
+        @include media(small, portrait){
+            margin-top: responsive-size(var(--space-md));
+        }
     }
     &__links {
         display: flex;

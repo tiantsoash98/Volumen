@@ -229,8 +229,11 @@
             justify-content: space-between;
 
             @include media(small, portrait){
+                position: relative;
+                height: auto;
                 width: 100%;
                 padding-right: 0;
+                padding-bottom: 0;
             }
         }
         &__sticky-title {
@@ -242,6 +245,13 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+
+            @include media(small, portrait){
+                display: none;
+            }
+        }
+        &__author {
+            overflow: hidden;
         }
         &__right-wrapper {
             width: 50%;
