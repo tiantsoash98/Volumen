@@ -42,6 +42,7 @@ function initPageTransitions(){
   // scroll to the top of the page
   barba.hooks.afterEnter(() => {
     window.scrollTo(0, 0);
+    select('.header').classList.remove('header--scrolling');
   });
 
   barba.init({
@@ -162,7 +163,11 @@ function initLoader(){
     '--y-percent': 100 
   }, '+=0.6s')
 
-  return timeline;
+  timeline.then(() => {
+    window.addEventListener('load', () => {
+      resolve();
+    });
+  });
 }
 
 // Animation - First Page Loader Out
@@ -183,8 +188,6 @@ function loaderOut(){
   .set('.loader', {
     display: 'none' 
   })
-
-  return timeline;
 }
 
 // Animation - Page transition In
