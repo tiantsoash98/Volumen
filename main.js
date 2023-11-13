@@ -13,6 +13,7 @@ import headerScroll from "./src/features/component/header/header-scroll";
 import cursor from "./src/features/component/cursor/cursor";
 import textReveal from "./src/features/component/effects/textReveal";
 import imageScroll from "./src/features/component/effects/imageScroll";
+import footer from './src/features/component/footer/footer';
 
 
 gsap.registerPlugin(ScrollTrigger, CustomEase);
@@ -108,6 +109,7 @@ function initScript(){
   // Run scripts
   header()
   headerScroll()
+  footer()
   cursor()
   textReveal()
   imageScroll()

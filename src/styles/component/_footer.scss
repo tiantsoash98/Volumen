@@ -5,7 +5,7 @@
     &__details-wrapper {
         width: 100%;
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(12, minmax(0, 1fr));
         column-gap: responsive-size(var(--space-sm));
 
         @include media(small, portrait){
@@ -14,10 +14,15 @@
         }
     }
     &__left-box {
+        grid-column: span 6;
         display: flex;
-        align-items: flex-end;
+        align-items: flex-end;        
+    }
+    &__time {
+        margin-left: responsive-size(var(--space-sm));
     }
     &__right-box {
+        grid-column: span 6;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -28,6 +33,21 @@
             align-items: flex-start;
             gap: responsive-size(var(--space-sm));
         }
+    }
+    &__credits-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    &__credits{
+        display: flex;
+        flex-direction: column;
+    }
+    &__links {
+        display: flex;
+        margin-top: responsive-size(calc(0.5 * var(--space-sm)));
     }
     &__link {
         & a {
@@ -59,14 +79,8 @@
             }
         }
     }
-    &__credits-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-
-        @include media(small, portrait){
-            align-items: flex-start;
-        }
+    &__link-separator {
+        margin-right: responsive-size(3);
     }
     &__logo-wrapper {
         position: relative;
