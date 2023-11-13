@@ -141,10 +141,10 @@ function initScroll(){
 function initLoader(){
 
   let timeline = gsap.timeline({
-      defaults: { 
-        duration: 1, 
-        ease: "customEase" 
-      }
+    defaults: { 
+      duration: 1, 
+      ease: "customEase" 
+    },
   })
   .set('.loader', {
     display: 'flex'
@@ -163,12 +163,9 @@ function initLoader(){
     '--y-percent': 100 
   }, '+=0.6s')
 
-  timeline.then(() => {
-    window.addEventListener('load', () => {
-      resolve();
-    });
-  });
+  return timeline;
 }
+
 
 // Animation - First Page Loader Out
 function loaderOut(){
