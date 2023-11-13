@@ -139,8 +139,8 @@ function shapeScroll(){
         })
         .from('.shape-content__author--char', {
             yPercent: 100,
-            duration: 0.3,
-            stagger: 0.05,
+            duration: 0.6,
+            stagger: 0.03,
         });
     });
 

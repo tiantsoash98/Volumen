@@ -68,6 +68,10 @@
     &__links {
         display: flex;
         margin-top: responsive-size(calc(0.5 * var(--space-sm)));
+
+        @include media(small, portrait){
+            margin-top: 0;
+        }
     }
     &__link {
         & a {

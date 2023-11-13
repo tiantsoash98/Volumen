@@ -69,7 +69,7 @@
             @include media(small, portrait){
                 margin-top: responsive-size(var(--space-md));
                 opacity: 0.5;
-                @include font-size(var(--callout-text));
+                @include font-size(var(--callout-text), 1rem);
             }
         }
         &__scroll {
@@ -157,6 +157,10 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+
+            @include media(small, portrait){
+                @include font-size(var(--callout-text), 1rem);
+            }
         }
         &__main-wrapper {
             width: 100%;

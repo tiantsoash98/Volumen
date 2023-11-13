@@ -17,6 +17,10 @@ h1 {
     font-weight: var(--font-weight);
     letter-spacing: -1px;
     line-height: 1.1;
+
+    @include media(small){
+        letter-spacing: -0.5px;
+    }
 }
 
 h2 {
