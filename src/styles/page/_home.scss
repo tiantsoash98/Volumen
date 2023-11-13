@@ -87,8 +87,12 @@
     &__item {
         display: flex;
         flex-direction: column;
-        max-height: 95vh;
+        max-height: calc(100vh - responsive-size(var(--space-sm)));
 
+        & a {
+            width: 100%;
+            height: 100%;
+        }
         &--3 {
             @include media-min-width(small){
                 grid-column: 1/-1;
@@ -97,7 +101,6 @@
         &--4 {
             @include media-min-width(small){
                 grid-column: 2/-1;
-                max-height: 85vh;
             }
         }
     }
