@@ -1,3 +1,4 @@
+import './src/styles/style.scss'
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import barba from '@barba/core';
