@@ -1,0 +1,33 @@
+.hover-link {
+    --background-color: var(--brand-secondary);
+    position: relative;
+
+    &--negative {
+        --background-color: var(--brand-primary);
+    }
+
+    &::after{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: responsive-size(1.5);
+        background-color: var(--background-color);
+        transition: transform 1s var(--alias-default-ease);
+        transform-origin: left;
+        transform: scaleX(0);
+    }
+
+    &:hover{
+        &::after{
+            transform: scaleX(1);
+        }
+    }
+    &:not(:hover) {
+        &::after{
+            transform-origin: right;
+            transform: scaleX(0);
+        }
+    }
+}
