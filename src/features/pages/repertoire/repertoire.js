@@ -1,8 +1,8 @@
 import { createApp } from "vue";
 import Repertoire from "../../component/repertoire/Repertoire.vue";
 
-function home(){
+function repertoire(){
     createApp(Repertoire).mount('#repertoire');
 }
 
-export default home
+export default repertoire

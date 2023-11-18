@@ -22,9 +22,9 @@
             <ul class="header__links">
               <li class="header__link hover-link hover-link--negative"><a href="./index.html">Home</a></li>
               <li class="header__link-separator">, </li>
-              <li class="header__link hover-link hover-link--negative"><a href="./the-sphere.html">Repertoire</a></li>
+              <li class="header__link hover-link hover-link--negative"><a href="./repertoire.html">Repertoire</a></li>
               <li class="header__link-separator">, </li>
-              <li class="header__link hover-link hover-link--negative"><a href="./the-icosahedral.html">About</a></li>
+              <li class="header__link hover-link hover-link--negative"><a href="#">About</a></li>
             </ul>
           </div>
           <div class="header__location-wrapper">
@@ -46,12 +46,12 @@
             <ul class="menu__links">
                 <li class="menu__link menu__link--1">
                 <div class="menu__link-wrapper">
-                    <a href="#">Home</a>
+                    <a href="./index.html">Home</a>
                 </div>
                 </li>
                 <li class="menu__link menu__link--2">
                 <div class="menu__link-wrapper">
-                    <a href="#">Repertoire</a>
+                    <a href="./repertoire.html">Repertoire</a>
                 </div>
                 </li>
                 <li class="menu__link menu__link--3">

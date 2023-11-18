@@ -12,6 +12,7 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         icosahedral: resolve(__dirname, 'the-icosahedral.html'),
         sphere: resolve(__dirname, 'the-sphere.html'),
+        repertoire: resolve(__dirname, 'repertoire.html'),
       },
       // output: {
       //   format: 'umd',
