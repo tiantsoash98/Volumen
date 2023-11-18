@@ -16,17 +16,18 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        // sphere: resolve(__dirname, 'sphere/index.html'),
+        icosahedral: resolve(__dirname, 'the-icosahedral.html'),
+        sphere: resolve(__dirname, 'the-sphere.html'),
       },
-      output: {
-        format: 'umd',
-        entryFileNames: 'main.js',
-        esModule: false,
-        compact: true,
-        globals: {
-          jquery: '$',
-        },
-      },
+      // output: {
+      //   format: 'umd',
+      //   entryFileNames: 'main.js',
+      //   esModule: false,
+      //   compact: true,
+      //   globals: {
+      //     jquery: '$',
+      //   },
+      // },
     },
   },
 })
