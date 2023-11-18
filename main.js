@@ -84,21 +84,17 @@ function initPageTransitions(){
       namespace: 'home',
       beforeEnter(){
         select('body').className = 'body body--home';
-      },
-      afterEnter(){
         home()
         homeScroll()
-      }
+      },
     },
     {
       namespace: 'shape',
       beforeEnter(){
         select('body').className = 'body body--shape';
-      },
-      afterEnter(){
         shape()
         shapeScroll()
-      }
+      },
     }]
   });
 }

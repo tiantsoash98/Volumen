@@ -1,15 +1,9 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
-  server: {
-    host: 'localhost',
-    cors: '*',
-    hmr: {
-      host: 'localhost',
-      protocol: 'ws',
-    },
-  },
+  plugins: [vue()],
   build: {
     minify: true,
     manifest: true,

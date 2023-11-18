@@ -1,5 +1,8 @@
-function footer(){
+import { createApp } from "vue";
+import Footer from './Footer.vue';
 
+function footer(){
+    createApp(Footer).mount('#footer');
     initTimeZone();
 
     // Footer time zone
@@ -29,7 +32,6 @@ function footer(){
             const formattedDateTime = formatter.format(dateTime);
             timeSpan.textContent = formattedDateTime;
         }
-    
     }
 }
 
