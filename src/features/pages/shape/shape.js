@@ -1,6 +1,6 @@
 import { createApp } from "vue";
 import Shape from "./Shape.vue";
-import Suggested from "../../component/Suggested/Suggested.vue";
+import Suggested from "../../component/suggested/Suggested.vue";
 
 function shape(){
     /* App mount */

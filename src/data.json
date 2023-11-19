@@ -38,8 +38,9 @@
                 ]
             },
             "repertoire": {
-                "imgId": "the-icosahedral-landscape-1.webp",
-                "hoverId": "the-icosahedral-landscape-2.webp"
+                "preferedOrientation": "landscape",
+                "imgId": "1",
+                "hoverId": "2"
             }
         },
         {
@@ -80,8 +81,9 @@
                 ]
             },
             "repertoire": {
-                "imgId": "the-sphere-landscape-1.webp",
-                "hoverId": "the-sphere-landscape-2.webp"
+                "preferedOrientation": "portrait",
+                "imgId": "1",
+                "hoverId": "2"
             }
         },
         {
@@ -122,8 +124,9 @@
                 ]
             },
             "repertoire": {
-                "imgId": "the-square-landscape-1.webp",
-                "hoverId": "the-square-landscape-2.webp"
+                "preferedOrientation": "landscape",
+                "imgId": "1",
+                "hoverId": "2"
             }
         },
         {
@@ -164,8 +167,9 @@
                 ]
             },
             "repertoire": {
-                "imgId": "the-pyramid-landscape-1.webp",
-                "hoverId": "the-pyramid-landscape-2.webp"
+                "preferedOrientation": "portrait",
+                "imgId": "1",
+                "hoverId": "2"
             }
         },
         {
@@ -206,8 +210,9 @@
                 ]
             },
             "repertoire": {
-                "imgId": "the-cube-landscape-1.webp",
-                "hoverId": "the-cube-landscape-2.webp"
+                "preferedOrientation": "landscape",
+                "imgId": "1",
+                "hoverId": "2"
             }
         }
     ]

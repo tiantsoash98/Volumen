@@ -7,11 +7,12 @@ const props = defineProps({
   item: String,
 })
 
-function imgUrl(url) {
-  return "/" + url;
-}
 function getShapeHref(slug){
     return "./" + slug + ".html";
+}
+
+function getImgByOrientation(slug, orientation, imgId){
+    return `/${slug}-${orientation}-${imgId}.webp`;
 }
 
 const suggestedShapes = computed(() => {
@@ -32,7 +33,7 @@ const suggestedShapes = computed(() => {
                 <article v-for="(shape, index) in suggestedShapes" :key="shape.slug" :class="`repertoire__item repertoire__item--${index+1}`" >
                     <figure class="repertoire__item-image-wrapper image-scroll__wrapper">
                         <a :href="getShapeHref(shape.slug)">
-                            <img class="image-scroll" :src="imgUrl(shape.repertoire.imgId)" :alt="shape.name" loading="lazy">
+                            <img class="image-scroll" :src="getImgByOrientation(shape.slug, shape.repertoire.preferedOrientation, shape.repertoire.imgId)" :alt="shape.name" loading="lazy">
                         </a>
                     </figure>
                     <div class="repertoire__details">
