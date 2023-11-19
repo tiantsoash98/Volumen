@@ -1,6 +1,49 @@
 {
     "shapes": [
         {
+            "id": 1,
+            "name": "The Icosahedral",
+            "slug": "the-icosahedral",
+            "subtitle": "The Multifaceted Beauty of Twenty Sides",
+            "heroImg": "the-icosahedral-landscape-1.webp",
+            "description": {
+                "firstRow": "Mapping the heavens to modern innovations in science and art, the sphere's influence transcends time and culture, reminding us of the profound beauty in",
+                "secondRow": "mathematical precision and the universality of its appeal.",
+                "thirdRow": "The Sphere, a symbol of perfection and unity, has captivated human imagination for millennia. Its flawless, symmetrical shape represents harmony and balance, embodying the simplicity and elegance found in nature's design.",
+                "img": "the-icosahedral-portrait-2.webp"
+            },
+            "visual": {
+                "img": "the-icosahedral-landscape-3.webp",
+                "alt": "The Sphere in dark mode"
+            },
+            "content": {
+                "title": "Geometry, Science, and Art",
+                "paragraph": [
+                    "Beyond its aesthetic allure, the sphere plays a crucial role in diverse fields. In geometry, it's a fundamental shape for understanding volume and space. In science, it emerges as a crucial model for celestial bodies like planets and stars.  In art, it serves as a muse for countless masterpieces, its contours reflecting light and shadow with unmatched grace.",
+                    "The sphere invites us to explore the depths of its mathematical intricacies and its boundless applications, from engineering to artistry, reminding us that the simplest form can be a gateway to boundless creativity and discovery."
+                ],
+                "images": [
+                    {
+                        "src": "the-icosahedral-portrait-4.webp",
+                        "alt": "The Sphere on grid"
+                    },
+                    {
+                        "src": "the-icosahedral-portrait-5.webp",
+                        "alt": "The Sphere floating"
+                    },
+                    {
+                        "src": "the-icosahedral-portrait-6.webp",
+                        "alt": "The Sphere resting"
+                    }
+                ]
+            },
+            "repertoire": {
+                "imgId": "the-icosahedral-landscape-1.webp",
+                "hoverId": "the-icosahedral-landscape-2.webp"
+            }
+        },
+        {
+            "id": 2,
             "name": "The Sphere",
             "slug": "the-sphere",
             "subtitle": "A perfect orb of infinite possibilities",
@@ -42,18 +85,19 @@
             }
         },
         {
-            "name": "The Icosahedral",
-            "slug": "the-icosahedral",
+            "id": 3,
+            "name": "The Square",
+            "slug": "the-square",
             "subtitle": "The Multifaceted Beauty of Twenty Sides",
-            "heroImg": "the-icosahedral-landscape-1.webp",
+            "heroImg": "the-square-landscape-1.webp",
             "description": {
                 "firstRow": "Mapping the heavens to modern innovations in science and art, the sphere's influence transcends time and culture, reminding us of the profound beauty in",
                 "secondRow": "mathematical precision and the universality of its appeal.",
                 "thirdRow": "The Sphere, a symbol of perfection and unity, has captivated human imagination for millennia. Its flawless, symmetrical shape represents harmony and balance, embodying the simplicity and elegance found in nature's design.",
-                "img": "the-icosahedral-portrait-2.webp"
+                "img": "the-square-portrait-2.webp"
             },
             "visual": {
-                "img": "the-icosahedral-landscape-3.webp",
+                "img": "the-square-landscape-3.webp",
                 "alt": "The Sphere in dark mode"
             },
             "content": {
@@ -64,22 +108,106 @@
                 ],
                 "images": [
                     {
-                        "src": "the-icosahedral-portrait-4.webp",
+                        "src": "the-square-portrait-4.webp",
                         "alt": "The Sphere on grid"
                     },
                     {
-                        "src": "the-icosahedral-portrait-5.webp",
+                        "src": "the-square-portrait-5.webp",
                         "alt": "The Sphere floating"
                     },
                     {
-                        "src": "the-icosahedral-portrait-6.webp",
+                        "src": "the-square-portrait-6.webp",
                         "alt": "The Sphere resting"
                     }
                 ]
             },
             "repertoire": {
-                "imgId": "the-icosahedral-landscape-1.webp",
-                "hoverId": "the-icosahedral-landscape-2.webp"
+                "imgId": "the-square-landscape-1.webp",
+                "hoverId": "the-square-landscape-2.webp"
+            }
+        },
+        {
+            "id": 4,
+            "name": "The Pyramid",
+            "slug": "the-pyramid",
+            "subtitle": "The Multifaceted Beauty of Twenty Sides",
+            "heroImg": "the-pyramid-landscape-1.webp",
+            "description": {
+                "firstRow": "Mapping the heavens to modern innovations in science and art, the sphere's influence transcends time and culture, reminding us of the profound beauty in",
+                "secondRow": "mathematical precision and the universality of its appeal.",
+                "thirdRow": "The Sphere, a symbol of perfection and unity, has captivated human imagination for millennia. Its flawless, symmetrical shape represents harmony and balance, embodying the simplicity and elegance found in nature's design.",
+                "img": "the-pyramid-portrait-2.webp"
+            },
+            "visual": {
+                "img": "the-pyramid-landscape-3.webp",
+                "alt": "The Sphere in dark mode"
+            },
+            "content": {
+                "title": "Geometry, Science, and Art",
+                "paragraph": [
+                    "Beyond its aesthetic allure, the sphere plays a crucial role in diverse fields. In geometry, it's a fundamental shape for understanding volume and space. In science, it emerges as a crucial model for celestial bodies like planets and stars.  In art, it serves as a muse for countless masterpieces, its contours reflecting light and shadow with unmatched grace.",
+                    "The sphere invites us to explore the depths of its mathematical intricacies and its boundless applications, from engineering to artistry, reminding us that the simplest form can be a gateway to boundless creativity and discovery."
+                ],
+                "images": [
+                    {
+                        "src": "the-pyramid-portrait-4.webp",
+                        "alt": "The Sphere on grid"
+                    },
+                    {
+                        "src": "the-pyramid-portrait-5.webp",
+                        "alt": "The Sphere floating"
+                    },
+                    {
+                        "src": "the-pyramid-portrait-6.webp",
+                        "alt": "The Sphere resting"
+                    }
+                ]
+            },
+            "repertoire": {
+                "imgId": "the-pyramid-landscape-1.webp",
+                "hoverId": "the-pyramid-landscape-2.webp"
+            }
+        },
+        {
+            "id": 5,
+            "name": "The Cube",
+            "slug": "the-cube",
+            "subtitle": "The Multifaceted Beauty of Twenty Sides",
+            "heroImg": "the-cube-landscape-1.webp",
+            "description": {
+                "firstRow": "Mapping the heavens to modern innovations in science and art, the sphere's influence transcends time and culture, reminding us of the profound beauty in",
+                "secondRow": "mathematical precision and the universality of its appeal.",
+                "thirdRow": "The Sphere, a symbol of perfection and unity, has captivated human imagination for millennia. Its flawless, symmetrical shape represents harmony and balance, embodying the simplicity and elegance found in nature's design.",
+                "img": "the-cube-portrait-2.webp"
+            },
+            "visual": {
+                "img": "the-cube-landscape-3.webp",
+                "alt": "The Sphere in dark mode"
+            },
+            "content": {
+                "title": "Geometry, Science, and Art",
+                "paragraph": [
+                    "Beyond its aesthetic allure, the sphere plays a crucial role in diverse fields. In geometry, it's a fundamental shape for understanding volume and space. In science, it emerges as a crucial model for celestial bodies like planets and stars.  In art, it serves as a muse for countless masterpieces, its contours reflecting light and shadow with unmatched grace.",
+                    "The sphere invites us to explore the depths of its mathematical intricacies and its boundless applications, from engineering to artistry, reminding us that the simplest form can be a gateway to boundless creativity and discovery."
+                ],
+                "images": [
+                    {
+                        "src": "the-cube-portrait-4.webp",
+                        "alt": "The Sphere on grid"
+                    },
+                    {
+                        "src": "the-cube-portrait-5.webp",
+                        "alt": "The Sphere floating"
+                    },
+                    {
+                        "src": "the-cube-portrait-6.webp",
+                        "alt": "The Sphere resting"
+                    }
+                ]
+            },
+            "repertoire": {
+                "imgId": "the-cube-landscape-1.webp",
+                "hoverId": "the-cube-landscape-2.webp"
             }
         }
     ]

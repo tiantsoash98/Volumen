@@ -3,6 +3,7 @@ import CustomEase from "gsap/CustomEase";
 import SplitType from "split-type";
 import { createApp } from "vue";
 import Shape from "./Shape.vue";
+import Suggested from "../../component/Suggested/Suggested.vue";
 
 function shape(){
     /* App mount */
@@ -10,6 +11,7 @@ function shape(){
     const appSelector = "#shape";
     const mountEl = document.querySelector(appSelector);
     createApp(Shape, { ...mountEl.dataset }).mount(appSelector);
+    createApp(Suggested, { ...mountEl.dataset }).mount("#suggested");
     
     
     /* Animations */

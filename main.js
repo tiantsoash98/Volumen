@@ -60,7 +60,7 @@ function initPageTransitions(){
         initScript();
         await initLoader();
       },
-      async afterOnce(data){
+      async afterOnce(){
         loaderOut();
       },
       async leave(data){
@@ -73,7 +73,7 @@ function initPageTransitions(){
         // Reset all scroll triggers
         ScrollTrigger.getAll().forEach(t => t.kill());
       },
-      async beforeEnter(data){
+      async beforeEnter(){
         initScroll();
         initScript();
       },
@@ -92,6 +92,14 @@ function initPageTransitions(){
       },
     },
     {
+      namespace: 'icosahedral',
+      beforeEnter(){
+        select('body').className = 'body body--icosahedral';
+        shape()
+        shapeScroll()
+      },
+    },
+    {
       namespace: 'sphere',
       beforeEnter(){
         select('body').className = 'body body--sphere';
@@ -100,9 +108,25 @@ function initPageTransitions(){
       },
     },
     {
-      namespace: 'icosahedral',
+      namespace: 'square',
       beforeEnter(){
-        select('body').className = 'body body--icosahedral';
+        select('body').className = 'body body--square';
+        shape()
+        shapeScroll()
+      },
+    },
+    {
+      namespace: 'pyramid',
+      beforeEnter(){
+        select('body').className = 'body body--pyramid';
+        shape()
+        shapeScroll()
+      },
+    },
+    {
+      namespace: 'cube',
+      beforeEnter(){
+        select('body').className = 'body body--cube';
         shape()
         shapeScroll()
       },
