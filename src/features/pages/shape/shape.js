@@ -1,8 +1,13 @@
 import gsap from "gsap";
 import CustomEase from "gsap/CustomEase";
 import SplitType from "split-type";
+import { createApp } from "vue";
+import Shape from "./Shape.vue";
 
 function shape(){
+    const appSelector = "#shape";
+    const mountEl = document.querySelector(appSelector);
+    createApp(Shape, { ...mountEl.dataset }).mount(appSelector);
 
     let defaultEase = getComputedStyle(document.body).getPropertyValue('--default-ease');
 
