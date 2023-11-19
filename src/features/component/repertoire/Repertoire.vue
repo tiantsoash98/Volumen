@@ -20,10 +20,11 @@ function getImgByOrientation(slug, orientation, imgId){
 <template>
     <div class="container">
         <div class="repertoire__items">
-            <article v-for="(shape, index) in shapes" :key="shape.slug" :class="`repertoire__item repertoire__item--${index+1}`" >
-                <figure class="repertoire__item-image-wrapper image-scroll__wrapper">
+            <article v-for="(shape, index) in shapes" :key="shape.id" :class="`repertoire__item repertoire__item--${index+1}`" >
+                <figure class="repertoire__image-wrapper image-scroll__wrapper">
                     <a :href="getShapeHref(shape.slug)">
-                        <img class="image-scroll" :src="getImgByOrientation(shape.slug, shape.repertoire.preferedOrientation, shape.repertoire.imgId)" :alt="shape.name" loading="lazy">
+                        <img class="repertoire__img repertoire__img--main image-scroll" :src="getImgByOrientation(shape.slug, shape.repertoire.preferedOrientation, shape.repertoire.imgId)" :alt="shape.name" loading="eager">
+                        <img class="repertoire__img repertoire__img--hover" :src="getImgByOrientation(shape.slug, shape.repertoire.preferedOrientation, shape.repertoire.hoverId)" :alt="shape.name" loading="lazy">
                     </a>
                 </figure>
                 <div class="repertoire__details">

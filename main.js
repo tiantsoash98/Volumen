@@ -15,7 +15,7 @@ import textReveal from "./src/features/component/effects/textReveal";
 import imageScroll from "./src/features/component/effects/imageScroll";
 import footer from './src/features/component/footer/footer';
 import loader from './src/features/component/loader/loader';
-import repertoire from './src/features/pages/repertoire/repertoire';
+import repertoire from './src/features/component/repertoire/repertoire';
 import shapeAnimation from './src/features/pages/shape/shape-animation';
 
 
@@ -53,6 +53,7 @@ function initPageTransitions(){
     sync: true,
     timeout: 7000,
     preventRunning: true,
+    debug: true,
     transitions: [{
       name: 'default-transitions',
       async once() {
@@ -89,6 +90,7 @@ function initPageTransitions(){
       beforeEnter(){
         select('body').className = 'body body--home';
         home()
+        repertoire()
         homeScroll()
       }
     },
