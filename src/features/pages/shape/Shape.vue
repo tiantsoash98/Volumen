@@ -2,8 +2,14 @@
 // https://stackoverflow.com/questions/45565349/how-to-access-external-json-file-objects-in-vue-js-app
 import jsonShapes from '../../../data.json';
 
+defineProps({
+  item: String,
+})
+
 const baseImgUrl = "./src/assets/img/";
 const shape = jsonShapes.shapes[0];
+
+
 
 function imgUrl(url) {
   return baseImgUrl + url;
@@ -11,6 +17,7 @@ function imgUrl(url) {
 </script>
 
 <template>
+    <h1>{{ item }}</h1>
     <div class="section section--no-margin-top shape-hero__wrapper">
         <div class="shape-hero__img-wrapper">
             <div class="shape-hero__img-overlay"></div>
