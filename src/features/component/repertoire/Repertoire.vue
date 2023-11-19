@@ -19,9 +19,6 @@ function getImgByOrientation(slug, orientation, imgId){
 
 <template>
     <div class="container">
-        <div class="repertoire__menu">
-            <h3 class="repertoire__title">Repertoire of forms</h3>
-        </div>
         <div class="repertoire__items">
             <article v-for="(shape, index) in shapes" :key="shape.slug" :class="`repertoire__item repertoire__item--${index+1}`" >
                 <figure class="repertoire__item-image-wrapper image-scroll__wrapper">

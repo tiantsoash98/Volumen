@@ -8,4 +8,10 @@
     &--no-padding-top {
         padding-top: 0;
     }
+    &--padding-top-xl {
+        padding-top: responsive-size(var(--space-xl));
+    }
+    &--padding-top-xxl {
+        padding-top: responsive-size(var(--space-xxl));
+    }
 }
