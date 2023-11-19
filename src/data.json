@@ -44,16 +44,16 @@
         {
             "name": "The Icosahedral",
             "slug": "the-icosahedral",
-            "subtitle": "A perfect orb of infinite possibilities",
-            "heroImg": "the-sphere-landscape-1.webp",
+            "subtitle": "The Multifaceted Beauty of Twenty Sides",
+            "heroImg": "the-icosahedral-landscape-1.webp",
             "description": {
                 "firstRow": "Mapping the heavens to modern innovations in science and art, the sphere's influence transcends time and culture, reminding us of the profound beauty in",
                 "secondRow": "mathematical precision and the universality of its appeal.",
                 "thirdRow": "The Sphere, a symbol of perfection and unity, has captivated human imagination for millennia. Its flawless, symmetrical shape represents harmony and balance, embodying the simplicity and elegance found in nature's design.",
-                "img": "the-sphere-portrait-2.webp"
+                "img": "the-icosahedral-portrait-2.webp"
             },
             "visual": {
-                "img": "the-sphere-landscape-3.webp",
+                "img": "the-icosahedral-landscape-3.webp",
                 "alt": "The Sphere in dark mode"
             },
             "content": {
@@ -64,22 +64,22 @@
                 ],
                 "images": [
                     {
-                        "img": "the-sphere-portrait-4.webp",
-                        "alt": ""
+                        "src": "the-icosahedral-portrait-4.webp",
+                        "alt": "The Sphere on grid"
                     },
                     {
-                        "img": "the-sphere-portrait-5.webp",
-                        "alt": ""
+                        "src": "the-icosahedral-portrait-5.webp",
+                        "alt": "The Sphere floating"
                     },
                     {
-                        "img": "the-sphere-portrait-6.webp",
-                        "alt": ""
+                        "src": "the-icosahedral-portrait-6.webp",
+                        "alt": "The Sphere resting"
                     }
                 ]
             },
             "repertoire": {
-                "imgId": "the-sphere-landscape-1.webp",
-                "hoverId": "the-sphere-landscape-2.webp"
+                "imgId": "the-icosahedral-landscape-1.webp",
+                "hoverId": "the-icosahedral-landscape-2.webp"
             }
         }
     ]
