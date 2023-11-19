@@ -1,5 +1,7 @@
 <script setup>
-
+function imgUrl(url) {
+  return "/" + url;
+}
 </script>
 
 <template>
@@ -12,7 +14,7 @@
         <article class="repertoire__item repertoire__item--1" >
             <figure class="repertoire__item-image-wrapper image-scroll__wrapper">
                 <a href="./the-icosahedral.html">
-                    <img class="image-scroll" src="../../../assets/img/the-icosahedral-landscape-1.webp" alt="The Icosahedral" loading="lazy">
+                    <img class="image-scroll" src="/the-icosahedral-landscape-1.webp" alt="The Icosahedral" loading="lazy">
                 </a>
             </figure>
             <div class="repertoire__details">
@@ -25,7 +27,7 @@
         <article class="repertoire__item repertoire__item--2" >
             <figure class="repertoire__item-image-wrapper image-scroll__wrapper">
                 <a href="./the-sphere.html">
-                    <img class="image-scroll" src="../../../assets/img/the-sphere-portrait-1.webp" alt="The Sphere" loading="lazy">
+                    <img class="image-scroll" src="/the-sphere-portrait-1.webp" alt="The Sphere" loading="lazy">
                 </a>
             </figure>
             <div class="repertoire__details">
@@ -38,7 +40,7 @@
         <article class="repertoire__item repertoire__item--3" >
             <figure class="repertoire__item-image-wrapper image-scroll__wrapper">
                 <a href="./sphere/">
-                    <img class="image-scroll" src="../../../assets/img/the-square-landscape-1.webp" alt="The Square" loading="lazy">
+                    <img class="image-scroll" src="/the-square-landscape-1.webp" alt="The Square" loading="lazy">
                 </a>
             </figure>
             <div class="repertoire__details">
@@ -51,7 +53,7 @@
         <article class="repertoire__item repertoire__item--4" >
             <figure class="repertoire__item-image-wrapper image-scroll__wrapper">
                 <a href="./sphere/">
-                    <img class="image-scroll" src="../../../assets/img/the-pyramid-portrait-1.webp" alt="The Pyramid" loading="lazy">
+                    <img class="image-scroll" src="/the-pyramid-portrait-1.webp" alt="The Pyramid" loading="lazy">
                 </a>
             </figure>
             <div class="repertoire__details">
@@ -64,7 +66,7 @@
         <article class="repertoire__item repertoire__item--5" >
             <figure class="repertoire__item-image-wrapper image-scroll__wrapper">
                 <a href="./sphere/">
-                    <img class="image-scroll" src="../../../assets/img/the-cube-landscape-1.webp" alt="The Cube" loading="lazy">
+                    <img class="image-scroll" src="/the-cube-landscape-1.webp" alt="The Cube" loading="lazy">
                 </a>
             </figure>
             <div class="repertoire__details">

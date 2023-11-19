@@ -9,7 +9,7 @@ const props = defineProps({
 const shape = data.shapes.filter(obj => obj.slug == props.item)[0];
 
 function imgUrl(url) {
-  return "./src/assets/img/" + url;
+  return "/" + url;
 }
 </script>
 
@@ -17,7 +17,7 @@ function imgUrl(url) {
     <div class="section section--no-margin-top shape-hero__wrapper">
         <div class="shape-hero__img-wrapper">
             <div class="shape-hero__img-overlay"></div>
-            <img class="shape-hero__img" :src="imgUrl(shape.heroImg)" :alt="shape.subtitle" >
+            <img class="shape-hero__img" :src="imgUrl(shape.heroImg)" :alt="shape.subtitle" loading="eager">
         </div>
         <div class="shape-hero__content-wrapper">
             <div class="shape-hero__name-wrapper">
