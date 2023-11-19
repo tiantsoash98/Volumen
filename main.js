@@ -14,6 +14,8 @@ import cursor from "./src/features/component/cursor/cursor";
 import textReveal from "./src/features/component/effects/textReveal";
 import imageScroll from "./src/features/component/effects/imageScroll";
 import footer from './src/features/component/footer/footer';
+import loader from './src/features/component/loader/loader';
+import repertoire from './src/features/pages/repertoire/repertoire';
 
 
 gsap.registerPlugin(ScrollTrigger, CustomEase);
@@ -53,6 +55,7 @@ function initPageTransitions(){
     transitions: [{
       name: 'default-transitions',
       async once(data) {
+        loader()
         initScroll();
         initScript();
         await initLoader();
@@ -84,21 +87,32 @@ function initPageTransitions(){
       namespace: 'home',
       beforeEnter(){
         select('body').className = 'body body--home';
-      },
-      afterEnter(){
         home()
         homeScroll()
-      }
+      },
     },
     {
-      namespace: 'shape',
+      namespace: 'sphere',
       beforeEnter(){
-        select('body').className = 'body body--shape';
-      },
-      afterEnter(){
+        select('body').className = 'body body--sphere';
         shape()
         shapeScroll()
-      }
+      },
+    },
+    {
+      namespace: 'icosahedral',
+      beforeEnter(){
+        select('body').className = 'body body--icosahedral';
+        shape()
+        shapeScroll()
+      },
+    },
+    {
+      namespace: 'repertoire',
+      beforeEnter(){
+        select('body').className = 'body body--repertoire';
+        repertoire()
+      },
     }]
   });
 }

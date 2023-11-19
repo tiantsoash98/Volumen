@@ -1,9 +1,18 @@
 import gsap from "gsap";
 import CustomEase from "gsap/CustomEase";
 import SplitType from "split-type";
+import { createApp } from "vue";
+import Shape from "./Shape.vue";
 
 function shape(){
-
+    /* App mount */
+    // https://stackoverflow.com/questions/64010560/passing-props-to-vue-root-instance-via-attributes-on-element-the-app-is-mounted
+    const appSelector = "#shape";
+    const mountEl = document.querySelector(appSelector);
+    createApp(Shape, { ...mountEl.dataset }).mount(appSelector);
+    
+    
+    /* Animations */
     let defaultEase = getComputedStyle(document.body).getPropertyValue('--default-ease');
 
     gsap.registerPlugin(CustomEase) 

@@ -1,8 +1,11 @@
 import gsap from "gsap";
 import CustomEase from "gsap/CustomEase";
 import SplitType from "split-type";
+import { createApp } from "vue";
+import Header from './Header.vue';
 
 function header(){
+    createApp(Header).mount('#header');
     splitNavLinks();
 
     let defaultEase = getComputedStyle(document.body).getPropertyValue('--default-ease');
