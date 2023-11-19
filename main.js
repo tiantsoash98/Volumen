@@ -16,6 +16,7 @@ import imageScroll from "./src/features/component/effects/imageScroll";
 import footer from './src/features/component/footer/footer';
 import loader from './src/features/component/loader/loader';
 import repertoire from './src/features/pages/repertoire/repertoire';
+import shapeAnimation from './src/features/pages/shape/shape-animation';
 
 
 gsap.registerPlugin(ScrollTrigger, CustomEase);
@@ -54,7 +55,7 @@ function initPageTransitions(){
     preventRunning: true,
     transitions: [{
       name: 'default-transitions',
-      async once(data) {
+      async once() {
         loader()
         initScroll();
         initScript();
@@ -89,7 +90,7 @@ function initPageTransitions(){
         select('body').className = 'body body--home';
         home()
         homeScroll()
-      },
+      }
     },
     {
       namespace: 'icosahedral',
@@ -98,6 +99,9 @@ function initPageTransitions(){
         shape()
         shapeScroll()
       },
+      afterEnter(){
+        shapeAnimation()
+      }
     },
     {
       namespace: 'sphere',
@@ -106,6 +110,9 @@ function initPageTransitions(){
         shape()
         shapeScroll()
       },
+      afterEnter(){
+        shapeAnimation()
+      }
     },
     {
       namespace: 'square',
@@ -114,6 +121,9 @@ function initPageTransitions(){
         shape()
         shapeScroll()
       },
+      afterEnter(){
+        shapeAnimation()
+      }
     },
     {
       namespace: 'pyramid',
@@ -122,6 +132,9 @@ function initPageTransitions(){
         shape()
         shapeScroll()
       },
+      afterEnter(){
+        shapeAnimation()
+      }
     },
     {
       namespace: 'cube',
@@ -130,6 +143,9 @@ function initPageTransitions(){
         shape()
         shapeScroll()
       },
+      afterEnter(){
+        shapeAnimation()
+      }
     },
     {
       namespace: 'repertoire',
