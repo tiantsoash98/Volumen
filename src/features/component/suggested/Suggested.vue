@@ -1,5 +1,4 @@
 <script>
-import { computed } from 'vue'
 // https://stackoverflow.com/questions/45565349/how-to-access-external-json-file-objects-in-vue-js-app
 import data from '../../../data.json';
 // Import Swiper Vue.js components
