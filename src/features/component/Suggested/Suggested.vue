@@ -1,25 +1,32 @@
-<script setup>
+<script>
 import { computed } from 'vue'
 // https://stackoverflow.com/questions/45565349/how-to-access-external-json-file-objects-in-vue-js-app
 import data from '../../../data.json';
 
-const props = defineProps({
-  item: String,
-})
-
-function getShapeHref(slug){
-    return "./" + slug + ".html";
+export default {
+    data(){
+        return {
+        }
+    },
+    props: {
+        item: String,
+    },
+    methods: {
+        getShapeHref(slug){
+            return "./" + slug + ".html";
+        },
+        getImgByOrientation(slug, orientation, imgId){
+            return `/${slug}-${orientation}-${imgId}.webp`;
+        }
+    },
+    computed: {
+        suggestedShapes(){
+            return data.shapes
+                        .filter(obj => obj.slug !== this.item)
+                        .slice(1, 3);
+        }
+    }
 }
-
-function getImgByOrientation(slug, orientation, imgId){
-    return `/${slug}-${orientation}-${imgId}.webp`;
-}
-
-const suggestedShapes = computed(() => {
-    return data.shapes
-            .filter(obj => obj.slug !== props.item)
-            .slice(1, 3);
-})
 </script>
 
 <template>
@@ -27,7 +34,7 @@ const suggestedShapes = computed(() => {
         <div class="container">
             <div class="repertoire__menu">
                 <h3 class="repertoire__title">Other forms</h3>
-                <a class="repertoire__see-all" href="./repertoire.html">See all</a>
+                <a class="hover-link" href="./repertoire.html">See all</a>
             </div>
             <div class="repertoire__items">
                 <article v-for="(shape, index) in suggestedShapes" :key="shape.slug" :class="`repertoire__item repertoire__item--${index+1}`" >

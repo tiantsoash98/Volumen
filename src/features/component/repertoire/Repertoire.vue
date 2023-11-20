@@ -1,19 +1,31 @@
-<script setup>
+<script>
 // https://stackoverflow.com/questions/45565349/how-to-access-external-json-file-objects-in-vue-js-app
 import data from '../../../data.json';
 
-const props = defineProps({
-  item: String,
-})
-
-const shapes = data.shapes;
-
-function getShapeHref(slug){
-    return "./" + slug + ".html";
-}
-
-function getImgByOrientation(slug, orientation, imgId){
-    return `/${slug}-${orientation}-${imgId}.webp`;
+export default {
+    data(){
+        return {
+            shapes: data.shapes
+        }
+    },
+    props: {
+        item: String,
+    },
+    methods: {
+        getShapeHref(slug){
+            return "./" + slug + ".html";
+        },
+        getImgByOrientation(slug, orientation, imgId){
+            return `/${slug}-${orientation}-${imgId}.webp`;
+        }
+    },
+    computed: {
+        suggestedShapes(){
+            return data.shapes
+                        .filter(obj => obj.slug !== this.item)
+                        .slice(1, 3);
+        }
+    }
 }
 </script>
 

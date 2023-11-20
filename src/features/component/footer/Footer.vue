@@ -1,5 +1,31 @@
-<script setup>
+<script>
+import { ref } from 'vue'
 
+export default {
+  setup() {
+    const time = ref("00:00:00 AM GMT+3")
+
+    const optionsTime = {
+      timeZone: 'Europe/Moscow',
+      timeZoneName: 'short',
+      hour: '2-digit',
+      hour12: 'true',
+      minute: 'numeric',
+    };
+
+    const formatter = new Intl.DateTimeFormat([], optionsTime);
+    updateTime();
+    setInterval(updateTime, 1000);
+
+    function updateTime() {
+      time.value = formatter.format(new Date());
+    }
+    
+    return {
+      time
+    }
+  }
+}
 </script>
 
 <template>
@@ -8,7 +34,7 @@
           <div class="footer__details-wrapper">
             <div class="footer__left-box">
               <div class="footer__copyright">© 2023 Volumen</div>
-              <div class="footer__time" id="time">00:00:00 AM GMT+3</div>
+              <div class="footer__time" id="time">{{ time }}</div>
             </div>
             <div class="footer__right-box">
               <div class="footer__credits-wrapper">

@@ -1,16 +1,23 @@
-<script setup>
+<script>
 // https://stackoverflow.com/questions/45565349/how-to-access-external-json-file-objects-in-vue-js-app
 import data from '../../../data.json';
 
-const props = defineProps({
-  item: String,
-})
-
-const shape = data.shapes.filter(obj => obj.slug == props.item)[0];
-
-function imgUrl(url) {
-  return "/" + url;
+export default {
+    props: {
+        item: String,
+    },
+    methods: {
+        imgUrl(url) {
+            return "/" + url;
+        }
+    },
+    computed: {
+        shape(){
+            return data.shapes.filter(obj => obj.slug == this.item)[0];
+        }
+    }
 }
+
 </script>
 
 <template>
