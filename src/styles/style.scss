@@ -4,7 +4,6 @@
 
 @import './base/base';
 @import './base/typography';
-@import './base/spacing';
 
 @import './component/cursor';
 @import './component/loader';
@@ -14,6 +13,7 @@
 @import './component/image-scroll';
 @import './component/hover-link';
 
+@import './layout/suggested';
 @import './layout/repertoire';
 
 @import './page/home';
