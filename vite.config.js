@@ -17,7 +17,7 @@ export default defineConfig({
         cube: resolve(__dirname, 'the-cube.html'),
         repertoire: resolve(__dirname, 'repertoire.html'),
       },
-      external: ['swiper/vue', 'swiper/css'],
+      external: ['swiper/vue', 'swiper/css', 'swiper/modules'],
     }
   },
 })
