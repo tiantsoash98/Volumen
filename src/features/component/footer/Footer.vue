@@ -2,6 +2,8 @@
 import { ref } from 'vue'
 
 export default {
+  // https://vuejs.org/guide/essentials/reactivity-fundamentals.html
+  // https://dennissnellenberg.com/
   setup() {
     const time = ref("00:00:00 AM GMT+3")
 
@@ -20,7 +22,7 @@ export default {
     function updateTime() {
       time.value = formatter.format(new Date());
     }
-    
+
     return {
       time
     }

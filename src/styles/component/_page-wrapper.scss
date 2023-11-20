@@ -1,3 +1,40 @@
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: responsive-size(var(--space-sm));
+    padding-right: responsive-size(var(--space-sm));
+}
+
+.section {
+    margin-top: responsive-size(var(--space-sm));
+
+    &--no-margin-top{
+        margin-top: 0;
+    }
+    &--margin-md {
+        margin-top: responsive-size(var(--space-md));
+    }
+    &--margin-xl {
+        margin-top: responsive-size(var(--space-xl));
+    }
+    &--margin-xxl {
+        margin-top: responsive-size(var(--space-xxl));
+    }
+    &--no-padding-top{
+        padding-top: 0;
+    }
+    &--padding-top-sm {
+        padding-top: responsive-size(var(--space-sm));
+    }
+    &--padding-top-md {
+        padding-top: responsive-size(var(--space-md));
+    }
+    &--padding-top-xl {
+        padding-top: responsive-size(var(--space-xl));
+    }
+}
+
 .page-wrapper {
     position: relative;
     width: 100%;
