@@ -14,7 +14,15 @@ export default {
         SwiperSlide,
     },
     setup() {
+        // Randomly select one suggested to show in portrait mode
+        const randomPortraitIndex = randomIntFromInterval(0, 2)
+
+        // https://stackoverflow.com/questions/4959975/generate-random-number-between-two-numbers-in-javascript
+        function randomIntFromInterval(min, max) { // min and max included 
+            return Math.floor(Math.random() * (max - min + 1) + min)
+        }
       return {
+        randomPortraitIndex,
         modules: [FreeMode, Navigation],
       };
     },
@@ -23,19 +31,24 @@ export default {
     },
     methods: {
         onSwiper(swiper){
-            console.log(swiper)
+            // console.log(swiper)
         },
         onSlideChange() {
-        
+            // On slide change function
+        },
+        isPortrait(index){
+            return index == this.randomPortraitIndex;
         },
         getShapeHref(slug){
             return "./" + slug + ".html";
         },
-        getImgByOrientation(slug, orientation, imgId){
-            return `/${slug}-${orientation}-${imgId}.webp`;
+        getImgByOrientation(slug, imgId, isPortrait){
+            return isPortrait ? 
+                    `/${slug}-portrait-${imgId}.webp` 
+                    : `/${slug}-landscape-${imgId}.webp`;
         },
-        articleClass(index, orientation){
-            return `suggested__item suggested__item--${index+1} ${orientation === 'portrait' ? "suggested__item--portrait" : "" }`;
+        articleClass(index, isPortrait){
+            return `suggested__item suggested__item--${index+1} ${isPortrait ? "suggested__item--portrait" : "" }`;
         }
     },
     computed: {
@@ -46,7 +59,6 @@ export default {
             // Double for swiper loop
             return suggested.concat(suggested)
         }
-
     }
 }
 </script>
@@ -61,19 +73,29 @@ export default {
         </div>
         <div class="suggested__items">
             <swiper
-                :slides-per-view="4.1"
                 :space-between="20"
                 :loop="true"
                 :freeMode="true"
                 :modules="modules"
                 :navigation="true"
+                :breakpoints="{
+                    767: {
+                        slidesPerView: 3.1,
+                    },
+                    576: {
+                        slidesPerView: 2.1,
+                    },
+                    320: {
+                        slidesPerView: 1.1,
+                    }
+                }"
                 class="suggested__swiper"
             >
                 <swiper-slide v-for="(shape, index) in suggestedShapes" :key="shape.slug" >
-                    <article :class="articleClass(index,  shape.repertoire.preferedOrientation)">
+                    <article :class="articleClass(index, isPortrait(index))">
                         <figure class="suggested__image-wrapper">
                             <a :href="getShapeHref(shape.slug)">
-                                <img class="suggested__img" :src="getImgByOrientation(shape.slug, shape.repertoire.preferedOrientation, shape.repertoire.imgId)" :alt="shape.name" loading="lazy">
+                                <img class="suggested__img" :src="getImgByOrientation(shape.slug, shape.repertoire.imgId, isPortrait(index))" :alt="shape.name" loading="lazy">
                             </a>
                         </figure>
                         <div class="suggested__details">
