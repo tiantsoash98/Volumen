@@ -31,7 +31,7 @@ export default {
                 <h1 class="shape-hero__name">{{ shape.name }}</h1>
             </div>
             <div class="shape-hero__description-wrapper">
-                <span>{{ shape.subtitle }}</span>
+                <h2 class="shape-hero__description">{{ shape.subtitle }}</h2>
             </div>
             <div class="shape-hero__scroll-wrapper">
                 <div class="shape-hero__scroll shape-hero__scroll--first">Scroll</div>

@@ -146,11 +146,10 @@
         overflow: hidden;
     }
     &__links {
-        @include font-size(var(--super-large-text));
-        line-height: 1;
+        @include super-large-text
     }
     &__bottom-wrapper {
-        @include font-size(var(--title-3));
+        @include h3
     }
     &__socials {
         margin-bottom: responsive-size(var(--space-xl));

@@ -8,36 +8,26 @@
 body {
     font-family: var(--font-family-primary), 'Arial', serif;
     font-weight: var(--font-weight);
-    @include font-size(var(--paragraph-text));
+    @include p
 }
 
 
 h1 {
-    @include font-size(var(--title-1));
-    font-weight: var(--font-weight);
-    letter-spacing: -1px;
-    line-height: 1.1;
-
-    @include media(small){
-        letter-spacing: -0.5px;
-    }
+    @include h1
 }
 
 h2 {
-    @include font-size(var(--title-2));
-    font-weight: var(--font-weight);
-    letter-spacing: -1px;
-    line-height: 1.2;
+    @include h2
 }
 
 h3 {
-    @include font-size(var(--title-3));
-    font-weight: var(--font-weight);
-    letter-spacing: 0;
-    line-height: 1.1;
+    @include h3
+}
+
+h4 {
+    @include h4
 }
 
 p {
-    @include font-size(var(--paragraph-text));
-    line-height: 1.4;
+    @include p
 }

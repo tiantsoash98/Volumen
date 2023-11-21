@@ -47,14 +47,17 @@
             }
         }
         &__name {
-            @include font-size(var(--paragraph-text));
+            @include p;
 
             @include media(small, portrait){
-                @include font-size(var(--callout-text));
+                @include callout-text;
             }
         }
         &__description-wrapper {
             overflow: hidden;
+        }
+        &__description {
+            @include p;   
         }
         &__scroll-wrapper {
             position: relative;
@@ -69,7 +72,7 @@
             @include media(small, portrait){
                 margin-top: responsive-size(var(--space-md));
                 opacity: 0.5;
-                @include font-size(var(--callout-text), 1rem);
+                @include callout-text;
             }
         }
         &__scroll {
@@ -127,9 +130,7 @@
             }
         }
         &__content {
-            @include font-size(var(--title-1));
-            line-height: 1.2;
-            letter-spacing: -1px;
+            @include h1;
         }
         &__description-wrapper {
             margin-top: responsive-size(var(--space-xxl));
@@ -139,8 +140,7 @@
         }
         &__description {
             grid-column: 9/span 4;
-            @include font-size(var(--title-4));
-            line-height: 1.4;
+            @include h4;
 
             @include media(medium){
                 grid-column: 7/-1;
@@ -159,7 +159,7 @@
             align-items: center;
 
             @include media(small, portrait){
-                @include font-size(var(--callout-text), 1rem);
+                @include callout-text;
             }
         }
         &__main-wrapper {
@@ -256,9 +256,7 @@
             }
         }
         &__sticky-title {
-            @include font-size(var(--display-text));
-            line-height: 1;
-            letter-spacing: -3px;
+            @include display-text;
         }
         &__info-wrapper{
             display: flex;
@@ -283,7 +281,7 @@
             }
         }
         &__title-wrapper {
-            @include font-size(var(--title-3));
+            @include h3;
         }
         &__paragraph-wrapper {
             margin-top: responsive-size(var(--space-sm));
