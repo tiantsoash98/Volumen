@@ -80,7 +80,7 @@ export default {
         <div class="container">
             <div class="shape-content__wrapper">
                 <div class="shape-content__left-wrapper">
-                    <span class="shape-content__sticky-title text-reveal">{{ shape.content.title }}</span>
+                    <div class="shape-content__sticky-title">{{ shape.content.title }}</div>
                     <div class="shape-content__info-wrapper">
                         <div class="shape-content__by">Designed by</div>
                         <div class="shape-content__author">Jamy Rasanda</div>

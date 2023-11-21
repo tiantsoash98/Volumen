@@ -257,6 +257,11 @@
         }
         &__sticky-title {
             @include display-text;
+            line-height: 1.09;
+
+            &--line {
+                overflow: hidden;
+            }
         }
         &__info-wrapper{
             display: flex;

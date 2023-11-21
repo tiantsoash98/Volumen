@@ -42,6 +42,68 @@ function shapeScroll(){
     });
 
 
+    // Content title
+    SplitType
+        .create('.shape-content__sticky-title', 
+        {
+            types: 'lines, words', 
+            lineClass: 'shape-content__sticky-title--line', 
+            wordClass: 'shape-content__sticky-title--word',
+        });
+
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".shape-content__sticky-title",
+            //trigger element - viewport
+            start: "top 80%",
+            end: "top 40%",
+        }
+    })
+    .from('.shape-content__sticky-title--word', {
+        opacity: 0,
+        yPercent: 100,
+        duration: 1,
+        stagger: 0.05
+    })
+
+    // Content Infos
+    gsap.timeline({
+        defaults: { duration: 1 },
+        scrollTrigger: {
+            trigger: ".shape-content__right-wrapper",
+            //trigger element - viewport
+            start: "bottom bottom",
+            end: "bottom center",
+            scrub: true
+        }
+    })
+    .to('.shape-content__info-wrapper', {
+        yPercent: 100,
+    })
+
+
+    // Content author
+    SplitType.create('.shape-content__author', {types: 'chars', charClass: 'shape-content__author--char'});
+
+    gsap.timeline({
+        defaults: { duration: 1 },
+        scrollTrigger: {
+            trigger: ".shape-content__img-track",
+            //trigger element - viewport
+            start: "top top",
+            end: "10% top",
+        }
+    })
+    .from('.shape-content__by', {
+        opacity: 0
+    })
+    .from('.shape-content__author--char', {
+        yPercent: 100,
+        duration: 0.6,
+        stagger: 0.03,
+    });
+
+
     // Content sticky
     gsap.timeline({
         defaults: { duration: 1 },
@@ -80,7 +142,7 @@ function shapeScroll(){
         scale: 1
     }, '<')
 
-
+    
     // Mobile
     matchMedia.add(`(min-width : ${showNavMenuBreakpoint})`, () => {
 
@@ -120,33 +182,11 @@ function shapeScroll(){
         .to('.shape-visual__sticky-wrapper', {
             yPercent: 30
         }, '<')
-
-
-        // Content design by
-        SplitType.create('.shape-content__author', {types: 'chars', charClass: 'shape-content__author--char'});
-
-        gsap.timeline({
-            defaults: { duration: 1 },
-            scrollTrigger: {
-                trigger: ".shape-content__img-track",
-                //trigger element - viewport
-                start: "top top",
-                end: "10% top"
-            }
-        })
-        .from('.shape-content__by', {
-            opacity: 0
-        })
-        .from('.shape-content__author--char', {
-            yPercent: 100,
-            duration: 0.6,
-            stagger: 0.03,
-        });
     });
 
 
     function runSplitIntroduction(){
-        SplitType.create(introductionText, {types: 'lines, words', lineClass: introductionLineClass});
+        SplitType.create(introductionText, {types: 'lines, words, chars', lineClass: introductionLineClass});
         
         let triggerElement = '.shape-introduction__row';
         let targetElement = '.' + introductionLineClass;

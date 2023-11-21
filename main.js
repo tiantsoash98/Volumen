@@ -60,7 +60,7 @@ function initPageTransitions(){
         loader()
         initScroll();
         initScript();
-        // await initLoader();
+        await initLoader();
       },
       async afterOnce(){
         loaderOut();

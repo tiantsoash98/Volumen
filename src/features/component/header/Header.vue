@@ -20,7 +20,7 @@
         <nav class="header__large">
           <div class="header__links-wrapper">
             <ul class="header__links">
-              <li class="header__link hover-link hover-link--negative"><a href="./index.html">Home</a></li>
+              <li class="header__link hover-link hover-link--negative"><a href="./index.html">Index</a></li>
               <li class="header__link-separator">, </li>
               <li class="header__link hover-link hover-link--negative"><a href="./repertoire.html">Repertoire</a></li>
               <li class="header__link-separator">, </li>
@@ -46,7 +46,7 @@
             <ul class="menu__links">
                 <li class="menu__link menu__link--1">
                 <div class="menu__link-wrapper">
-                    <a href="./index.html">Home</a>
+                    <a href="./index.html">Index</a>
                 </div>
                 </li>
                 <li class="menu__link menu__link--2">

@@ -1,3 +1,4 @@
+import $ from "jquery";
 import MouseFollower from "mouse-follower";
 import gsap from "gsap";
 

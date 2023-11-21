@@ -5,7 +5,7 @@ import SplitType from "split-type";
 function homeScroll(){
     gsap.registerPlugin(ScrollTrigger);
 
-
+    // Hero content
     SplitType.create('.hero__content', {types: 'lines, words', lineClass: 'hero__content--line', wordClass: "hero__content--word"});
     
     let delay = 0
@@ -30,7 +30,6 @@ function homeScroll(){
         delay+=0.1
     })
 
-    
 
     let showNavMenuBreakpoint = getComputedStyle(document.body).getPropertyValue('--default-show-nav-menu-breakpoint');
     let matchMedia = gsap.matchMedia();
