@@ -13,7 +13,7 @@ export default {
     },
     methods: {
         getShapeHref(slug){
-            return "./" + slug + ".html";
+            return `./${slug}.html`;
         },
         getImgByOrientation(slug, orientation, imgId){
             return `/${slug}-${orientation}-${imgId}.webp`;
