@@ -68,10 +68,11 @@ function header(){
             menu.setAttribute('aria-expanded', 'false')
         }
     });
+
+    function splitNavLinks(){
+        SplitType.create('.menu__link-wrapper a')
+    }    
 }
 
-function splitNavLinks(){
-    SplitType.create('.menu__link-wrapper a')
-}
 
 export default header
