@@ -25,6 +25,7 @@ $min-font-size : 1.25rem;
     --unit-grid-margin: calc(var(--base-grid-margin) * var(--unit-fx));
 
     // Spacing
+    --space-xs: calc(0.5 * var(--base-grid-margin));
     --space-sm: var(--base-grid-margin);
     --space-md: calc(2 * var(--base-grid-margin));
     --space-xl: calc(3 * var(--base-grid-margin));
