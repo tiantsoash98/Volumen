@@ -246,6 +246,7 @@
             top: responsive-size(var(--space-sm));
             height: calc(100vh - responsive-size(var(--space-sm)));
             width: 50%;
+            padding-left: responsive-size(var(--space-sm));
             padding-bottom: responsive-size(var(--space-sm));
             padding-right: responsive-size(var(--space-sm));
 
@@ -287,8 +288,15 @@
             flex-direction: column;
 
             @include media(small, portrait){
-                padding-top: responsive-size(var(--space-md));
+                padding-top: responsive-size(var(--space-xl));
                 width: 100%;
+            }
+        }
+        &__text-wrapper {
+            padding-right: responsive-size(var(--space-sm));
+            
+            @include media(small, portrait){
+                padding-left: responsive-size(var(--space-sm));
             }
         }
         &__title-wrapper {
@@ -308,6 +316,11 @@
             position: relative;
             height: 300vh;
             width: 100%;
+            padding-right: responsive-size(var(--space-sm));
+
+            @include media(small, portrait){
+                padding-right: 0;
+            }
         }
         &__sticky-wrapper{
             position: sticky;

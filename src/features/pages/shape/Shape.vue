@@ -77,28 +77,29 @@ export default {
         </div>
     </section>
     <section class="section section--no-margin-top section--padding-top-md shape-content">
-        <div class="container">
-            <div class="shape-content__wrapper">
-                <div class="shape-content__left-wrapper">
-                    <div class="shape-content__sticky-title">{{ shape.content.title }}</div>
-                    <div class="shape-content__info-wrapper">
-                        <div class="shape-content__by">Designed by</div>
-                        <div class="shape-content__author">Jamy Rasanda</div>
-                    </div>
+        <div class="shape-content__wrapper">
+            <div class="shape-content__left-wrapper">
+                <div class="shape-content__sticky-title">{{ shape.content.title }}</div>
+                <div class="shape-content__info-wrapper">
+                    <div class="shape-content__by">Designed by</div>
+                    <div class="shape-content__author">Jamy Rasanda</div>
                 </div>
-                <div class="shape-content__right-wrapper">
+            </div>
+            <div class="shape-content__right-wrapper">
+                <div class="shape-content__text-wrapper">
                     <div class="shape-content__title-wrapper">
                         <span>{{ shape.name }}</span>
                     </div>
                     <div class="shape-content__paragraph-wrapper">
                         <p v-for="(paragraph, index) in shape.content.paragraph" :class="`shape-content__paragraph shape-content__paragraph--${index+1}`" :key="index">{{paragraph }}</p>
                     </div>
-                    <div class="shape-content__img-track">
-                        <div class="shape-content__sticky-wrapper">
-                        <div class="shape-content__img-wrapper">
-                            <img v-for="(img, index) in shape.content.images" :class="`shape-content__img shape-content__img--${index+1}`" :src="imgUrl(img.src)" :key="index" :alt="img.alt" loading="lazy">
-                        </div>
-                        </div>
+                </div>
+                
+                <div class="shape-content__img-track">
+                    <div class="shape-content__sticky-wrapper">
+                    <div class="shape-content__img-wrapper">
+                        <img v-for="(img, index) in shape.content.images" :class="`shape-content__img shape-content__img--${index+1}`" :src="imgUrl(img.src)" :key="index" :alt="img.alt" loading="lazy">
+                    </div>
                     </div>
                 </div>
             </div>
