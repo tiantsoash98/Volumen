@@ -42,8 +42,8 @@ export default {
                 <div class="repertoire__details">
                     <div class="repertoire__title-wrapper">
                         <a :href="getShapeHref(shape.slug)">
-                            <div class="repertoire__title repertoire__title--name">{{ shape.name }}</div>
-                            <div class="repertoire__title repertoire__title--description">{{ shape.subtitle }}</div>
+                            <div class="repertoire__name">{{ shape.name }}</div>
+                            <div class="repertoire__description">{{ shape.subtitle }}</div>
                         </a>
                     </div>
                     <div class="repertoire__view">

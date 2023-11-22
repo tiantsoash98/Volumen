@@ -93,15 +93,16 @@
             position: relative;
         }
     }
-    &__title {
+    &__name {
         position: relative;
-
-        &--description {
-            @include callout-text;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            opacity: 0;
+    }
+    &__description {
+        position: absolute;
+        top: 0;
+        left: 0;
+        
+        &--char {
+            transform: translateY(100%);
         }
     }
 }

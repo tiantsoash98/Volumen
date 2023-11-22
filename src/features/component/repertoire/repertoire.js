@@ -3,6 +3,7 @@ import { createApp } from "vue";
 import Repertoire from "./Repertoire.vue";
 import gsap from "gsap";
 import CustomEase from "gsap/CustomEase";
+import SplitType from "split-type";
 
 function repertoire(){
     createApp(Repertoire).mount('#repertoire');
@@ -15,6 +16,15 @@ function repertoire(){
     // Repertoire item hover
     
     let items = gsap.utils.toArray('.repertoire__item')
+
+    SplitType
+        .create('.repertoire__description', 
+        {
+            types: 'chars', 
+            lineClass: 'repertoire__description--line', 
+            wordClass: 'repertoire__description--word',
+            charClass: 'repertoire__description--char',
+        });
 
     items.forEach((item) => {
         // Hover in
@@ -36,14 +46,15 @@ function repertoire(){
                 duration: 2
             }, '<')
             // Title animation
-            .to(item.querySelector('.repertoire__title--name'), {
-                yPercent: -100,
-                duration: 1.3,
+            .to(item.querySelector('.repertoire__name'), {
+                opacity: 0,
+                duration: 1,
             }, '<')
-            .to(item.querySelector('.repertoire__title--description'), {
+            .to(item.querySelectorAll('.repertoire__description--char'), {
                 yPercent: -100,
                 opacity: 1,
-                duration: 1.3,
+                duration: 0.8,
+                stagger: 0.02
             }, '<')
         })
 
@@ -57,15 +68,17 @@ function repertoire(){
             .to(item.querySelector('.repertoire__img--main'), {
                 opacity: 1
             })
-            .to(item.querySelector('.repertoire__title--description'), {
-                yPercent: 0,
+            .to(item.querySelectorAll('.repertoire__description--char'), {
                 opacity: 0
             }, '<')
-            .to(item.querySelector('.repertoire__title--name'), {
-                yPercent: 0
+            .to(item.querySelector('.repertoire__name'), {
+                opacity: 1
             }, '<')
             .set(item.querySelector('.repertoire__img--hover'), {
                 scale: 1
+            })
+            .set(item.querySelectorAll('.repertoire__description--char'), {
+                yPercent: 0
             })
         })
     });
