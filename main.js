@@ -17,6 +17,7 @@ import footer from './src/features/component/footer/footer';
 import loader from './src/features/component/loader/loader';
 import repertoire from './src/features/component/repertoire/repertoire';
 import shapeAnimation from './src/features/pages/shape/shape-animation';
+import suggestedScroll from './src/features/component/suggested/suggested-scroll';
 
 
 gsap.registerPlugin(ScrollTrigger, CustomEase);
@@ -100,6 +101,7 @@ function initPageTransitions(){
         select('body').className = 'body body--icosahedral';
         shape()
         shapeScroll()
+        suggestedScroll()
       },
       afterEnter(){
         shapeAnimation()
@@ -111,6 +113,7 @@ function initPageTransitions(){
         select('body').className = 'body body--sphere';
         shape()
         shapeScroll()
+        suggestedScroll()
       },
       afterEnter(){
         shapeAnimation()
@@ -122,6 +125,7 @@ function initPageTransitions(){
         select('body').className = 'body body--square';
         shape()
         shapeScroll()
+        suggestedScroll()
       },
       afterEnter(){
         shapeAnimation()
@@ -133,6 +137,7 @@ function initPageTransitions(){
         select('body').className = 'body body--pyramid';
         shape()
         shapeScroll()
+        suggestedScroll()
       },
       afterEnter(){
         shapeAnimation()
@@ -144,6 +149,7 @@ function initPageTransitions(){
         select('body').className = 'body body--cube';
         shape()
         shapeScroll()
+        suggestedScroll()
       },
       afterEnter(){
         shapeAnimation()

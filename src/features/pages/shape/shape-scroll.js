@@ -1,10 +1,13 @@
 import gsap from "gsap";
+import CustomEase from 'gsap/CustomEase';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 
 function shapeScroll(){
-    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger, CustomEase);
 
+    const defaultEase = getComputedStyle(document.body).getPropertyValue('--default-ease');
+    CustomEase.create("customEase", defaultEase);
     let showNavMenuBreakpoint = getComputedStyle(document.body).getPropertyValue('--default-show-nav-menu-breakpoint');
     let matchMedia = gsap.matchMedia();
 
@@ -145,6 +148,23 @@ function shapeScroll(){
     
     // Mobile
     matchMedia.add(`(min-width : ${showNavMenuBreakpoint})`, () => {
+
+        // Visual label
+        gsap.timeline({
+            defaults: { 
+                duration: 1,
+                ease: "customEase" 
+            },
+            scrollTrigger: {
+                trigger: ".shape-visual__center-wrapper",
+                //trigger element - viewport
+                start: "top center",
+                end: "top top",
+            }
+        })
+        .from('.shape-visual__center-wrapper', {
+            width: '65%'
+        })
 
         // Visual clip
         gsap.timeline({

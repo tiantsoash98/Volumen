@@ -58,7 +58,7 @@ export default {
         </div>
     </section>
     <section class="section section--margin-xl shape-visual">
-        <div class="container">
+        <div class="container shape-visual__center-wrapper">
             <div class="shape-visual__label-wrapper">
                 <span>Volumen</span>
                 <span>{{ shape.name }}</span>

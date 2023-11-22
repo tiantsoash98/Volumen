@@ -11,6 +11,9 @@
         justify-content: space-between;
         align-items: center;
     }
+    &__title {
+        overflow: hidden;
+    }
     &__see-all {
         text-decoration: underline;
     }

@@ -9,7 +9,16 @@ function cursor(){
         container: document.body,
         speed: 1,
         ease: 'expo.out',
+        skewingText: 0,
     });
+
+    // $('article').on('mouseenter', () => {
+    //     cursor.removeState('-exclusion');
+    // });
+    
+    // $('article').on('mouseleave', () => {
+    //     cursor.addState('-exclusion');
+    // });
 }
 
 export default cursor
