@@ -4,7 +4,7 @@ import gsap from "gsap";
 
 function cursor(){
     MouseFollower.registerGSAP(gsap);
-
+    
     const cursor = new MouseFollower({
         container: document.body,
         speed: 1,
@@ -12,13 +12,13 @@ function cursor(){
         skewingText: 0,
     });
 
-    // $('article').on('mouseenter', () => {
-    //     cursor.removeState('-exclusion');
-    // });
+    let matchMedia = gsap.matchMedia();
+
+    matchMedia.add("(hover: none)", () => {
+        console.log('Touchscreen detected')
+        cursor.destroy()
+    });
     
-    // $('article').on('mouseleave', () => {
-    //     cursor.addState('-exclusion');
-    // });
 }
 
 export default cursor
