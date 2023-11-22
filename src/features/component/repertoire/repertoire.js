@@ -27,6 +27,7 @@ function repertoire(){
         });
 
     items.forEach((item) => {
+
         // Hover in
         $(item).on('mouseenter', () => {
             gsap.timeline({
@@ -53,8 +54,8 @@ function repertoire(){
             .to(item.querySelectorAll('.repertoire__description--char'), {
                 yPercent: -100,
                 opacity: 1,
-                duration: 0.8,
-                stagger: 0.02
+                duration: 0.6,
+                stagger: 0.015
             }, '<')
         })
 
@@ -66,7 +67,8 @@ function repertoire(){
                     ease: "customEase" },
             })
             .to(item.querySelector('.repertoire__img--main'), {
-                opacity: 1
+                opacity: 1,
+                delay: 0.6
             })
             .to(item.querySelectorAll('.repertoire__description--char'), {
                 opacity: 0
@@ -82,8 +84,6 @@ function repertoire(){
             })
         })
     });
-
-    
 }
 
 export default repertoire
