@@ -3,7 +3,7 @@
     @include font-size(var(--title-1));
     letter-spacing: -1px;
     line-height: 1.2;
-    font-weight: var(--font-weight);
+    font-weight: 500;
 
     @include media(small){
         letter-spacing: -0.5px;
@@ -13,47 +13,47 @@
     @include font-size(var(--title-2));
     letter-spacing: -1px;
     line-height: 1.2;
-    font-weight: var(--font-weight);
+    font-weight: 500;
 }
 @mixin h3 {
     @include font-size(var(--title-3));
     letter-spacing: 0;
     line-height: 1.1;
-    font-weight: var(--font-weight);
+    font-weight: 500;
 }
 @mixin h4 {
     @include font-size(var(--title-4));
     letter-spacing: 0;
     line-height: 1.4;
-    font-weight: var(--font-weight);
+    font-weight: 500;
 }
 
-@mixin p {
+@mixin p {  
     @include font-size(var(--paragraph-text));
-    line-height: 1.4;
-    letter-spacing: 0;
-    font-weight: var(--font-weight);
+    line-height: 1.5;
+    letter-spacing: normal;
+    font-weight: 400;
 }
 
 @mixin callout-text {
     @include font-size(var(--callout-text));
     line-height: 1.4;
-    letter-spacing: 0;
-    font-weight: var(--font-weight);
+    letter-spacing: normal;
+    font-weight: 400;
 }
 
 @mixin super-large-text {
     @include font-size(var(--super-large-text));
     line-height: 1;
-    letter-spacing: 0;
-    font-weight: var(--font-weight);
+    letter-spacing: normal;
+    font-weight: 500;
 }
 
 @mixin display-text {
     @include font-size(var(--display-text));
     line-height: 1;
     letter-spacing: -3px;
-    font-weight: var(--font-weight);
+    font-weight: 500;
 }
 
 // Mixin

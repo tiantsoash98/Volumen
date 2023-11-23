@@ -102,7 +102,7 @@ export default {
                             <div class="suggested__title">
                                 <a :href="getShapeHref(shape.slug)">{{ shape.name }}</a>
                             </div>
-                            <div class="suggested__year">
+                            <div class="suggested__view">
                                 <a :href="getShapeHref(shape.slug)" class="hover-link">View</a>
                             </div>
                         </div>

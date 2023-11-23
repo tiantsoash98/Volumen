@@ -95,6 +95,7 @@
     }
     &__name {
         position: relative;
+        @include h4;
     }
     &__description {
         position: absolute;
@@ -105,5 +106,8 @@
             transform: translateY(100%);
             opacity: 0;
         }
+    }
+    &__view {
+        @include h4;
     }
 }

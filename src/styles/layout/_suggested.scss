@@ -42,6 +42,7 @@
             width: 100%;
             height: 100%;
             position: relative;
+            @include h4;
         }
     }
     &__image-wrapper{
@@ -60,11 +61,6 @@
         padding-top: responsive-size(calc(var(--base-grid-margin) * 0.75));
         display: flex;
         justify-content: space-between;
-    }
-    &__end-wrapper{
-        margin-top: responsive-size(var(--space-xl));
-        margin-bottom: responsive-size(var(--space-xl));
-        text-align: center;
     }
     &__swiper {
         & .swiper-wrapper {
