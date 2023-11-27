@@ -150,21 +150,21 @@ function shapeScroll(){
     matchMedia.add(`(min-width : ${showNavMenuBreakpoint})`, () => {
 
         // Visual label
-        gsap.timeline({
-            defaults: { 
-                duration: 1,
-                ease: "customEase" 
-            },
-            scrollTrigger: {
-                trigger: ".shape-visual__center-wrapper",
-                //trigger element - viewport
-                start: "top center",
-                end: "top top",
-            }
-        })
-        .from('.shape-visual__center-wrapper', {
-            width: '65%'
-        })
+        // gsap.timeline({
+        //     defaults: { 
+        //         duration: 1,
+        //         ease: "customEase" 
+        //     },
+        //     scrollTrigger: {
+        //         trigger: ".shape-visual__center-wrapper",
+        //         //trigger element - viewport
+        //         start: "top center",
+        //         end: "top top",
+        //     }
+        // })
+        // .from('.shape-visual__center-wrapper', {
+        //     width: '65%'
+        // })
 
         // Visual clip
         gsap.timeline({
