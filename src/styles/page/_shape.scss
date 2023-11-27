@@ -264,7 +264,7 @@
         }
         &__sticky-title {
             @include display-text;
-            line-height: 1.09;
+            line-height: 1.09; // Avoid Split text bug on overflow
 
             &--line {
                 overflow: hidden;

@@ -21,7 +21,7 @@ export default {
 </script>
 
 <template>
-    <div class="section section--no-margin-top shape-hero__wrapper">
+    <section class="section section--no-margin-top shape-hero__wrapper">
         <div class="shape-hero__img-wrapper">
             <div class="shape-hero__img-overlay"></div>
             <img class="shape-hero__img" :src="imgUrl(shape.heroImg)" :alt="shape.subtitle" loading="eager">
@@ -38,15 +38,15 @@ export default {
                 <div class="shape-hero__scroll shape-hero__scroll--second">Scroll</div>
             </div>
         </div>
-    </div>
+    </section>
     <section class="section section--no-margin-top section--padding-top-md shape-introduction">
         <div class="container">
             <div class="shape-introduction__row shape-introduction__row--first">
                 <div class="shape-introduction__text-wrapper shape-introduction__text-wrapper--1">
-                <p class="shape-introduction__content">{{ shape.description.firstRow }}</p>
+                    <p class="shape-introduction__content">{{ shape.description.firstRow }}</p>
                 </div>
                 <div class="shape-introduction__text-wrapper shape-introduction__text-wrapper--2">
-                <p class="shape-introduction__content">{{ shape.description.secondRow }}</p>
+                    <p class="shape-introduction__content">{{ shape.description.secondRow }}</p>
                 </div>
                 <div class="shape-introduction__img-wrapper image-scroll__wrapper">
                     <img class="shape-introduction__img image-scroll" :src="imgUrl(shape.description.img)" :alt="shape.name">
@@ -94,7 +94,6 @@ export default {
                         <p v-for="(paragraph, index) in shape.content.paragraph" :class="`shape-content__paragraph shape-content__paragraph--${index+1}`" :key="index">{{paragraph }}</p>
                     </div>
                 </div>
-                
                 <div class="shape-content__img-track">
                     <div class="shape-content__sticky-wrapper">
                     <div class="shape-content__img-wrapper">

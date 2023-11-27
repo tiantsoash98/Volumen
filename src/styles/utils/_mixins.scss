@@ -42,19 +42,21 @@
     font-weight: 400;
 }
 
-@mixin super-large-text {
-    @include font-size(var(--super-large-text));
-    line-height: 1;
-    letter-spacing: normal;
-    font-weight: 500;
-}
-
 @mixin display-text {
     @include font-size(var(--display-text));
     line-height: 1;
-    letter-spacing: -3px;
+    letter-spacing: -0.2vw;
     font-weight: 500;
 }
+
+@mixin super-large-text {
+    @include font-size(var(--super-large-text));
+    line-height: 1;
+    letter-spacing: -0.2vw;
+    font-weight: 500;
+}
+
+
 
 // Mixin
 @mixin font-size($font-size, $min-size: $min-font-size){

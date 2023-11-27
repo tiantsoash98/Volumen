@@ -146,7 +146,8 @@
         overflow: hidden;
     }
     &__links {
-        @include super-large-text
+        @include display-text;
+        letter-spacing: normal;
     }
     &__bottom-wrapper {
         @include h3
