@@ -80,25 +80,33 @@
         }
     }
     &-beauty {
-        &__track {
+        &__section-height {
             width: 100%;
             height: 300lvh;
             position: relative;
         }
-        &__sticky-wrapper {
+        &__sticky-element {
             width: 100%;
             height: 100lvh;
             position: sticky;
             top: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: flex-start;
+            align-items: stretch;
         }
-        &__horizontal-wrapper {
+        &__track {
+            height: 100%;
+            flex: none;
+            position: relative;
+        }
+        &__track-flex {
             height: 100%;
             display: flex;
             flex-direction: row;
-            flex-wrap: nowrap;
             justify-content: flex-start;
             align-items: stretch;
-            overflow: hidden;
+            margin-right: -100vw;
         }
         &__no-flex {
             flex: none;
@@ -109,6 +117,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            overflow: hidden;
         }
         &__img {
             width: 100%;
