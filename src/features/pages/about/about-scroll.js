@@ -108,7 +108,6 @@ function aboutScroll(){
             start: "left right",
             end: "left left",
             scrub: true,
-            markers: true,
             containerAnimation: tlMain
         }
     })
