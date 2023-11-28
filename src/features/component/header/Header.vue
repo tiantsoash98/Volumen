@@ -24,7 +24,7 @@
               <li class="header__link-separator">, </li>
               <li class="header__link hover-link hover-link--negative"><a href="./repertoire.html">Repertoire</a></li>
               <li class="header__link-separator">, </li>
-              <li class="header__link hover-link hover-link--negative"><a href="#">About</a></li>
+              <li class="header__link hover-link hover-link--negative"><a href="./about.html">About</a></li>
             </ul>
           </div>
           <div class="header__location-wrapper">
@@ -56,7 +56,7 @@
                 </li>
                 <li class="menu__link menu__link--3">
                 <div class="menu__link-wrapper">
-                    <a href="#">About</a>
+                    <a href="./about.html">About</a>
                 </div>
                 </li>
             </ul>

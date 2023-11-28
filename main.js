@@ -18,6 +18,9 @@ import loader from './src/features/component/loader/loader';
 import repertoire from './src/features/component/repertoire/repertoire';
 import shapeAnimation from './src/features/pages/shape/shape-animation';
 import suggestedScroll from './src/features/component/suggested/suggested-scroll';
+import about from "./src/features/pages/about/about";
+import aboutScroll from "./src/features/pages/about/about-scroll";
+import aboutAnimation from './src/features/pages/about/about-animation';
 
 
 gsap.registerPlugin(ScrollTrigger, CustomEase);
@@ -161,7 +164,19 @@ function initPageTransitions(){
         select('body').className = 'body body--repertoire';
         repertoire()
       },
-    }]
+    },
+    {
+      namespace: 'about',
+      beforeEnter(){
+        select('body').className = 'body body--about';
+        about()
+        aboutScroll()
+      },
+      afterEnter(){
+        aboutAnimation()
+      }
+    }
+  ]
   });
 }
 

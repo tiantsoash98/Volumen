@@ -31,8 +31,8 @@ export default {
 
 <template>
     <div class="container">
-        <div class="repertoire__items">
-            <article v-for="(shape, index) in shapes" :key="shape.id" :class="`repertoire__item repertoire__item--${index+1}`">
+        <div class="repertoire__items" role="list">
+            <article v-for="(shape, index) in shapes" :key="shape.id" :class="`repertoire__item repertoire__item--${index+1}`" role="listitem">
                 <figure class="repertoire__image-wrapper image-scroll__wrapper">
                     <a :href="getShapeHref(shape.slug)">
                         <img class="repertoire__img repertoire__img--main image-scroll" :src="getImgByOrientation(shape.slug, shape.repertoire.preferedOrientation, shape.repertoire.imgId)" :alt="shape.name" loading="eager">

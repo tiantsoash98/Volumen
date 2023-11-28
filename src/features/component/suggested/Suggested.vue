@@ -90,8 +90,9 @@ export default {
                     }
                 }"
                 class="suggested__swiper"
+                role="list"
             >
-                <swiper-slide v-for="(shape, index) in suggestedShapes" :key="shape.slug" >
+                <swiper-slide v-for="(shape, index) in suggestedShapes" :key="shape.slug" role="listitem">
                     <article :class="articleClass(index, isPortrait(index))">
                         <figure class="suggested__image-wrapper">
                             <a :href="getShapeHref(shape.slug)">

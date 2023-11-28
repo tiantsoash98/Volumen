@@ -28,6 +28,7 @@ $min-font-size : 1.25rem;
     --space-xs: calc(0.5 * var(--base-grid-margin));
     --space-sm: var(--base-grid-margin);
     --space-md: calc(2 * var(--base-grid-margin));
+    --space-lg: calc(2.5 * var(--base-grid-margin));
     --space-xl: calc(3 * var(--base-grid-margin));
     --space-xxl: calc(4 * var(--base-grid-margin));
 
@@ -48,8 +49,8 @@ $min-font-size : 1.25rem;
     --title-4: 20;
     --paragraph-text: 18;
     --callout-text: 16;
-    --super-large-text: 64;
     --display-text: 72;
+    --super-large-text: 100;
     --min-font-size: $min-font-size;
 
     // Breakpoints
@@ -102,8 +103,8 @@ $min-font-size : 1.25rem;
         --title-4: 14;
         --paragraph-text: 12;
         --callout-text: 10;
-        --super-large-text: 40;
         --display-text: 48;
+        --super-large-text: 56;
     }
 }
 
@@ -117,7 +118,7 @@ $min-font-size : 1.25rem;
         --title-4: 18;
         --paragraph-text: 16;
         --callout-text: 12;
-        --super-large-text: 64;
         --display-text: 64;
+        --super-large-text: 72;
     }
 }
