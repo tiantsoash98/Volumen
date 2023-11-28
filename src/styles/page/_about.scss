@@ -27,6 +27,14 @@
             &--end {
                 align-self: flex-end;
             }
+            &--line {
+                overflow: hidden;
+            }
+        }
+        &__title {
+            &--line {
+                overflow: hidden;
+            }
         }
         &__img-wrapper {
             margin-top: responsive-size(var(--space-xl));
@@ -59,6 +67,10 @@
         }
         &__title {
             @include h2;
+            
+            &--line {
+                overflow: hidden;
+            }
         }
         &__content-wrapper {
             grid-column: 4/span 4;
@@ -145,6 +157,10 @@
         }
         &__title {
             @include h2;
+
+            &--line {
+                overflow: hidden;
+            }
         }
         &__description {
             @include p;
@@ -194,6 +210,10 @@
         }
     }
     &-quote {
+        background-color: var(--brand-primary);
+        position: relative;
+        z-index: 1;
+
         &__label-wrapper {
             display: flex;
             justify-content: space-between;
@@ -201,7 +221,7 @@
             width: 100%;
         }
         &__main-wrapper {
-            margin-top: responsive-size(var(--space-md));
+            margin-top: responsive-size(var(--space-sm));
         }
         &__row {
             width: 100%;
@@ -256,6 +276,7 @@
 
         &__title-wrapper {
             grid-column: span 4;
+            @include h4;
         }
         &__credits{
             grid-column: span 4;

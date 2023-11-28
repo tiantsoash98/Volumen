@@ -20,6 +20,7 @@ import shapeAnimation from './src/features/pages/shape/shape-animation';
 import suggestedScroll from './src/features/component/suggested/suggested-scroll';
 import about from "./src/features/pages/about/about";
 import aboutScroll from "./src/features/pages/about/about-scroll";
+import aboutAnimation from './src/features/pages/about/about-animation';
 
 
 gsap.registerPlugin(ScrollTrigger, CustomEase);
@@ -63,7 +64,7 @@ function initPageTransitions(){
         loader()
         initScroll();
         initScript();
-        // await initLoader();
+        await initLoader();
       },
       async afterOnce(){
         loaderOut();
@@ -171,6 +172,9 @@ function initPageTransitions(){
         about()
         aboutScroll()
       },
+      afterEnter(){
+        aboutAnimation()
+      }
     }
   ]
   });
