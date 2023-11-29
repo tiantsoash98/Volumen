@@ -46,32 +46,33 @@ function aboutScroll(){
         scrollTrigger: {
             trigger: ".about-beauty__section-height",
             //trigger element - viewport
-            start: "top top",
+            start: "1% top",
             end: "bottom bottom",
             scrub: true,
         }
     })
     .to('.about-beauty__track', {
-        xPercent: -100
+        xPercent: -100,
+        ease: "none"
     })
 
     // Visual start
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: ".about-beauty__img-wrapper--1",
-            //trigger element - viewport
-            start: "left left",
-            end: "right left",
-            scrub: true,
-            containerAnimation: tlMain
-        }
-    })
-    .from('.about-beauty__img-wrapper--1 .about-beauty__img', {
-        scale: 1.4,
-    })
-    .to('.about-beauty__img-wrapper--1 .about-beauty__img', {
-        xPercent: 20
-    }, "<")
+    // gsap.timeline({
+    //     scrollTrigger: {
+    //         trigger: ".about-beauty__img-wrapper--1",
+    //         //trigger element - viewport
+    //         start: "left left",
+    //         end: "right left",
+    //         scrub: true,
+    //         containerAnimation: tlMain
+    //     }
+    // })
+    // .from('.about-beauty__img-wrapper--1 .about-beauty__img', {
+    //     scale: 1.4,
+    // })
+    // .to('.about-beauty__img-wrapper--1 .about-beauty__img', {
+    //     xPercent: 20
+    // }, "<")
 
 
     // Beauty
@@ -87,8 +88,8 @@ function aboutScroll(){
                 trigger: ".about-beauty__content-wrapper",
                 //trigger element - viewport
                 start: "left 90%",
-                end: "left 40%",
-                containerAnimation: tlMain
+                end: "left 80%",
+                containerAnimation: tlMain,
             }
         })
         .from(line.querySelectorAll('.about-beauty__title--word'), {
@@ -108,11 +109,12 @@ function aboutScroll(){
             start: "left right",
             end: "left left",
             scrub: true,
-            containerAnimation: tlMain
+            containerAnimation: tlMain,
+            markers: true
         }
     })
     .from('.about-beauty__img-wrapper--2 .about-beauty__img', {
-        scale: 1.4,
+        scale: 2,
     })
 
     
