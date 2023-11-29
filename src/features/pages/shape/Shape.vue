@@ -69,9 +69,9 @@ export default {
             <div class="shape-visual__sticky-wrapper">
                 <div class="shape-visual__overlay"></div>
                 <div class="shape-visual__clip">
-                <div class="shape-visual__img-wrapper">
-                    <img class="shape-visual__img" :src="imgUrl(shape.visual.img)" :alt="shape.visual.alt" loading="lazy">
-                </div>
+                    <div class="shape-visual__img-wrapper">
+                        <img class="shape-visual__img" :src="imgUrl(shape.visual.img)" :alt="shape.visual.alt" loading="lazy">
+                    </div>
                 </div>
             </div>
         </div>

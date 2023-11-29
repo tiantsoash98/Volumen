@@ -42,6 +42,15 @@ function aboutAnimation(){
 
         delay+=0.15
     })
+
+    gsap.timeline({
+        defaults: { duration: 1.5, ease: "customEase" },
+    })
+    .from('.about-main__img-wrapper', {
+        yPercent: 10,
+        opacity: 0,
+        delay: delay + 0.5
+    })
 }
 
 export default aboutAnimation
