@@ -189,7 +189,6 @@
             align-items: flex-start;
             flex: none;
             margin-right: responsive-size(var(--space-sm));
-            padding-top: responsive-size(var(--space-sm));
 
             &:last-child{
                 margin-right: 0;
@@ -208,9 +207,6 @@
             height: 100%;
             object-fit: cover;
         }
-        &__name-wrapper {
-            padding-top: responsive-size(var(--space-xs));
-        }
         &__name {
             @include h4;
         }
@@ -222,7 +218,7 @@
         }
         &__sticky-element {
             width: 100vw;
-            height: 100vh;
+            height: 100%;
             position: relative;
             overflow: hidden;
         }
