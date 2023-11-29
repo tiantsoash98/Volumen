@@ -56,23 +56,25 @@ function aboutScroll(){
         ease: "none"
     })
 
-    // Visual start
+    // Visual end
     // gsap.timeline({
     //     scrollTrigger: {
-    //         trigger: ".about-beauty__img-wrapper--1",
+    //         trigger: ".about-beauty__img-wrapper--2",
     //         //trigger element - viewport
-    //         start: "left left",
-    //         end: "right left",
+    //         start: "left right",
+    //         end: "left left",
     //         scrub: true,
     //         containerAnimation: tlMain
     //     }
     // })
-    // .from('.about-beauty__img-wrapper--1 .about-beauty__img', {
-    //     scale: 1.4,
+    // .from('.about-beauty__img-wrapper--2', {
+    //     xPercent: -100,
+    //     ease: "none"
     // })
-    // .to('.about-beauty__img-wrapper--1 .about-beauty__img', {
-    //     xPercent: 20
-    // }, "<")
+    // .from('.about-beauty__img-wrapper--2 .about-beauty__img', {
+    //     scale: 2,
+    // },'<')
+    
 
 
     // Beauty
@@ -101,21 +103,48 @@ function aboutScroll(){
         delay+=0.15
     })
 
-    // Visual end
+    // Grid
     gsap.timeline({
         scrollTrigger: {
-            trigger: ".about-beauty__img-wrapper--2",
+            trigger: ".about-grid__section-width",
             //trigger element - viewport
-            start: "left right",
-            end: "left left",
+            start: "left left",
+            end: "right right",
             scrub: true,
             containerAnimation: tlMain,
-            markers: true
         }
     })
-    .from('.about-beauty__img-wrapper--2 .about-beauty__img', {
-        scale: 2,
+    .to('.about-grid__sticky-element', {
+        xPercent: 100,
+        ease: "none"
     })
+
+
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".about-grid__section-width",
+            //trigger element - viewport
+            start: "left right",
+            end: "right right",
+            scrub: true,
+            containerAnimation: tlMain
+        }
+    })
+    .fromTo('.about-grid__column-wrapper--left', {
+        yPercent: -10,
+        ease: "none"
+    },{
+        yPercent: 10,
+        ease: "none"
+    })
+    .fromTo('.about-grid__column-wrapper--right', {
+        yPercent: 10,
+        ease: "none"
+    }, {
+        yPercent: -10,
+        ease: "none"
+    }, "<")
+
 
     
     // Quote
