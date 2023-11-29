@@ -58,8 +58,6 @@ function aboutScroll(){
 
     
     // Shapes
-
-
     delay = 0
     let shapesVisible = gsap.utils.toArray('.about-shape__item--1, .about-shape__item--2, .about-shape__item--3')
     let shapes = gsap.utils.toArray('.about-shape__item--4, .about-shape__item--5')
@@ -67,7 +65,7 @@ function aboutScroll(){
     shapesVisible.forEach((shape) => {
         gsap.timeline({
             defaults: {
-                duration: 1.5,
+                duration: 1,
                 ease: "customEase"
             },
             scrollTrigger: {
@@ -93,7 +91,7 @@ function aboutScroll(){
     shapes.forEach((shape) => {
         gsap.timeline({
             defaults: {
-                duration: 1.5,
+                duration: 1,
                 ease: "customEase"
             },
             scrollTrigger: {
@@ -108,39 +106,14 @@ function aboutScroll(){
             clipPath: 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)'
         }, {
             clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
-            delay: delay
         })
-
-        delay+=0.15
+        .from(shape.querySelector('.about-shape__img'), {
+            scale: 1.4
+        }, '<')
     })
 
-    // Beauty
-    SplitType.create('.about-beauty__title', {types: 'lines, words', lineClass: 'about-beauty__title--line', wordClass: "about-beauty__title--word"});
-
-    delay = 0;
-    let descriptionLines = gsap.utils.toArray('.about-beauty__title--line')
-
-    descriptionLines.forEach((line) => {
-        gsap.timeline({
-            defaults: { duration: 1.5, ease: "customEase" },
-            scrollTrigger: {
-                trigger: ".about-beauty__content-wrapper",
-                //trigger element - viewport
-                start: "left 90%",
-                end: "left 80%",
-                containerAnimation: tlMain,
-            }
-        })
-        .from(line.querySelectorAll('.about-beauty__title--word'), {
-            opacity: 0,
-            yPercent: 100,
-            delay: delay
-        })
-
-        delay+=0.15
-    })
-
-    // Grid
+    // Visual
+    // Sticky horizontal
     gsap.timeline({
         scrollTrigger: {
             trigger: ".about-grid__section-width",
@@ -152,11 +125,45 @@ function aboutScroll(){
         }
     })
     .to('.about-grid__sticky-element', {
-        xPercent: 100,
+        xPercent: 200,
         ease: "none"
     })
 
+     // Grid
+    // Title
+    SplitType.create('.about-grid__title', {types: 'lines, words', lineClass: 'about-grid__title--line', wordClass: "about-grid__title--word"});
 
+    delay = 0;
+    let gridTitleLines = gsap.utils.toArray('.about-grid__title--line');
+    let titleTL = gsap.timeline({
+        defaults: { duration: 2, ease: "customEase" },
+        scrollTrigger: {
+            trigger: ".about-grid__section-width",
+            //trigger element - viewport
+            start: "10% left",
+            end: "30% left",
+            containerAnimation: tlMain,
+            scrub: true,
+        }
+    })
+
+    gridTitleLines.forEach((line) => {
+        
+        titleTL.from(line.querySelectorAll('.about-grid__title--word'), {
+            opacity: 0,
+            yPercent: 100,
+        }, '<+0.15s')
+
+        delay+=0.15
+    })
+
+    titleTL.from('.about-grid__description', {
+        opacity: 0,
+        duration: 3
+    }, '+=0.5s')
+
+    
+    // Image 1
     gsap.timeline({
         scrollTrigger: {
             trigger: ".about-grid__section-width",
@@ -167,17 +174,62 @@ function aboutScroll(){
             containerAnimation: tlMain
         }
     })
-    .from('.about-beauty__img-wrapper', {
+    .from('.about-grid__img-wrapper', {
         xPercent: -50,
         ease: "none"
     })
-    .from('.about-beauty__img-wrapper .about-beauty__img', {
+    .from('.about-grid__img-wrapper--1 .about-grid__img', {
         scale: 1.6,
+    }, '<')
+
+    // Image 2
+    gsap.timeline({
+        defaults: { 
+            duration: 2
+        },
+        scrollTrigger: {
+            trigger: ".about-grid__section-width",
+            //trigger element - viewport
+            start: "40% left",
+            end: "55% left",
+            scrub: 1,
+            containerAnimation: tlMain,
+        }
+    })
+    .to('.about-grid__img-wrapper--1 .about-grid__img', {
+        opacity: 0,
+        scale: 1.3,
+    })
+    .from('.about-grid__img-wrapper--2 .about-grid__img', {
+        scale: 1.3,
     }, '<')
 
 
 
     // Quote
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".about-quote",
+            //trigger element - viewport
+            start: "top bottom",
+            end: "top top",
+            scrub: true
+        }
+    })
+    .to('.about-grid__content-wrapper', {
+        opacity: 0,
+        duration: 1.5
+    })
+    .to('.about-grid__sticky-element', {
+        yPercent: 50,
+        ease: "none",
+        duration: 1.5
+    }, '<')
+    .to('.about-grid__overlay', {
+        opacity: 1,
+        duration: 1.5
+    }, '<')
+
     gsap.timeline({
         defaults: { 
             duration: 1.5, 
