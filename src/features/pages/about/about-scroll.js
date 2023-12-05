@@ -113,6 +113,21 @@ function aboutScroll(){
     })
 
     // Visual
+    // Scale shape item
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".about-grid__section-width",
+            //trigger element - viewport
+            start: "left right",
+            end: "left left",
+            scrub: true,
+            containerAnimation: tlMain,
+        }
+    })
+    .to('.about-shape__item', {
+        scale: 0.5
+    })
+    
     // Sticky horizontal
     gsap.timeline({
         scrollTrigger: {
@@ -141,7 +156,7 @@ function aboutScroll(){
             trigger: ".about-grid__section-width",
             //trigger element - viewport
             start: "10% left",
-            end: "30% left",
+            end: "35% left",
             containerAnimation: tlMain,
             scrub: true,
         }
@@ -159,7 +174,7 @@ function aboutScroll(){
 
     titleTL.from('.about-grid__description', {
         opacity: 0,
-        duration: 3
+        duration: 4
     }, '+=0.5s')
 
     
@@ -174,12 +189,15 @@ function aboutScroll(){
             containerAnimation: tlMain
         }
     })
+    .set('.about-grid__img-wrapper--1 .about-grid__img', {
+        scale: 1.6,
+    })
     .from('.about-grid__img-wrapper', {
         xPercent: -50,
         ease: "none"
     })
-    .from('.about-grid__img-wrapper--1 .about-grid__img', {
-        scale: 1.6,
+    .to('.about-grid__img-wrapper--1 .about-grid__img', {
+        scale: 1,
     }, '<')
 
     // Image 2
@@ -205,7 +223,6 @@ function aboutScroll(){
     }, '<')
 
 
-
     // Quote
     gsap.timeline({
         scrollTrigger: {
@@ -219,7 +236,7 @@ function aboutScroll(){
     .to('.about-grid__content-wrapper', {
         opacity: 0,
         duration: 1.5
-    })
+    }, '<')
     .to('.about-grid__sticky-element', {
         yPercent: 50,
         ease: "none",
@@ -230,21 +247,53 @@ function aboutScroll(){
         duration: 1.5
     }, '<')
 
+    
+    SplitType.create('.about-quote__content', {types: 'chars', charClass: "about-quote__content--char"});
+    
     gsap.timeline({
-        defaults: { 
-            duration: 1.5, 
-            ease: "customEase" 
-        },
         scrollTrigger: {
             trigger: ".about-quote",
             //trigger element - viewport
-            start: "top center",
-            end: "top 20%"
+            start: "top 65%",
+            end: "top 15%",
+            scrub: true
         }
     })
-    .from('.about-quote__content--3', {
-        xPercent: -30,
+    .from(['.about-quote__content--1 .about-quote__content--char', '.about-quote__content--2 .about-quote__content--char'], {
+        yPercent: 100,
+        opacity: 0,
+        stagger: 0.05,
+        duration: 1.5,
     })
+    .from(['.about-quote__content--3 .about-quote__content--char', '.about-quote__content--4 .about-quote__content--char'], {
+        yPercent: 100,
+        opacity: 0,
+        stagger: 0.05,
+        duration: 1.5,
+        delay: 1
+    })
+    
+
+    // Credits
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".about-credits",
+            //trigger element - viewport
+            start: "top 70%",
+            end: "top 40%",
+            scrub: true
+        }
+    })
+    .from('.about-credits__title', {
+        opacity: 0,
+        duration: 1,
+    })
+    .from('.about-credits__credits', {
+        opacity: 0,
+        duration: 1
+    }, '<')
+
+
 
     function setTrackHeights(){
         $(".about-beauty__section-height").each(function(index) {
