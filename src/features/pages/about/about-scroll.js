@@ -8,6 +8,14 @@ function aboutScroll(){
     const defaultEase = getComputedStyle(document.body).getPropertyValue('--default-ease');
     CustomEase.create("customEase", defaultEase);
 
+    // Horizontal scrolling
+    // From Timothy Ricks https://www.youtube.com/watch?v=xEkbMs6BR88
+    setTrackHeights();
+    
+    window.addEventListener("resize", function () {
+        setTrackHeights();
+    });
+
     // Symphony
     SplitType.create('.about-symphony__title', {types: 'lines, words', lineClass: 'about-symphony__title--line', wordClass: "about-symphony__title--word"});
 
@@ -33,16 +41,8 @@ function aboutScroll(){
         delay+=0.15
     })
 
-    // Horizontal scrolling
-    // From Timothy Ricks https://www.youtube.com/watch?v=xEkbMs6BR88
-    setTrackHeights();
-    
-    window.addEventListener("resize", function () {
-        setTrackHeights();
-    });
-
     // Horizontal scroll
-    let tlMain = gsap.timeline({
+    let tMain = gsap.timeline({
         scrollTrigger: {
             trigger: ".about-beauty__section-height",
             //trigger element - viewport
@@ -56,7 +56,7 @@ function aboutScroll(){
         ease: "none"
     })
 
-    
+    // Visual
     // Shapes
     delay = 0
     let shapesVisible = gsap.utils.toArray('.about-shape__item--1, .about-shape__item--2, .about-shape__item--3')
@@ -99,7 +99,7 @@ function aboutScroll(){
                 //trigger element - viewport
                 start: "left right",
                 end: "left center",
-                containerAnimation: tlMain,
+                containerAnimation: tMain,
             }
         })
         .fromTo(shape.querySelector('.about-shape__img-wrapper'), {
@@ -112,22 +112,7 @@ function aboutScroll(){
         }, '<')
     })
 
-    // Visual
-    // Scale shape item
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: ".about-grid__section-width",
-            //trigger element - viewport
-            start: "left right",
-            end: "left left",
-            scrub: true,
-            containerAnimation: tlMain,
-        }
-    })
-    .to('.about-shape__item', {
-        scale: 0.5
-    })
-    
+    // Grid
     // Sticky horizontal
     gsap.timeline({
         scrollTrigger: {
@@ -136,7 +121,7 @@ function aboutScroll(){
             start: "left left",
             end: "right right",
             scrub: true,
-            containerAnimation: tlMain,
+            containerAnimation: tMain,
         }
     })
     .to('.about-grid__sticky-element', {
@@ -144,7 +129,6 @@ function aboutScroll(){
         ease: "none"
     })
 
-     // Grid
     // Title
     SplitType.create('.about-grid__title', {types: 'lines, words', lineClass: 'about-grid__title--line', wordClass: "about-grid__title--word"});
 
@@ -157,7 +141,7 @@ function aboutScroll(){
             //trigger element - viewport
             start: "10% left",
             end: "35% left",
-            containerAnimation: tlMain,
+            containerAnimation: tMain,
             scrub: true,
         }
     })
@@ -186,7 +170,7 @@ function aboutScroll(){
             start: "left right",
             end: "left left",
             scrub: true,
-            containerAnimation: tlMain
+            containerAnimation: tMain
         }
     })
     .set('.about-grid__img-wrapper--1 .about-grid__img', {
@@ -200,29 +184,7 @@ function aboutScroll(){
         scale: 1,
     }, '<')
 
-    // Image 2
-    gsap.timeline({
-        defaults: { 
-            duration: 2
-        },
-        scrollTrigger: {
-            trigger: ".about-grid__section-width",
-            //trigger element - viewport
-            start: "40% left",
-            end: "55% left",
-            scrub: 1,
-            containerAnimation: tlMain,
-        }
-    })
-    .to('.about-grid__img-wrapper--1 .about-grid__img', {
-        opacity: 0,
-        scale: 1.3,
-    })
-    .from('.about-grid__img-wrapper--2 .about-grid__img', {
-        scale: 1.3,
-    }, '<')
-
-
+    
     // Quote
     gsap.timeline({
         scrollTrigger: {
@@ -247,53 +209,100 @@ function aboutScroll(){
         duration: 1.5
     }, '<')
 
-    
-    SplitType.create('.about-quote__content', {types: 'chars', charClass: "about-quote__content--char"});
-    
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: ".about-quote",
-            //trigger element - viewport
-            start: "top 65%",
-            end: "top 15%",
-            scrub: true
-        }
-    })
-    .from(['.about-quote__content--1 .about-quote__content--char', '.about-quote__content--2 .about-quote__content--char'], {
-        yPercent: 100,
-        opacity: 0,
-        stagger: 0.05,
-        duration: 1.5,
-    })
-    .from(['.about-quote__content--3 .about-quote__content--char', '.about-quote__content--4 .about-quote__content--char'], {
-        yPercent: 100,
-        opacity: 0,
-        stagger: 0.05,
-        duration: 1.5,
-        delay: 1
-    })
-    
 
-    // Credits
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: ".about-credits",
-            //trigger element - viewport
-            start: "top 70%",
-            end: "top 40%",
-            scrub: true
-        }
-    })
-    .from('.about-credits__title', {
-        opacity: 0,
-        duration: 1,
-    })
-    .from('.about-credits__credits', {
-        opacity: 0,
-        duration: 1
-    }, '<')
+    let showNavMenuBreakpoint = getComputedStyle(document.body).getPropertyValue('--default-show-nav-menu-breakpoint');
+    let matchMedia = gsap.matchMedia();
+
+    matchMedia.add(`(min-width : ${showNavMenuBreakpoint})`, () => {
+
+        // Scale shape item
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: ".about-grid__section-width",
+                //trigger element - viewport
+                start: "left right",
+                end: "left left",
+                scrub: true,
+                containerAnimation: tMain,
+            }
+        })
+        .to('.about-shape__item', {
+            scale: 0.5
+        })
+
+        // Image 2
+        gsap.timeline({
+            defaults: { 
+                duration: 2
+            },
+            scrollTrigger: {
+                trigger: ".about-grid__section-width",
+                //trigger element - viewport
+                start: "40% left",
+                end: "55% left",
+                scrub: 1,
+                containerAnimation: tMain,
+            }
+        })
+        .to('.about-grid__img-wrapper--1 .about-grid__img', {
+            opacity: 0,
+            scale: 1.3,
+        })
+        .from('.about-grid__img-wrapper--2 .about-grid__img', {
+            scale: 1.3,
+        }, '<')
 
 
+        SplitType.create('.about-quote__content', {types: 'chars', charClass: "about-quote__content--char"});
+
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: ".about-quote",
+                //trigger element - viewport
+                start: "top 65%",
+                end: "top 15%",
+                scrub: true
+            }
+        })
+        .from(['.about-quote__content--1 .about-quote__content--char', '.about-quote__content--2 .about-quote__content--char'], {
+            yPercent: 100,
+            opacity: 0,
+            stagger: 0.05,
+            duration: 1.5,
+        })
+        .from(['.about-quote__content--3 .about-quote__content--char', '.about-quote__content--4 .about-quote__content--char'], {
+            yPercent: 100,
+            opacity: 0,
+            stagger: 0.05,
+            duration: 1.5,
+            delay: 1
+        })
+
+
+        // Credits
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: ".about-credits",
+                //trigger element - viewport
+                start: "top 70%",
+                end: "top 40%",
+                scrub: true
+            }
+        })
+        .from('.about-credits__title', {
+            opacity: 0,
+            duration: 1,
+        })
+        .from('.about-credits__credits', {
+            opacity: 0,
+            duration: 1
+        }, '<')
+
+        
+
+        // end of gsap match media
+    });
+    
 
     function setTrackHeights(){
         $(".about-beauty__section-height").each(function(index) {

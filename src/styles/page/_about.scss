@@ -15,12 +15,23 @@
             &--second {
                 width: 66%;
                 @include h1;
-                padding-right: responsive-size(var(--space-xl));
+
+                @include media-min-width(small){
+                    padding-right: responsive-size(var(--space-xl));
+                }
+                @include media(small, portrait){
+                    width: 100%;
+                }
             }
             &--third {
                 width: 33%;
                 @include h4;
                 display: flex;
+
+                @include media(small, portrait){
+                    width: 100%;
+                    padding-top: responsive-size(var(--space-xl));
+                }
             }
         }
         &__text {
@@ -44,6 +55,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
+
+            @include media(small, portrait){
+                width: 100%;
+                height: clamp(30rem, 60vh, 45rem);
+            }
         }
         &__img {
             width: 100%;
@@ -64,6 +80,10 @@
             grid-column: span 7;
             display: flex;
             justify-content: space-between;
+
+            @include media(small, portrait){
+                grid-column: 1/-1;
+            }
         }
         &__title {
             @include h2;
@@ -76,6 +96,10 @@
             grid-column: 4/span 4;
             display: flex;
             flex-direction: column;
+
+            @include media(small, portrait){
+                grid-column: 1/-1;
+            }
         }
         &__content{
             align-self: flex-end;
@@ -161,6 +185,10 @@
             align-items: stretch;
             padding: responsive-size(var(--space-xl)) responsive-size(var(--space-sm));
             padding-right: 0;
+
+            @include media(small, portrait){
+                align-items: center;
+            }
         }
         &__item {
             width: clamp(40rem, 40vw, 50rem);
@@ -170,6 +198,11 @@
             align-items: flex-start;
             flex: none;
             margin-right: responsive-size(var(--space-sm));
+        
+            @include media(small, portrait){
+                width: clamp(16rem, 75vw, 30rem);
+                align-items: center;
+            }
         }
         &__img-wrapper {
             width: 100%;
@@ -220,18 +253,32 @@
             column-gap: responsive-size(var(--space-sm));
             padding: responsive-size(var(--space-sm));
             color: var(--brand-primary);
+
+            @include media(small, portrait){
+                grid-template-columns: repeat(1, minmax(0, 1fr));
+                align-content: end;
+            }
         }
         &__title-wrapper {
             grid-column: span 4;
             display: flex;
             flex-direction: row;
             align-items: flex-end;
+
+            @include media(small, portrait){
+                grid-column: 1/-1;
+            }
         }
         &__description-wrapper {
             grid-column: 9/-1;
             display: flex;
             flex-direction: row;
             align-items: flex-end;
+
+            @include media(small, portrait){
+                grid-column: 1/-1;
+                margin-top: responsive-size(var(--space-sm));
+            }
         }
         &__title {
             @include h2;
@@ -260,6 +307,10 @@
             }
             &--2 {
                 z-index: 1;
+
+                @include media(small, portrait){
+                    display: none;
+                }
             }
         }
         &__img {
@@ -292,6 +343,10 @@
             &--2 {
                 margin-top: responsive-size(var(--space-sm));
             }
+
+            @include media(small, portrait){
+                grid-template-columns: repeat(1, minmax(0, 1fr));
+            }
         }
         &__content {
             overflow: hidden;
@@ -300,17 +355,33 @@
 
             &--1 {
                 grid-column: span 8;
+
+                @include media(small){
+                    grid-column: 1/-1;  
+                }
             }
             &--2 {
                 grid-column: span 8;
+
+                @include media(small){
+                    grid-column: 1/-1;  
+                }
             }
             &--3 {
                 grid-column: 5/-1;
                 text-align: right;
+
+                @include media(small){
+                    grid-column: 1/-1;  
+                }
             }
             &--4 {
                 grid-column: 5/-1;
                 text-align: right;
+
+                @include media(small){
+                    grid-column: 1/-1;  
+                }
             }
         }
         &__img-wrapper {
@@ -318,11 +389,21 @@
             grid-row: 1/-1;
 
             &--1 {
-                grid-column: 10/-1;       
+                grid-column: 10/-1;  
+                
+                @include media(small){
+                    grid-column: 1/-1;  
+                }
             }
             &--2 {
                 grid-column: span 3;
+
+                @include media(small){
+                    grid-column: 1/-1;  
+                }
             }
+
+            
         }
         &__img {
             width: 100%;
@@ -336,18 +417,28 @@
             display: grid;
             grid-template-columns: repeat(12, minmax(0, 1fr));
             column-gap: responsive-size(var(--space-sm));
+
+            @include media(small){
+                grid-template-columns: repeat(1, minmax(0, 1fr));
+            }
         }
         &__title-wrapper {
             grid-column: span 4;
             @include h4;
+
+            @include media(small){
+                @include h3;
+                grid-column: 1/-1;
+            }
         }
         &__credits{
             grid-column: span 4;
             display: flex;
             flex-direction: column;
     
-            @include media(small, portrait){
-                margin-top: responsive-size(var(--space-md));
+            @include media(small){
+                margin-top: responsive-size(var(--space-xl));
+                grid-column: 1/-1;
             }
         } 
         &__links {
@@ -360,10 +451,13 @@
     &-home {
         grid-column: 1/-1;
         text-align: center;
-        
     }
     &-spacer {
         grid-column: 1/-1;
-        height: clamp(20rem, 30vh, 60rem);
+        height: clamp(20rem, 30vh, 40rem);
+
+        @include media(small){
+            height: clamp(10rem, 15vh, 20rem); 
+        }
     }
 }
