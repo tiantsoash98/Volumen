@@ -56,60 +56,20 @@ function aboutScroll(){
         ease: "none"
     })
 
-    // Visual
-    // Shapes
-    delay = 0
-    let shapesVisible = gsap.utils.toArray('.about-shape__item--1, .about-shape__item--2, .about-shape__item--3')
-    let shapes = gsap.utils.toArray('.about-shape__item--4, .about-shape__item--5')
 
-    shapesVisible.forEach((shape) => {
-        gsap.timeline({
-            defaults: {
-                duration: 1,
-                ease: "customEase"
-            },
-            scrollTrigger: {
-                trigger: ".about-beauty",
-                //trigger element - viewport
-                start: "top 70%",
-                end: "top center"
-            }
-        })
-        .fromTo(shape, {
-            clipPath: 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)'
-        }, {
-            clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
-            delay: delay,
-        })
-        .from(shape.querySelector('.about-shape__img'), {
-            scale: 1.4
-        }, '<')
-
-        delay += 0.15
+    // Scale shape item
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".about-grid__section-width",
+            //trigger element - viewport
+            start: "left right",
+            end: "left left",
+            scrub: true,
+            containerAnimation: tMain,
+        }
     })
-
-    shapes.forEach((shape) => {
-        gsap.timeline({
-            defaults: {
-                duration: 1,
-                ease: "customEase"
-            },
-            scrollTrigger: {
-                trigger: shape,
-                //trigger element - viewport
-                start: "left right",
-                end: "left center",
-                containerAnimation: tMain,
-            }
-        })
-        .fromTo(shape.querySelector('.about-shape__img-wrapper'), {
-            clipPath: 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)'
-        }, {
-            clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
-        })
-        .from(shape.querySelector('.about-shape__img'), {
-            scale: 1.4
-        }, '<')
+    .to('.about-shape__item', {
+        scale: 0.5
     })
 
     // Grid
@@ -227,20 +187,62 @@ function aboutScroll(){
 
     matchMedia.add(`(min-width : ${showNavMenuBreakpoint})`, () => {
 
-        // Scale shape item
-        gsap.timeline({
-            scrollTrigger: {
-                trigger: ".about-grid__section-width",
-                //trigger element - viewport
-                start: "left right",
-                end: "left left",
-                scrub: true,
-                containerAnimation: tMain,
-            }
+        // Shapes
+        delay = 0
+        let shapesVisible = gsap.utils.toArray('.about-shape__item--1, .about-shape__item--2, .about-shape__item--3')
+        let shapes = gsap.utils.toArray('.about-shape__item--4, .about-shape__item--5')
+
+        shapesVisible.forEach((shape) => {
+            gsap.timeline({
+                defaults: {
+                    duration: 1,
+                    ease: "customEase"
+                },
+                scrollTrigger: {
+                    trigger: ".about-beauty",
+                    //trigger element - viewport
+                    start: "top 70%",
+                    end: "top center"
+                }
+            })
+            .fromTo(shape, {
+                clipPath: 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)'
+            }, {
+                clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+                delay: delay,
+            })
+            .from(shape.querySelector('.about-shape__img'), {
+                scale: 1.4
+            }, '<')
+
+            delay += 0.15
         })
-        .to('.about-shape__item', {
-            scale: 0.5
+
+        shapes.forEach((shape) => {
+            gsap.timeline({
+                defaults: {
+                    duration: 1,
+                    ease: "customEase"
+                },
+                scrollTrigger: {
+                    trigger: shape,
+                    //trigger element - viewport
+                    start: "left right",
+                    end: "left center",
+                    containerAnimation: tMain,
+                }
+            })
+            .fromTo(shape.querySelector('.about-shape__img-wrapper'), {
+                clipPath: 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)'
+            }, {
+                clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+            })
+            .from(shape.querySelector('.about-shape__img'), {
+                scale: 1.4
+            }, '<')
         })
+
+
 
         // // Image 2
         // gsap.timeline({

@@ -42,7 +42,8 @@
     <aside class="menu" aria-expanded="false">
     <div class="menu__frame"></div>
         <div class="menu__content-wrapper">
-            <div class="menu__links-wrapper">
+          <div class="menu__spacer"></div>
+          <div class="menu__links-wrapper">
             <ul class="menu__links">
                 <li class="menu__link menu__link--1">
                 <div class="menu__link-wrapper">
@@ -60,15 +61,10 @@
                 </div>
                 </li>
             </ul>
-            </div>
-            <div class="menu__bottom-wrapper">
-                <ul class="menu__socials">
-                <li class="menu__social"><a href="#">FACEBOOK</a></li>
-                <li class="menu__social"><a href="#">INSTAGRAM</a></li>
-                <li class="menu__social"><a href="#">LINKEDIN</a></li>
-                </ul>
-                <div class="footer__copyright">© 2023 Volumen</div>
-            </div>
+          </div>
+          <div class="menu__bottom-wrapper">
+              <div class="footer__copyright">© 2023 Volumen</div>
+          </div>
         </div>
     </aside>
 </template>

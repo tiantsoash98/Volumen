@@ -83,6 +83,10 @@
             grid-template-rows: auto auto;
             column-gap: responsive-size(var(--space-sm));
             row-gap: responsive-size(var(--space-sm));
+
+            @include media(small){
+                row-gap: responsive-size(var(--space-md));
+            }
         }
         &__header {
             grid-column: span 7;

@@ -12,9 +12,11 @@
     grid-template-columns: repeat(12, minmax(0, 1fr));
     column-gap: responsive-size(var(--space-sm));
     transition: opacity 1s var(--alias-default-ease) .2s;
+    pointer-events: all;
 
     &--scrolling {
         opacity: 0;
+        pointer-events: none;
     }
 
     & a {
@@ -140,7 +142,7 @@
         justify-content: flex-end;
     }
     &__links-wrapper {
-        margin-bottom: responsive-size(var(--space-xl));
+        margin-bottom: responsive-size(var(--space-xxl));
     }
     &__link-wrapper {
         overflow: hidden;
