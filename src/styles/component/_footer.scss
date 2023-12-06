@@ -31,6 +31,7 @@
             grid-column: span 4;
             flex-direction: column;
             align-items: flex-start;
+            justify-content: flex-end;
         }
         @include media(medium, portrait){
             grid-column: span 3;
