@@ -125,7 +125,7 @@ function aboutScroll(){
         }
     })
     .to('.about-grid__sticky-element', {
-        xPercent: 200,
+        xPercent: 75,
         ease: "none"
     })
 
@@ -139,15 +139,14 @@ function aboutScroll(){
         scrollTrigger: {
             trigger: ".about-grid__section-width",
             //trigger element - viewport
-            start: "10% left",
-            end: "35% left",
+            start: "2% left",
+            end: "25% left",
             containerAnimation: tMain,
             scrub: true,
         }
     })
 
     gridTitleLines.forEach((line) => {
-        
         titleTL.from(line.querySelectorAll('.about-grid__title--word'), {
             opacity: 0,
             yPercent: 100,
@@ -209,6 +208,19 @@ function aboutScroll(){
         duration: 1.5
     }, '<')
 
+    gsap.timeline({
+        defaults: { duration: 1.5, ease: "customEase" },
+        scrollTrigger: {
+            trigger: ".about-quote",
+            //trigger element - viewport
+            start: "top 40%",
+            end: "top top",
+        }
+    })
+    .from('.about-quote__content--3', {
+        xPercent: -30,
+    })
+
 
     let showNavMenuBreakpoint = getComputedStyle(document.body).getPropertyValue('--default-show-nav-menu-breakpoint');
     let matchMedia = gsap.matchMedia();
@@ -230,53 +242,53 @@ function aboutScroll(){
             scale: 0.5
         })
 
-        // Image 2
-        gsap.timeline({
-            defaults: { 
-                duration: 2
-            },
-            scrollTrigger: {
-                trigger: ".about-grid__section-width",
-                //trigger element - viewport
-                start: "40% left",
-                end: "55% left",
-                scrub: 1,
-                containerAnimation: tMain,
-            }
-        })
-        .to('.about-grid__img-wrapper--1 .about-grid__img', {
-            opacity: 0,
-            scale: 1.3,
-        })
-        .from('.about-grid__img-wrapper--2 .about-grid__img', {
-            scale: 1.3,
-        }, '<')
+        // // Image 2
+        // gsap.timeline({
+        //     defaults: { 
+        //         duration: 2
+        //     },
+        //     scrollTrigger: {
+        //         trigger: ".about-grid__section-width",
+        //         //trigger element - viewport
+        //         start: "40% left",
+        //         end: "55% left",
+        //         scrub: 1,
+        //         containerAnimation: tMain,
+        //     }
+        // })
+        // .to('.about-grid__img-wrapper--1 .about-grid__img', {
+        //     opacity: 0,
+        //     scale: 1.3,
+        // })
+        // .from('.about-grid__img-wrapper--2 .about-grid__img', {
+        //     scale: 1.3,
+        // }, '<')
 
 
-        SplitType.create('.about-quote__content', {types: 'chars', charClass: "about-quote__content--char"});
+        // SplitType.create('.about-quote__content', {types: 'chars', charClass: "about-quote__content--char"});
 
-        gsap.timeline({
-            scrollTrigger: {
-                trigger: ".about-quote",
-                //trigger element - viewport
-                start: "top 65%",
-                end: "top 15%",
-                scrub: true
-            }
-        })
-        .from(['.about-quote__content--1 .about-quote__content--char', '.about-quote__content--2 .about-quote__content--char'], {
-            yPercent: 100,
-            opacity: 0,
-            stagger: 0.05,
-            duration: 1.5,
-        })
-        .from(['.about-quote__content--3 .about-quote__content--char', '.about-quote__content--4 .about-quote__content--char'], {
-            yPercent: 100,
-            opacity: 0,
-            stagger: 0.05,
-            duration: 1.5,
-            delay: 1
-        })
+        // gsap.timeline({
+        //     scrollTrigger: {
+        //         trigger: ".about-quote",
+        //         //trigger element - viewport
+        //         start: "top 65%",
+        //         end: "top 15%",
+        //         scrub: true
+        //     }
+        // })
+        // .from(['.about-quote__content--1 .about-quote__content--char', '.about-quote__content--2 .about-quote__content--char'], {
+        //     yPercent: 100,
+        //     opacity: 0,
+        //     stagger: 0.05,
+        //     duration: 1.5,
+        // })
+        // .from(['.about-quote__content--3 .about-quote__content--char', '.about-quote__content--4 .about-quote__content--char'], {
+        //     yPercent: 100,
+        //     opacity: 0,
+        //     stagger: 0.05,
+        //     duration: 1.5,
+        //     delay: 1
+        // })
 
 
         // Credits
@@ -286,7 +298,7 @@ function aboutScroll(){
                 //trigger element - viewport
                 start: "top 70%",
                 end: "top 40%",
-                scrub: true
+                // scrub: true
             }
         })
         .from('.about-credits__title', {
