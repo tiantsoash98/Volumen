@@ -7,22 +7,40 @@
         display: grid;
         grid-template-columns: repeat(12, minmax(0, 1fr));
         column-gap: responsive-size(var(--space-sm));
+        row-gap: responsive-size(var(--space-lg));
 
         @include media(small, portrait){
             row-gap: responsive-size(var(--space-sm));
         }
     }
-    &__left-box {
+    &__navigation-box {
+        grid-column: span 12;
+        justify-content: center;
+
+        @include media(small, portrait){
+            grid-column: span 12;
+            justify-content: flex-start;
+        }
+    }
+    &__time-box {
         grid-column: span 6;
         display: flex;
         align-items: flex-end;
         
+        @include media(large, portrait){
+            grid-column: span 4;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        @include media(medium, portrait){
+            grid-column: span 3;
+        }
         @include media(small, portrait){
             grid-column: 1/-1;
             order: 2;
             align-items: flex-start;
             justify-content: space-between;
-            margin-top: responsive-size(var(--space-md));
+            margin-top: responsive-size(var(--space-xl));
         }
         @include media(tiny, portrait){
             flex-direction: column;
@@ -30,28 +48,25 @@
     }
     &__time {
         margin-left: responsive-size(var(--space-sm));
-    }
-    &__right-box {
-        grid-column: span 6;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-end;
 
-        @include media(small, portrait){
-            grid-column: 1/-1;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: responsive-size(var(--space-sm));
+        @include media(large, portrait){
+            margin-left: 0;
         }
     }
     &__credits-wrapper {
+        grid-column: span 6;
         width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
         
+        @include media(large, portrait){
+            grid-column: span 8;
+        }
+        @include media(medium, portrait){
+            grid-column: span 9;
+        }
         @include media(small, portrait){
             flex-direction: column;
             justify-content: flex-start;
@@ -67,6 +82,11 @@
     }
     &__links {
         display: flex;
+        flex-direction: row;
+
+        &--column {
+            flex-direction: column;
+        }
     }
     &__link-separator {
         margin-right: responsive-size(3);
