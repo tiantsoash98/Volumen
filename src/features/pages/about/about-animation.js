@@ -14,7 +14,7 @@ function aboutAnimation(){
 
     lines.forEach((line) => {
         gsap.timeline({
-            defaults: { duration: 1.5, ease: "customEase" },
+            defaults: { duration: 1, ease: "customEase" },
         })
         .from(line.querySelectorAll('.about-main__title--word'), {
             opacity: 0,
@@ -32,7 +32,7 @@ function aboutAnimation(){
 
     descriptionLines.forEach((line) => {
         gsap.timeline({
-            defaults: { duration: 1.5, ease: "customEase" },
+            defaults: { duration: 1, ease: "customEase" },
         })
         .from(line.querySelectorAll('.about-main__text--word'), {
             opacity: 0,
