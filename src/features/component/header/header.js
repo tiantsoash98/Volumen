@@ -6,6 +6,16 @@ import Header from './Header.vue';
 
 function header(){
     createApp(Header).mount('#header');
+
+    let menuToogler = document.querySelector('.nav__toogle');
+    let menu =  document.querySelector('.menu');
+    let nav =  document.querySelector('nav.header__mobile');
+    let isAnimating = false;
+
+    nav.classList.remove('nav--open')
+    menu.classList.remove('menu--open')
+    menu.setAttribute('aria-expanded', 'false')
+
     splitNavLinks();
 
     let defaultEase = getComputedStyle(document.body).getPropertyValue('--default-ease');
@@ -13,10 +23,6 @@ function header(){
     gsap.registerPlugin(CustomEase) 
     CustomEase.create("customEase", defaultEase);
 
-
-    let menuToogler = document.querySelector('.nav__toogle');
-    let menu =  document.querySelector('.menu');
-    let nav =  document.querySelector('nav.header__mobile');
 
     let menuOpenTl = gsap.timeline({
         defaults: { duration: 1, ease: "customEase" }
@@ -56,16 +62,23 @@ function header(){
     menuToogler.addEventListener('click', () => {
         let navbarAreaExpanded = menu.getAttribute('aria-expanded')
 
-        if (navbarAreaExpanded && navbarAreaExpanded == 'false') {
+        if (!isAnimating && navbarAreaExpanded && navbarAreaExpanded == 'false') {
+            isAnimating = true;
             menu.setAttribute('aria-expanded', 'true')
             menu.classList.add('menu--open')
             nav.classList.add('nav--open')
-            menuOpenTl.play(0)
-        } else {
-            menuCloseTl.play(0)
+            menuOpenTl.play(0).then(() => {
+                isAnimating = false;
+            })
+        } 
+        else if(!isAnimating && navbarAreaExpanded && navbarAreaExpanded == 'true') {
+            isAnimating = true;
             nav.classList.remove('nav--open')
             menu.classList.remove('menu--open')
             menu.setAttribute('aria-expanded', 'false')
+            menuCloseTl.play(0).then(() => {
+                isAnimating = false;
+            })
         }
     });
 

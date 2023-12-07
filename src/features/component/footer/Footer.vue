@@ -1,7 +1,9 @@
 <script>
+import Lenis from '@studio-freight/lenis';
 import { ref } from 'vue'
 
 export default {
+
   // https://vuejs.org/guide/essentials/reactivity-fundamentals.html
   // https://dennissnellenberg.com/
   setup() {
@@ -26,6 +28,14 @@ export default {
     return {
       time
     }
+  },
+  methods: {
+    scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
   }
 }
 </script>
@@ -34,34 +44,39 @@ export default {
     <footer class="footer">
         <div class="container">
           <div class="footer__details-wrapper">
-            <div class="footer__left-box">
+            <ul class="footer__navigation-box footer__links">
+              <li class="footer__link hover-link"><a href="./index.html">Index</a></li>
+              <li class="footer__link-separator">, </li>
+              <li class="footer__link hover-link"><a href="./repertoire.html">Repertoire</a></li>
+              <li class="footer__link-separator">, </li>
+              <li class="footer__link hover-link"><a href="./about.html">About</a></li>
+            </ul>
+            <div class="footer__time-box">
               <div class="footer__copyright">© 2023 Volumen</div>
               <div class="footer__time" id="time">{{ time }}</div>
             </div>
-            <div class="footer__right-box">
-              <div class="footer__credits-wrapper">
-                <div class="footer__credits footer__credits--left">
-                  <span>Jamy Rasanda</span>
-                  <span>3D Artist</span>
-                  <ul class="footer__links">
-                    <li class="footer__link"><a href="https://www.instagram.com/jamyrasanda/" target="_blank" class="hover-link">Instagram</a></li>
-                    <li class="footer__link-separator">, </li>
-                    <li class="footer__link"><a href="https://www.artstation.com/jamyrasanda" target="_blank" class="hover-link">ArtStation</a></li>
-                    <li class="footer__link-separator">, </li>
-                    <li class="footer__link"><a href="https://www.linkedin.com/in/jamy-rasanda-a853bb168/" target="_blank" class="hover-link">Linkedin</a></li>
-                  </ul>
-                </div>
-                <div class="footer__credits footer__credits--right">
-                  <span>Tiantsoa Rabemananjara</span>
-                  <span>Web Design & Development</span>
-                  <ul class="footer__links">
-                    <li class="footer__link"><a href="https://www.linkedin.com/in/tiantsoa-rabemananjara-254655152/" target="_blank" class="hover-link">Linkedin</a></li>
-                    <li class="footer__link-separator">, </li>
-                    <li class="footer__link"><a href="https://www.instagram.com/tiantsoa_sh/" target="_blank" class="hover-link">Instagram</a></li>
-                    <li class="footer__link-separator">, </li>
-                    <li class="footer__link"><a href="mailto:tiantsoa.sh@gmail.com" target="_blank" class="hover-link">Email</a></li>
-                  </ul>
-                </div>
+            <div class="footer__credits-wrapper">
+              <div class="footer__credits footer__credits--left">
+                <span>Jamy Rasanda</span>
+                <span>3D Artist</span>
+                <ul class="footer__links">
+                  <li class="footer__link"><a href="https://www.instagram.com/jamyrasanda/" target="_blank" class="hover-link">Instagram</a></li>
+                  <li class="footer__link-separator">, </li>
+                  <li class="footer__link"><a href="https://www.artstation.com/jamyrasanda" target="_blank" class="hover-link">ArtStation</a></li>
+                  <li class="footer__link-separator">, </li>
+                  <li class="footer__link"><a href="https://www.linkedin.com/in/jamy-rasanda-a853bb168/" target="_blank" class="hover-link">Linkedin</a></li>
+                </ul>
+              </div>
+              <div class="footer__credits footer__credits--right">
+                <span>Tiantsoa Rabemananjara</span>
+                <span>Web Design & Development</span>
+                <ul class="footer__links">
+                  <li class="footer__link"><a href="https://www.linkedin.com/in/tiantsoa-rabemananjara-254655152/" target="_blank" class="hover-link">Linkedin</a></li>
+                  <li class="footer__link-separator">, </li>
+                  <li class="footer__link"><a href="https://www.instagram.com/tiantsoa_sh/" target="_blank" class="hover-link">Instagram</a></li>
+                  <li class="footer__link-separator">, </li>
+                  <li class="footer__link"><a href="mailto:tiantsoa.sh@gmail.com" target="_blank" class="hover-link">Email</a></li>
+                </ul>
               </div>
             </div>
           </div>

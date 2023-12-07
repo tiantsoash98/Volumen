@@ -1,6 +1,7 @@
 <script>
 // https://stackoverflow.com/questions/45565349/how-to-access-external-json-file-objects-in-vue-js-app
 import data from '../../../data.json';
+import Image from '../image/Image.vue';
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue';
 // Import Swiper styles
@@ -12,6 +13,7 @@ export default {
     components: {
         Swiper,
         SwiperSlide,
+        Image
     },
     setup() {
         // Randomly select one suggested to show in portrait mode
@@ -39,6 +41,9 @@ export default {
         isPortrait(index){
             return index == this.randomPortraitIndex;
         },
+        getImgOrientation(index){
+            return this.isPortrait(index) ? "portrait" : "landscape";
+        },
         getShapeHref(slug){
             return "./" + slug + ".html";
         },
@@ -49,7 +54,7 @@ export default {
         },
         articleClass(index, isPortrait){
             return `suggested__item suggested__item--${index+1} ${isPortrait ? "suggested__item--portrait" : "" }`;
-        }
+        },
     },
     computed: {
         suggestedShapes(){
@@ -96,7 +101,16 @@ export default {
                     <article :class="articleClass(index, isPortrait(index))">
                         <figure class="suggested__image-wrapper">
                             <a :href="getShapeHref(shape.slug)">
-                                <img class="suggested__img" :src="getImgByOrientation(shape.slug, shape.repertoire.imgId, isPortrait(index))" :alt="shape.name" loading="lazy">
+                                <!-- <img class="suggested__img" :src="getImgByOrientation(shape.slug, shape.repertoire.imgId, isPortrait(index))" :alt="shape.name" loading="lazy"> -->
+                                <Image 
+                                    class="suggested__img"
+                                    :slug="shape.slug" 
+                                    :shape="shape.name" 
+                                    :img-id="shape.repertoire.imgId"
+                                    :orientation="getImgOrientation(index)"
+                                    :loading="'lazy'"
+                                    :willChange="false"
+                                />
                             </a>
                         </figure>
                         <div class="suggested__details">

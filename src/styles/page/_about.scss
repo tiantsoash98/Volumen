@@ -15,11 +15,11 @@
             &--second {
                 width: 66%;
                 @include h1;
-
+              
                 @include media-min-width(small){
                     padding-right: responsive-size(var(--space-xl));
                 }
-                @include media(small, portrait){
+                @include media(medium, portrait){
                     width: 100%;
                 }
             }
@@ -28,9 +28,13 @@
                 @include h4;
                 display: flex;
 
+                @include media(medium, portrait){
+                    width: 58%;
+                    margin-top: responsive-size(var(--space-xl));
+                    margin-left: auto;
+                }
                 @include media(small, portrait){
                     width: 100%;
-                    padding-top: responsive-size(var(--space-xl));
                 }
             }
         }
@@ -56,8 +60,12 @@
             align-items: center;
             justify-content: center;
 
-            @include media(small, portrait){
+            @include media(medium){
                 width: 100%;
+                height: clamp(25rem, 80vh, 70rem);
+            }
+
+            @include media(small, portrait){
                 height: clamp(30rem, 60vh, 45rem);
             }
         }
@@ -75,19 +83,27 @@
             grid-template-rows: auto auto;
             column-gap: responsive-size(var(--space-sm));
             row-gap: responsive-size(var(--space-sm));
+
+            @include media(small){
+                row-gap: responsive-size(var(--space-md));
+            }
         }
         &__header {
             grid-column: span 7;
             display: flex;
             justify-content: space-between;
 
-            @include media(small, portrait){
+            @include media(medium){
                 grid-column: 1/-1;
             }
         }
         &__title {
             @include h2;
             
+            @include media(medium){
+                @include h1;
+            }
+
             &--line {
                 overflow: hidden;
             }
@@ -97,7 +113,10 @@
             display: flex;
             flex-direction: column;
 
-            @include media(small, portrait){
+            @include media(medium){
+                grid-column: 7/span 6;
+            }
+            @include media(small){
                 grid-column: 1/-1;
             }
         }
@@ -265,7 +284,11 @@
             flex-direction: row;
             align-items: flex-end;
 
-            @include media(small, portrait){
+            @include media(medium){
+                grid-column: span 6;
+            }
+
+            @include media(small){
                 grid-column: 1/-1;
             }
         }
@@ -275,6 +298,9 @@
             flex-direction: row;
             align-items: flex-end;
 
+            @include media(medium){
+                grid-column: span 6;
+            }
             @include media(small, portrait){
                 grid-column: 1/-1;
                 margin-top: responsive-size(var(--space-sm));
@@ -426,6 +452,10 @@
             grid-column: span 4;
             @include h4;
 
+            @include media(medium){
+                grid-column: span 6;
+            }
+
             @include media(small){
                 @include h3;
                 grid-column: 1/-1;
@@ -436,9 +466,24 @@
             display: flex;
             flex-direction: column;
     
-            @include media(small){
-                margin-top: responsive-size(var(--space-xl));
-                grid-column: 1/-1;
+            &--left {
+                @include media(medium){
+                    grid-column: span 6;
+                }
+                @include media(small){
+                    margin-top: responsive-size(var(--space-xl));
+                    grid-column: 1/-1;
+                }    
+            }
+            &--right {
+                @include media(medium){
+                    margin-top: responsive-size(var(--space-xl));
+                    grid-column: 7/span 6;
+                }
+                @include media(small){
+                    margin-top: responsive-size(var(--space-xl));
+                    grid-column: 1/-1;
+                }
             }
         } 
         &__links {
@@ -456,6 +501,9 @@
         grid-column: 1/-1;
         height: clamp(20rem, 30vh, 40rem);
 
+        @include media(medium){
+            height: clamp(15rem, 20vh, 30rem); 
+        }
         @include media(small){
             height: clamp(10rem, 15vh, 20rem); 
         }
