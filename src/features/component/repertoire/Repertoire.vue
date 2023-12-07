@@ -45,7 +45,7 @@ export default {
                 <figure class="repertoire__image-wrapper image-scroll__wrapper">
                     <a :href="getShapeHref(shape.slug)">
                         <Image 
-                            :imgClass="'repertoire__img repertoire__img--main image-scroll'"
+                            :class="'repertoire__img repertoire__img--main image-scroll'"
                             :slug="shape.slug" 
                             :shape="shape.name" 
                             :imgId="shape.repertoire.imgId"
@@ -55,7 +55,7 @@ export default {
                             :smallSize="'100vw'"
                         />
                         <Image
-                            :imgClass="'repertoire__img repertoire__img--hover'"
+                            :class="'repertoire__img repertoire__img--hover'"
                             :slug="shape.slug" 
                             :shape="shape.name" 
                             :img-id="shape.repertoire.hoverId"
