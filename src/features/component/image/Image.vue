@@ -12,7 +12,7 @@ export default {
         slug : String,
         shape : String,
         imgId : {
-            type: String,
+            type: [String, Number],
             default: "1",
         },
         orientation : {
@@ -22,6 +22,9 @@ export default {
         willChange : {
             type: Boolean,
             default: false
+        },
+        imgClass : {
+            type: String
         }
     },
     methods: {
@@ -48,7 +51,7 @@ export default {
         },
         getOppositeOrientationSrcSet(){
             if(this.orientation == "landscape")
-                return getPortraitSrcset();
+                return this.getPortraitSrcset();
 
             return this.getLandscapeSrcset();
         },
@@ -71,6 +74,9 @@ export default {
     computed: {
         imgSizes() {
             return `(max-width: ${this.getMaxWidth()}px) 100vw, ${this.getMaxWidth()}px`;
+        },
+        getImgClass() {
+            return "img__item " + this.imgClass;
         }
     }
 }
@@ -87,7 +93,7 @@ export default {
             :srcset="getCurrentOrientationSrcSet()"
             :src="getSrc"
             :alt="shape"
-            class="img__item"
+            :class="getImgClass"
         >
     </picture>
 </template>

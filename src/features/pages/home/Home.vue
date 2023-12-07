@@ -29,28 +29,14 @@ export default {
     <section class="hero__wrapper">
         <div class="hero__image-wrapper">
         <div class="hero__overlay"></div>
-        <picture class="hero__img-wrapper image-scroll__wrapper">
-            <source 
-            media="(max-width: 767px)" 
-            srcset="
-                /the-sphere-portrait-1-320.webp 320w,
-                /the-sphere-portrait-1-544.webp 544w,
-                /the-sphere-portrait-1-706.webp 706w"
-            >
-            <img
-            sizes="(max-width: 2880px) 100vw, 2880px"
-            srcset="
-                /the-sphere-landscape-1-320.webp 320w,
-                /the-sphere-landscape-1-969.webp 969w,
-                /the-sphere-landscape-1-1332.webp 1332w,
-                /the-sphere-landscape-1-1740.webp 1740w,
-                /the-sphere-landscape-1-2025.webp 2025w,
-                /the-sphere-landscape-1-2582.webp 2582w,
-                /the-sphere-landscape-1-2880.webp 2880w"
-                src="/the-sphere-landscape-1-2880.webp"
-            class="hero__img image-scroll"
-            alt="The Sphere">
-        </picture>
+        <Image
+            class="hero__img-wrapper image-scroll__wrapper"
+            :imgClass="'hero__img image-scroll'"
+            :slug="'the-sphere'" 
+            :shape="'The Sphere'" 
+            :imgId="1"
+            :willChange="true"
+        />
         </div>
         <div class="hero__content-wrapper">
         <h1 class="hero__content">
