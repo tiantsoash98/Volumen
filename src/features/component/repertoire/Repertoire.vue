@@ -1,8 +1,12 @@
 <script>
 // https://stackoverflow.com/questions/45565349/how-to-access-external-json-file-objects-in-vue-js-app
 import data from '../../../data.json';
+import Image from '../image/Image.vue';
 
 export default {
+    components: {
+        Image
+    },
     data(){
         return {
             shapes: data.shapes
@@ -35,8 +39,18 @@ export default {
             <article v-for="(shape, index) in shapes" :key="shape.id" :class="`repertoire__item repertoire__item--${index+1}`" role="listitem">
                 <figure class="repertoire__image-wrapper image-scroll__wrapper">
                     <a :href="getShapeHref(shape.slug)">
-                        <img class="repertoire__img repertoire__img--main image-scroll" :src="getImgByOrientation(shape.slug, shape.repertoire.preferedOrientation, shape.repertoire.imgId)" :alt="shape.name" loading="eager">
-                        <img class="repertoire__img repertoire__img--hover" :src="getImgByOrientation(shape.slug, shape.repertoire.preferedOrientation, shape.repertoire.hoverId)" :alt="shape.name" loading="lazy">
+                        <!-- <img class="repertoire__img repertoire__img--main image-scroll" :src="getImgByOrientation(shape.slug, shape.repertoire.preferedOrientation, shape.repertoire.imgId)" :alt="shape.name" loading="eager"> -->
+                        <!-- <img class="repertoire__img repertoire__img--hover" :src="getImgByOrientation(shape.slug, shape.repertoire.preferedOrientation, shape.repertoire.hoverId)" :alt="shape.name" loading="lazy"> -->
+                        <Image 
+                            class="repertoire__img repertoire__img--main image-scroll"
+                            :slug="shape.slug" 
+                            :shape="shape.name" 
+                            :img-id="shape.repertoire.imgId"/>
+                        <Image
+                            class="repertoire__img repertoire__img--hover"
+                            :slug="shape.slug" 
+                            :shape="shape.name" 
+                            :img-id="shape.repertoire.hoverId"/>
                     </a>
                 </figure>
                 <div class="repertoire__details">

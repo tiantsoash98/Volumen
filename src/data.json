@@ -10,10 +10,10 @@
                 "firstRow": "With their twenty faces and intricate geometry, the icosahedral stands as a testament to the remarkable diversity of forms found in the natural world. Reminiscent",
                 "secondRow": "of the beauty in crystals, it embodies the complexity of life and the inherent elegance of symmetry.",
                 "thirdRow": "Rooted in both ancient history and modern science, icosahedra continue to captivate our imagination, offering a unique lens through which we can explore the interconnectedness of the universe.",
-                "img": "the-icosahedral-portrait-2.webp"
+                "img": "2"
             },
             "visual": {
-                "img": "the-icosahedral-landscape-3.webp",
+                "img": "3",
                 "alt": "The Icosahedral in dark mode"
             },
             "content": {
@@ -24,15 +24,15 @@
                 ],
                 "images": [
                     {
-                        "src": "the-icosahedral-portrait-4.webp",
+                        "src": "4",
                         "alt": "There Icosahedrals floating"
                     },
                     {
-                        "src": "the-icosahedral-portrait-5.webp",
+                        "src": "5",
                         "alt": "The Icosahedral in empty space"
                     },
                     {
-                        "src": "the-icosahedral-portrait-6.webp",
+                        "src": "6",
                         "alt": "The Icosahedral resting"
                     }
                 ]
@@ -53,10 +53,10 @@
                 "firstRow": "Mapping the heavens to modern innovations in science and art, the sphere's influence transcends time and culture, reminding us of the profound beauty in",
                 "secondRow": "mathematical precision and the universality of its appeal.",
                 "thirdRow": "The Sphere, a symbol of perfection and unity, has captivated human imagination for millennia. Its flawless, symmetrical shape represents harmony and balance, embodying the simplicity and elegance found in nature's design.",
-                "img": "the-sphere-portrait-2.webp"
+                "img": "2"
             },
             "visual": {
-                "img": "the-sphere-landscape-3.webp",
+                "img": "3",
                 "alt": "The Sphere in dark mode"
             },
             "content": {
@@ -67,15 +67,15 @@
                 ],
                 "images": [
                     {
-                        "src": "the-sphere-portrait-4.webp",
+                        "src": "4",
                         "alt": "The Sphere on grid"
                     },
                     {
-                        "src": "the-sphere-portrait-5.webp",
+                        "src": "5",
                         "alt": "The Sphere floating"
                     },
                     {
-                        "src": "the-sphere-portrait-6.webp",
+                        "src": "6",
                         "alt": "The Sphere resting"
                     }
                 ]
@@ -96,10 +96,10 @@
                 "firstRow": "Most fundamental of geometric shapes, the square embodies a timeless elegance rooted in its perfect balance and equal sides. From ancient architecture to",
                 "secondRow": "contemporary design, it's simplicity has been a source of inspiration, representing order and symmetry.",
                 "thirdRow": "Its clean lines and classic proportions serve as a foundation for artistic expression, reminding us that beauty often lies in the purity of form.",
-                "img": "the-square-portrait-2.webp"
+                "img": "2"
             },
             "visual": {
-                "img": "the-square-landscape-3.webp",
+                "img": "3",
                 "alt": "The Square in dark mode"
             },
             "content": {
@@ -110,15 +110,15 @@
                 ],
                 "images": [
                     {
-                        "src": "the-square-portrait-4.webp",
+                        "src": "4",
                         "alt": "Three Squares"
                     },
                     {
-                        "src": "the-square-portrait-5.webp",
+                        "src": "5",
                         "alt": "The Square in empty space"
                     },
                     {
-                        "src": "the-square-portrait-6.webp",
+                        "src": "6",
                         "alt": "The Square resting"
                     }
                 ]
@@ -139,10 +139,10 @@
                 "firstRow": "From the ancient wonders of Giza to modern interpretations in architecture, the pyramid's structural significance extends beyond its physical form,",
                 "secondRow": "representing the enduring power of human ingenuity and the pursuit of lofty ideals.",
                 "thirdRow": "The pyramid, with its triangular sides ascending to a pinnacle, has long been a symbol of strength, stability, and transcendence.",
-                "img": "the-pyramid-portrait-2.webp"
+                "img": "2"
             },
             "visual": {
-                "img": "the-pyramid-landscape-3.webp",
+                "img": "3",
                 "alt": "The Pyramid in dark mode"
             },
             "content": {
@@ -153,15 +153,15 @@
                 ],
                 "images": [
                     {
-                        "src": "the-pyramid-portrait-4.webp",
+                        "src": "4",
                         "alt": "Three Pyramids floating"
                     },
                     {
-                        "src": "the-pyramid-portrait-5.webp",
+                        "src": "5",
                         "alt": "The Pyramid in empty space"
                     },
                     {
-                        "src": "the-pyramid-portrait-6.webp",
+                        "src": "6",
                         "alt": "The Pyramid resting"
                     }
                 ]
@@ -182,10 +182,10 @@
                 "firstRow": "From the ancient pyramids of Egypt to modern skyscrapers, the cube's perfect symmetry has been a cornerstone of architectural design, reflecting both ",
                 "secondRow": "mathematical precision and a timeless aesthetic appeal.",
                 "thirdRow": "The cube, with its six equal square faces, stands as a symbol of balance and order in the world of geometry. As a fundamental building block, the cube's harmonious form extends its influence across diverse realms, reminding us of the inherent beauty in simplicity and balance.",
-                "img": "the-cube-portrait-2.webp"
+                "img": "2"
             },
             "visual": {
-                "img": "the-cube-landscape-3.webp",
+                "img": "3",
                 "alt": "The Cube in dark mode"
             },
             "content": {
@@ -196,15 +196,15 @@
                 ],
                 "images": [
                     {
-                        "src": "the-cube-portrait-4.webp",
+                        "src": "4",
                         "alt": "The Cube on grid"
                     },
                     {
-                        "src": "the-cube-portrait-5.webp",
+                        "src": "5",
                         "alt": "The Cube resting"
                     },
                     {
-                        "src": "the-cube-portrait-6.webp",
+                        "src": "6",
                         "alt": "The Sphere on dark background"
                     }
                 ]
