@@ -95,7 +95,7 @@ export default {
         <img
             :sizes="imgSizes"
             :srcset="getCurrentOrientationSrcSet()"
-            :src="getSrc"
+            :src="getSrc()"
             :alt="shape"
             :class="getImgClass"
             :loading="loading"

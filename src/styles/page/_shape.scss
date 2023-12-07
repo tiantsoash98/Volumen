@@ -58,7 +58,7 @@
         }
         &__description {
             @include p;   
-            line-height: 1;
+            line-height: 1.1;
 
             & .word {
                 overflow: hidden;
