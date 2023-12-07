@@ -30,6 +30,7 @@ export default {
                 :img-id="shape.repertoire.imgId"
                 :loading="'eager'"
                 :willChange="true"
+                :defaultSize="'100vw'"
             />
         </div>
         <div class="shape-hero__content-wrapper">
@@ -62,6 +63,8 @@ export default {
                     :img-id="shape.description.img"
                     :orientation="'portrait'"
                     :loading="'lazy'"
+                    :defaultSize="'33vw'"
+                    :smallSize="'100vw'"
                 />
             </div>
             <div class="shape-introduction__description-wrapper">
@@ -90,6 +93,7 @@ export default {
                         :orientation="'landscape'"
                         :willChange="true"
                         :loading="'lazy'"
+                        :defaultSize="'100vw'"
                     />
                 </div>
             </div>
@@ -124,7 +128,9 @@ export default {
                             :shape="shape.name" 
                             :imgId="img.src"
                             :loading="'lazy'"
-                            :orientation="'portrait'" 
+                            :orientation="'portrait'"
+                            :defaultSize="'50vw'"
+                            :smallSize="'100vw'"
                         />
                     </div>
                     </div>

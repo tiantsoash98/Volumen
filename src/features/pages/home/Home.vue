@@ -35,6 +35,7 @@ export default {
                 :imgId="1"
                 :willChange="true"
                 :loading="'eager'"
+                :defaultSize="'100vw'"
             />
         </div>
         <div class="hero__content-wrapper">

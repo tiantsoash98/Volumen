@@ -29,6 +29,22 @@ export default {
         loading: {
             type: String,
             default: "lazy"
+        },
+        defaultSize: {
+            type: String,
+            default: "100vw"
+        },
+        mediumSize: {
+            type: String,
+            default: ""
+        },
+        smallSize: {
+            type: String,
+            default: ""
+        },
+        extraSmallSize: {
+            type: String,
+            default: ""
         }
     },
     methods: {
@@ -73,12 +89,21 @@ export default {
             return this.orientation == "landscape" ? 
                     this.sizes.landscape.slice(-1) : 
                     this.sizes.portrait.slice(-1)
-        }
+        },
+        imgSizes() {
+            // (max-width: 576px) 224px, (max-width: 767px) 688px, (max-width: 991px) 43vw, 48vw
+            // (max-width: 576px) 47vw, (max-width: 767px) 30vw, 32vw
+            let imgSizes = [];
+            if (this.mediumSize !== "") imgSizes.push(`(max-width: 991px) ${this.mediumSize}`)
+            if (this.smallSize !== "") imgSizes.push(`(max-width: 767px) ${this.smallSize}`)
+            if (this.extraSmallSize !== "") imgSizes.push(`(max-width: 576px) ${this.extraSmallSize}`)
+            imgSizes.push(this.defaultSize)
+
+            return imgSizes.join(", ");
+        },
     },
     computed: {
-        imgSizes() {
-            return `(max-width: ${this.getMaxWidth()}px) 100vw, ${this.getMaxWidth()}px`;
-        },
+        
         getImgClass() {
             return "img__item " + this.imgClass;
         }
@@ -93,7 +118,7 @@ export default {
             :media="getImgMedia()" 
             :srcset="getOppositeOrientationSrcSet()">
         <img
-            :sizes="imgSizes"
+            :sizes="imgSizes()"
             :srcset="getCurrentOrientationSrcSet()"
             :src="getSrc()"
             :alt="shape"

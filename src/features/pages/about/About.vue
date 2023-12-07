@@ -32,7 +32,9 @@ export default {
                 :imgId="1"
                 :orientation="'portrait'"
                 :willChange="false"
-                :loading="'lazy'"
+                :loading="'eager'"
+                :defaultSize="'58vw'"
+                :mediumSize="'100vw'"
             />
         </div>
     </section>
@@ -72,6 +74,8 @@ export default {
                                     :orientation="'portrait'"
                                     :willChange="false"
                                     :loading="'lazy'"
+                                    :defaultSize="'40vw'"
+                                    :smallSize="'75vw'"
                                 />
                             </div>
                             <div class="about-shape__item about-shape__item--2 about-shape__item--visible-first" role="listitem">
@@ -84,6 +88,8 @@ export default {
                                     :orientation="'portrait'"
                                     :willChange="false"
                                     :loading="'lazy'"
+                                    :defaultSize="'40vw'"
+                                    :smallSize="'75vw'"
                                 />
                             </div>
                             <div class="about-shape__item about-shape__item--3 about-shape__item--visible-first" role="listitem">
@@ -96,6 +102,8 @@ export default {
                                     :orientation="'portrait'"
                                     :willChange="false"
                                     :loading="'lazy'"
+                                    :defaultSize="'40vw'"
+                                    :smallSize="'75vw'"
                                 />
                             </div>
                             <div class="about-shape__item about-shape__item--4" role="listitem">
@@ -108,6 +116,8 @@ export default {
                                     :orientation="'portrait'"
                                     :willChange="false"
                                     :loading="'lazy'"
+                                    :defaultSize="'40vw'"
+                                    :smallSize="'75vw'"
                                 />
                             </div>
                             <div class="about-shape__item about-shape__item--5" role="listitem">
@@ -120,6 +130,8 @@ export default {
                                     :orientation="'portrait'"
                                     :willChange="false"
                                     :loading="'lazy'"
+                                    :defaultSize="'40vw'"
+                                    :smallSize="'75vw'"
                                 />
                             </div>
                         </div>
@@ -144,6 +156,7 @@ export default {
                                     :orientation="'landscape'"
                                     :willChange="true"
                                     :loading="'lazy'"
+                                    :defaultSize="'100vw'"
                                 />
                             </div>
                         </div>
@@ -172,6 +185,8 @@ export default {
                         :orientation="'landscape'"
                         :willChange="false"
                         :loading="'lazy'"
+                        :defaultSize="'20vw'"
+                        :smallSize="'100vw'"
                     />
                 </div>
                 <div class="about-quote__row about-quote__row--2">
@@ -186,6 +201,8 @@ export default {
                         :orientation="'landscape'"
                         :willChange="false"
                         :loading="'lazy'"
+                        :defaultSize="'20vw'"
+                        :smallSize="'100vw'"
                     />
                 </div>
             </div>
