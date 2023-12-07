@@ -10,11 +10,6 @@ export default {
     props: {
         item: String,
     },
-    methods: {
-        imgUrl(url) {
-            return "/" + url;
-        }
-    },
     computed: {
         shape(){
             return data.shapes.filter(obj => obj.slug == this.item)[0];
@@ -28,14 +23,14 @@ export default {
     <section class="section section--no-margin-top shape-hero__wrapper">
         <div class="shape-hero__img-wrapper">
             <div class="shape-hero__img-overlay"></div>
-            <!-- <img class="shape-hero__img" :src="imgUrl(shape.heroImg)" :alt="shape.subtitle" loading="eager"> -->
             <Image 
                 class="shape-hero__img" 
                 :slug="shape.slug" 
-                :shape="shape.name" 
+                :shape="shape.subtitle" 
                 :img-id="shape.repertoire.imgId"
-                loading="eager"
-                :alt="shape.subtitle"/>
+                :loading="'eager'"
+                :willChange="true"
+            />
         </div>
         <div class="shape-hero__content-wrapper">
             <div class="shape-hero__name-wrapper">
@@ -59,16 +54,15 @@ export default {
                 <div class="shape-introduction__text-wrapper shape-introduction__text-wrapper--2">
                     <p class="shape-introduction__content">{{ shape.description.secondRow }}</p>
                 </div>
-                <div class="shape-introduction__img-wrapper image-scroll__wrapper">
-                    <!-- <img class="shape-introduction__img image-scroll" :src="imgUrl(shape.description.img)" :alt="shape.name"> -->
-                    <Image 
-                        class="shape-introduction__img image-scroll"
-                        :slug="shape.slug" 
-                        :shape="shape.name" 
-                        :img-id="shape.description.img"
-                        loading="lazy"
-                        :alt="shape.name"/>
-                </div>
+                <Image 
+                    class="shape-introduction__img-wrapper image-scroll__wrapper"
+                    :imgClass="'shape-introduction__img image-scroll'"
+                    :slug="shape.slug" 
+                    :shape="shape.name" 
+                    :img-id="shape.description.img"
+                    :orientation="'portrait'"
+                    :loading="'lazy'"
+                />
             </div>
             <div class="shape-introduction__description-wrapper">
                 <p class="shape-introduction__description">{{ shape.description.thirdRow }}</p>
@@ -87,16 +81,16 @@ export default {
             <div class="shape-visual__sticky-wrapper">
                 <div class="shape-visual__overlay"></div>
                 <div class="shape-visual__clip">
-                    <div class="shape-visual__img-wrapper">
-                        <!-- <img class="shape-visual__img" :src="imgUrl(shape.visual.img)" :alt="shape.visual.alt" loading="lazy"> -->
-                        <Image 
-                            class="shape-visual__img"
-                            :slug="shape.slug" 
-                            :shape="shape.name" 
-                            :img-id="shape.visual.img"
-                            loading="lazy"
-                            :alt="shape.visual.alt" />
-                    </div>
+                    <Image 
+                        class="shape-visual__img-wrapper"
+                        :imgClass="'shape-visual__img'"
+                        :slug="shape.slug" 
+                        :shape="shape.name" 
+                        :img-id="shape.visual.img"
+                        :orientation="'landscape'"
+                        :willChange="true"
+                        :loading="'lazy'"
+                    />
                 </div>
             </div>
         </div>
@@ -122,16 +116,16 @@ export default {
                 <div class="shape-content__img-track">
                     <div class="shape-content__sticky-wrapper">
                     <div class="shape-content__img-wrapper">
-                        <!-- <img v-for="(img, index) in shape.content.images" :class="`shape-content__img shape-content__img--${index+1}`" :src="imgUrl(img.src)" :key="index" :alt="img.alt" loading="lazy"> -->
                         <Image 
                             v-for="(img, index) in shape.content.images"
                             :key="img+index"
-                            :class="`shape-content__img shape-content__img--${index+1}`"
+                            :imgClass="`shape-content__img shape-content__img--${index+1}`"
                             :slug="shape.slug" 
                             :shape="shape.name" 
-                            :img-id="img.src"
-                            loading="lazy"
-                            :alt="img.alt" />
+                            :imgId="img.src"
+                            :loading="'lazy'"
+                            :orientation="'portrait'" 
+                        />
                     </div>
                     </div>
                 </div>

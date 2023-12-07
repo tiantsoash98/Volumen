@@ -39,20 +39,20 @@ export default {
             <article v-for="(shape, index) in shapes" :key="shape.id" :class="`repertoire__item repertoire__item--${index+1}`" role="listitem">
                 <figure class="repertoire__image-wrapper image-scroll__wrapper">
                     <a :href="getShapeHref(shape.slug)">
-                        <!-- <img class="repertoire__img repertoire__img--main image-scroll" :src="getImgByOrientation(shape.slug, shape.repertoire.preferedOrientation, shape.repertoire.imgId)" :alt="shape.name" loading="eager"> -->
-                        <!-- <img class="repertoire__img repertoire__img--hover" :src="getImgByOrientation(shape.slug, shape.repertoire.preferedOrientation, shape.repertoire.hoverId)" :alt="shape.name" loading="lazy"> -->
                         <Image 
                             :imgClass="'repertoire__img repertoire__img--main image-scroll'"
                             :slug="shape.slug" 
                             :shape="shape.name" 
                             :imgId="shape.repertoire.imgId"
-                            :loading="'lazy'"
+                            :orientation="shape.repertoire.preferedOrientation"
+                            :loading="'eager'"
                         />
                         <Image
                             :imgClass="'repertoire__img repertoire__img--hover'"
                             :slug="shape.slug" 
                             :shape="shape.name" 
                             :img-id="shape.repertoire.hoverId"
+                            :orientation="shape.repertoire.preferedOrientation"
                             :loading="'lazy'"
                         />
                     </a>
