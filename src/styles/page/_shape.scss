@@ -58,6 +58,11 @@
         }
         &__description {
             @include p;   
+            line-height: 1;
+
+            & .word {
+                overflow: hidden;
+            }
         }
         &__scroll-wrapper {
             position: relative;
@@ -175,7 +180,7 @@
             position: relative;
 
             @include media(small, portrait){
-                height: 50vh;
+                height: 70vh;
                 margin-top: responsive-size(var(--space-md));
             }
         }
