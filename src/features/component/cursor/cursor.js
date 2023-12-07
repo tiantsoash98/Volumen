@@ -15,7 +15,6 @@ function cursor(){
     let matchMedia = gsap.matchMedia();
 
     matchMedia.add("(hover: none)", () => {
-        console.log('Touchscreen detected')
         cursor.destroy()
     });
     

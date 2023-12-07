@@ -1,10 +1,8 @@
 <script>
-import Repertoire from '../../component/repertoire/Repertoire.vue';
 import Image from '../../component/image/Image.vue';
 
 export default {
     components: {
-        Repertoire,
         Image
     }
 }
@@ -28,15 +26,16 @@ export default {
 
     <section class="hero__wrapper">
         <div class="hero__image-wrapper">
-        <div class="hero__overlay"></div>
-        <Image
-            class="hero__img-wrapper image-scroll__wrapper"
-            :imgClass="'hero__img image-scroll'"
-            :slug="'the-sphere'" 
-            :shape="'The Sphere'" 
-            :imgId="1"
-            :willChange="true"
-        />
+            <div class="hero__overlay"></div>
+            <Image
+                class="hero__img-wrapper image-scroll__wrapper"
+                :imgClass="'hero__img image-scroll'"
+                :slug="'the-sphere'" 
+                :shape="'The Sphere'" 
+                :imgId="1"
+                :willChange="true"
+                :loading="'eager'"
+            />
         </div>
         <div class="hero__content-wrapper">
         <h1 class="hero__content">
@@ -52,6 +51,6 @@ export default {
             <h3 class="repertoire__title">Repertoire of forms</h3>
             </div>
         </div>
-        <Repertoire />
+        <div id="repertoire"></div>
     </section>
 </template>

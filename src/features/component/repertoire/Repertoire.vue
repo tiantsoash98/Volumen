@@ -42,15 +42,19 @@ export default {
                         <!-- <img class="repertoire__img repertoire__img--main image-scroll" :src="getImgByOrientation(shape.slug, shape.repertoire.preferedOrientation, shape.repertoire.imgId)" :alt="shape.name" loading="eager"> -->
                         <!-- <img class="repertoire__img repertoire__img--hover" :src="getImgByOrientation(shape.slug, shape.repertoire.preferedOrientation, shape.repertoire.hoverId)" :alt="shape.name" loading="lazy"> -->
                         <Image 
-                            class="repertoire__img repertoire__img--main image-scroll"
+                            :imgClass="'repertoire__img repertoire__img--main image-scroll'"
                             :slug="shape.slug" 
                             :shape="shape.name" 
-                            :img-id="shape.repertoire.imgId"/>
+                            :imgId="shape.repertoire.imgId"
+                            :loading="'lazy'"
+                        />
                         <Image
-                            class="repertoire__img repertoire__img--hover"
+                            :imgClass="'repertoire__img repertoire__img--hover'"
                             :slug="shape.slug" 
                             :shape="shape.name" 
-                            :img-id="shape.repertoire.hoverId"/>
+                            :img-id="shape.repertoire.hoverId"
+                            :loading="'lazy'"
+                        />
                     </a>
                 </figure>
                 <div class="repertoire__details">

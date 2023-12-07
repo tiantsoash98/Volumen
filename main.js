@@ -94,6 +94,7 @@ function initPageTransitions(){
       beforeEnter(){
         select('body').className = 'body body--home';
         home()
+        repertoire()
         homeScroll()
       }
     },

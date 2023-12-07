@@ -25,6 +25,10 @@ export default {
         },
         imgClass : {
             type: String
+        },
+        loading: {
+            type: String,
+            default: "lazy"
         }
     },
     methods: {
@@ -94,6 +98,7 @@ export default {
             :src="getSrc"
             :alt="shape"
             :class="getImgClass"
+            :loading="loading"
         >
     </picture>
 </template>
