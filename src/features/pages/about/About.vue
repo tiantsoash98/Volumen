@@ -65,7 +65,7 @@ export default {
                             <div class="about-shape__item about-shape__item--1 about-shape__item--visible-first" role="listitem">
                                 <Image
                                     class="about-shape__img-wrapper"
-                                    :imgClass="'about-grid__img'"
+                                    :imgClass="'about-shape__img'"
                                     :slug="'the-pyramid'" 
                                     :shape="'The Pyramid'" 
                                     :imgId="3"
@@ -77,7 +77,7 @@ export default {
                             <div class="about-shape__item about-shape__item--2 about-shape__item--visible-first" role="listitem">
                                 <Image
                                     class="about-shape__img-wrapper"
-                                    :imgClass="'about-grid__img'"
+                                    :imgClass="'about-shape__img'"
                                     :slug="'the-sphere'" 
                                     :shape="'The Sphere'" 
                                     :imgId="3"
@@ -89,7 +89,7 @@ export default {
                             <div class="about-shape__item about-shape__item--3 about-shape__item--visible-first" role="listitem">
                                 <Image
                                     class="about-shape__img-wrapper"
-                                    :imgClass="'about-grid__img'"
+                                    :imgClass="'about-shape__img'"
                                     :slug="'the-cube'" 
                                     :shape="'The Cube'" 
                                     :imgId="3"
@@ -101,7 +101,7 @@ export default {
                             <div class="about-shape__item about-shape__item--4" role="listitem">
                                 <Image
                                     class="about-shape__img-wrapper"
-                                    :imgClass="'about-grid__img'"
+                                    :imgClass="'about-shape__img'"
                                     :slug="'the-square'" 
                                     :shape="'The Square'" 
                                     :imgId="3"
@@ -113,7 +113,7 @@ export default {
                             <div class="about-shape__item about-shape__item--5" role="listitem">
                                 <Image
                                     class="about-shape__img-wrapper"
-                                    :imgClass="'about-grid__img'"
+                                    :imgClass="'about-shape__img'"
                                     :slug="'the-icosahedral'" 
                                     :shape="'The Icosahedral'" 
                                     :imgId="3"

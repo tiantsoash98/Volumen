@@ -7,7 +7,7 @@
         display: grid;
         grid-template-columns: repeat(12, minmax(0, 1fr));
         column-gap: responsive-size(var(--space-sm));
-        row-gap: responsive-size(var(--space-lg));
+        row-gap: responsive-size(var(--space-xl));
 
         @include media(small, portrait){
             row-gap: responsive-size(var(--space-sm));
