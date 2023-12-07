@@ -1,11 +1,14 @@
 <script>
+import { ref } from 'vue'
+
 export default {
     data(){
         return {
             sizes: {
                 landscape: [320,969,1332,1740,2025,2880],
                 portrait: [320,544,706,1134,2160]
-            }
+            },
+            isLoaded: ref(false),
         }
     },
     props: {
@@ -24,7 +27,8 @@ export default {
             default: false
         },
         imgClass : {
-            type: String
+            type: String,
+            default: ""
         },
         loading: {
             type: String,
@@ -91,8 +95,6 @@ export default {
                     this.sizes.portrait.slice(-1)
         },
         imgSizes() {
-            // (max-width: 576px) 224px, (max-width: 767px) 688px, (max-width: 991px) 43vw, 48vw
-            // (max-width: 576px) 47vw, (max-width: 767px) 30vw, 32vw
             let imgSizes = [];
             if (this.mediumSize !== "") imgSizes.push(`(max-width: 991px) ${this.mediumSize}`)
             if (this.smallSize !== "") imgSizes.push(`(max-width: 767px) ${this.smallSize}`)
@@ -101,18 +103,23 @@ export default {
 
             return imgSizes.join(", ");
         },
+        loaded(){
+            this.isLoaded = true;
+        }
     },
     computed: {
-        
         getImgClass() {
             return "img__item " + this.imgClass;
+        },
+        getBackgroundImage(){
+            return `background-image: url(/${this.slug}-landscape-${this.imgId}-20.jpg)`;
         }
     }
 }
 </script>
 
 <template>
-    <picture class="img__wrapper">
+    <picture class="img__wrapper" :style="getBackgroundImage">
         <source 
             v-if="willChange"
             :media="getImgMedia()" 
@@ -122,8 +129,9 @@ export default {
             :srcset="getCurrentOrientationSrcSet()"
             :src="getSrc()"
             :alt="shape"
-            :class="getImgClass"
+            :class="[{ 'img__item': true, 'img__item--loaded': isLoaded},imgClass]"
             :loading="loading"
+            @load="loaded"
         >
     </picture>
 </template>
