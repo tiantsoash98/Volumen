@@ -29,7 +29,6 @@
           </div>
           <div class="header__location-wrapper">
             <span class="header__location">antananarivo, mdg</span>
-            <!-- <div class="header__dot"></div> -->
           </div>
         </nav>
         <nav class="header__mobile">

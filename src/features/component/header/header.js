@@ -12,10 +12,7 @@ function header(){
     let nav =  document.querySelector('nav.header__mobile');
     let isAnimating = false;
 
-    nav.classList.remove('nav--open')
-    menu.classList.remove('menu--open')
-    menu.setAttribute('aria-expanded', 'false')
-
+    resetHeader();
     splitNavLinks();
 
     let defaultEase = getComputedStyle(document.body).getPropertyValue('--default-ease');
@@ -39,13 +36,14 @@ function header(){
     ==============================================================*/
     menuOpenTl
         .set(menu, {display: 'block'})
+        .set(menu, {display: 'block'})
         .set('.menu__links', {opacity: 1})
         .from('.menu__frame', {scaleY: 0} )
         .to('.header__label--menu, .header__label--close', {yPercent: -100}, '<')
         .from('.menu__link--1 .char' , { yPercent: 100, stagger: 0.06 }, '<+0.2')
         .from('.menu__link--2 .char' , { yPercent: 100, stagger: 0.06 }, '<')
         .from('.menu__link--3 .char' , { yPercent: 100, stagger: 0.06 }, '<')
-        .from('.menu__bottom-wrapper', {opacity: 0}, '<+0.5')
+        .fromTo('.menu__bottom-wrapper', {opacity: 0}, {opacity: 1}, '<+0.5')
         
 
    /*==============================================================
@@ -85,6 +83,19 @@ function header(){
     function splitNavLinks(){
         SplitType.create('.menu__link-wrapper a')
     }    
+
+    function resetHeader(){
+        document.querySelector('.header__label--menu').style.transform = "translate(0%, 0%)"
+        document.querySelector('.header__label--close').style.transform = "translate(0%, 0%)"
+        document.querySelectorAll('.menu__links').forEach((link) => link.style.opacity = 0)
+        document.querySelector('.menu__bottom-wrapper').style.opacity = 0
+        document.querySelector('.menu__frame').style.transform = "translate(0%, 0%)"
+        menu.style.display = "none"
+
+        nav.classList.remove('nav--open')
+        menu.classList.remove('menu--open')
+        menu.setAttribute('aria-expanded', 'false')
+    }
 }
 
 
