@@ -32,7 +32,9 @@ export default {
                 :imgId="1"
                 :orientation="'portrait'"
                 :willChange="false"
-                :loading="'lazy'"
+                :loading="'eager'"
+                :defaultSize="'58vw'"
+                :mediumSize="'100vw'"
             />
         </div>
     </section>
@@ -65,61 +67,71 @@ export default {
                             <div class="about-shape__item about-shape__item--1 about-shape__item--visible-first" role="listitem">
                                 <Image
                                     class="about-shape__img-wrapper"
-                                    :imgClass="'about-grid__img'"
+                                    :imgClass="'about-shape__img'"
                                     :slug="'the-pyramid'" 
                                     :shape="'The Pyramid'" 
                                     :imgId="3"
                                     :orientation="'portrait'"
                                     :willChange="false"
                                     :loading="'lazy'"
+                                    :defaultSize="'40vw'"
+                                    :smallSize="'75vw'"
                                 />
                             </div>
                             <div class="about-shape__item about-shape__item--2 about-shape__item--visible-first" role="listitem">
                                 <Image
                                     class="about-shape__img-wrapper"
-                                    :imgClass="'about-grid__img'"
+                                    :imgClass="'about-shape__img'"
                                     :slug="'the-sphere'" 
                                     :shape="'The Sphere'" 
                                     :imgId="3"
                                     :orientation="'portrait'"
                                     :willChange="false"
                                     :loading="'lazy'"
+                                    :defaultSize="'40vw'"
+                                    :smallSize="'75vw'"
                                 />
                             </div>
                             <div class="about-shape__item about-shape__item--3 about-shape__item--visible-first" role="listitem">
                                 <Image
                                     class="about-shape__img-wrapper"
-                                    :imgClass="'about-grid__img'"
+                                    :imgClass="'about-shape__img'"
                                     :slug="'the-cube'" 
                                     :shape="'The Cube'" 
                                     :imgId="3"
                                     :orientation="'portrait'"
                                     :willChange="false"
                                     :loading="'lazy'"
+                                    :defaultSize="'40vw'"
+                                    :smallSize="'75vw'"
                                 />
                             </div>
                             <div class="about-shape__item about-shape__item--4" role="listitem">
                                 <Image
                                     class="about-shape__img-wrapper"
-                                    :imgClass="'about-grid__img'"
+                                    :imgClass="'about-shape__img'"
                                     :slug="'the-square'" 
                                     :shape="'The Square'" 
                                     :imgId="3"
                                     :orientation="'portrait'"
                                     :willChange="false"
                                     :loading="'lazy'"
+                                    :defaultSize="'40vw'"
+                                    :smallSize="'75vw'"
                                 />
                             </div>
                             <div class="about-shape__item about-shape__item--5" role="listitem">
                                 <Image
                                     class="about-shape__img-wrapper"
-                                    :imgClass="'about-grid__img'"
+                                    :imgClass="'about-shape__img'"
                                     :slug="'the-icosahedral'" 
                                     :shape="'The Icosahedral'" 
                                     :imgId="3"
                                     :orientation="'portrait'"
                                     :willChange="false"
                                     :loading="'lazy'"
+                                    :defaultSize="'40vw'"
+                                    :smallSize="'75vw'"
                                 />
                             </div>
                         </div>
@@ -144,6 +156,7 @@ export default {
                                     :orientation="'landscape'"
                                     :willChange="true"
                                     :loading="'lazy'"
+                                    :defaultSize="'100vw'"
                                 />
                             </div>
                         </div>
@@ -172,6 +185,8 @@ export default {
                         :orientation="'landscape'"
                         :willChange="false"
                         :loading="'lazy'"
+                        :defaultSize="'20vw'"
+                        :smallSize="'100vw'"
                     />
                 </div>
                 <div class="about-quote__row about-quote__row--2">
@@ -186,6 +201,8 @@ export default {
                         :orientation="'landscape'"
                         :willChange="false"
                         :loading="'lazy'"
+                        :defaultSize="'20vw'"
+                        :smallSize="'100vw'"
                     />
                 </div>
             </div>

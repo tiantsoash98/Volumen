@@ -101,7 +101,6 @@ export default {
                     <article :class="articleClass(index, isPortrait(index))">
                         <figure class="suggested__image-wrapper">
                             <a :href="getShapeHref(shape.slug)">
-                                <!-- <img class="suggested__img" :src="getImgByOrientation(shape.slug, shape.repertoire.imgId, isPortrait(index))" :alt="shape.name" loading="lazy"> -->
                                 <Image 
                                     class="suggested__img"
                                     :slug="shape.slug" 
@@ -110,6 +109,10 @@ export default {
                                     :orientation="getImgOrientation(index)"
                                     :loading="'lazy'"
                                     :willChange="false"
+                                    :defaultSize="'33vwvw'"
+                                    :mediumSize="'33vw'"
+                                    :smallSize="'50vw'"
+                                    :extraSmallSize="'100vw'"
                                 />
                             </a>
                         </figure>

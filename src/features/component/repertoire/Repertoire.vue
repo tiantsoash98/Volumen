@@ -21,6 +21,11 @@ export default {
         },
         getImgByOrientation(slug, orientation, imgId){
             return `/${slug}-${orientation}-${imgId}.webp`;
+        },
+        defaultSize(index){
+            if(index == 2) return "100vw";
+            else if(index == 4) return "66vw"
+            return "50vw";
         }
     },
     computed: {
@@ -46,6 +51,8 @@ export default {
                             :imgId="shape.repertoire.imgId"
                             :orientation="shape.repertoire.preferedOrientation"
                             :loading="'eager'"
+                            :defaultSize="defaultSize(index)"
+                            :smallSize="'100vw'"
                         />
                         <Image
                             :imgClass="'repertoire__img repertoire__img--hover'"
@@ -54,6 +61,8 @@ export default {
                             :img-id="shape.repertoire.hoverId"
                             :orientation="shape.repertoire.preferedOrientation"
                             :loading="'lazy'"
+                            :defaultSize="defaultSize(index)"
+                            :smallSize="'100vw'"
                         />
                     </a>
                 </figure>
