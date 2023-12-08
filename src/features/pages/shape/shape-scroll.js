@@ -146,11 +146,11 @@ function shapeScroll(){
     }, '<')
 
     
-    let webBreakpoint = getComputedStyle(document.body).getPropertyValue('--br-min-width-sm');
+    let desktopBreakpoint = getComputedStyle(document.body).getPropertyValue('--br-min-width-sm');
     let matchMedia = gsap.matchMedia();
 
-    // Web only
-    matchMedia.add(`(min-width : ${webBreakpoint})`, () => {
+    // Desktop only
+    matchMedia.add(`(min-width : ${desktopBreakpoint})`, () => {
 
         // Visual label
         // gsap.timeline({

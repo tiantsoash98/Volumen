@@ -241,6 +241,10 @@
         &__section-width {
             position: relative;
             width: 200vw;
+
+            @include media(small, portrait){
+                width: 300vw;
+            }
         }
         &__sticky-element {
             width: 100vw;

@@ -73,22 +73,6 @@ function aboutScroll(){
     })
 
     // Grid
-    // Sticky horizontal
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: ".about-grid__section-width",
-            //trigger element - viewport
-            start: "left left",
-            end: "right right",
-            scrub: true,
-            containerAnimation: tMain,
-        }
-    })
-    .to('.about-grid__sticky-element', {
-        xPercent: 100,
-        ease: "none"
-    })
-
     // Title
     SplitType.create('.about-grid__title', {types: 'lines, words', lineClass: 'about-grid__title--line', wordClass: "about-grid__title--word"});
 
@@ -183,136 +167,163 @@ function aboutScroll(){
     })
 
 
-    let webBreakpoint = getComputedStyle(document.body).getPropertyValue('--br-min-width-sm');
+    let desktopBreakpoint = getComputedStyle(document.body).getPropertyValue('--br-min-width-sm');
+    let mobileBreakpoint = getComputedStyle(document.body).getPropertyValue('--default-show-nav-menu-breakpoint');
     let matchMedia = gsap.matchMedia();
 
-    // Web only
-    matchMedia.add(`(min-width : ${webBreakpoint})`, () => {
+    matchMedia.add({
+        isDesktop: `(min-width : ${desktopBreakpoint})`,
+        isMobile: `(max-width : ${mobileBreakpoint})`
+    }, (context) => {
+        let { isMobile, isDesktop } = context.conditions;
 
-        // Shapes
-        delay = 0
-        let shapesVisible = gsap.utils.toArray('.about-shape__item--1, .about-shape__item--2, .about-shape__item--3')
-        let shapes = gsap.utils.toArray('.about-shape__item--4, .about-shape__item--5')
-
-        shapesVisible.forEach((shape) => {
-            gsap.timeline({
-                defaults: {
-                    duration: 1,
-                    ease: "customEase"
-                },
-                scrollTrigger: {
-                    trigger: ".about-beauty",
-                    //trigger element - viewport
-                    start: "top 70%",
-                    end: "top center"
-                }
-            })
-            .fromTo(shape, {
-                clipPath: 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)'
-            }, {
-                clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
-                delay: delay,
-            })
-            .from(shape.querySelector('.about-shape__img'), {
-                scale: 1.4
-            }, '<')
-
-            delay += 0.15
-        })
-
-        shapes.forEach((shape) => {
-            gsap.timeline({
-                defaults: {
-                    duration: 1,
-                    ease: "customEase"
-                },
-                scrollTrigger: {
-                    trigger: shape,
-                    //trigger element - viewport
-                    start: "left right",
-                    end: "left center",
-                    containerAnimation: tMain,
-                }
-            })
-            .fromTo(shape.querySelector('.about-shape__img-wrapper'), {
-                clipPath: 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)'
-            }, {
-                clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
-            })
-            .from(shape.querySelector('.about-shape__img'), {
-                scale: 1.4
-            }, '<')
-        })
-
-
-
-        // // Image 2
-        // gsap.timeline({
-        //     defaults: { 
-        //         duration: 2
-        //     },
-        //     scrollTrigger: {
-        //         trigger: ".about-grid__section-width",
-        //         //trigger element - viewport
-        //         start: "40% left",
-        //         end: "55% left",
-        //         scrub: 1,
-        //         containerAnimation: tMain,
-        //     }
-        // })
-        // .to('.about-grid__img-wrapper--1 .about-grid__img', {
-        //     opacity: 0,
-        //     scale: 1.3,
-        // })
-        // .from('.about-grid__img-wrapper--2 .about-grid__img', {
-        //     scale: 1.3,
-        // }, '<')
-
-
-        // SplitType.create('.about-quote__content', {types: 'chars', charClass: "about-quote__content--char"});
-
-        // gsap.timeline({
-        //     scrollTrigger: {
-        //         trigger: ".about-quote",
-        //         //trigger element - viewport
-        //         start: "top 65%",
-        //         end: "top 15%",
-        //         scrub: true
-        //     }
-        // })
-        // .from(['.about-quote__content--1 .about-quote__content--char', '.about-quote__content--2 .about-quote__content--char'], {
-        //     yPercent: 100,
-        //     opacity: 0,
-        //     stagger: 0.05,
-        //     duration: 1.5,
-        // })
-        // .from(['.about-quote__content--3 .about-quote__content--char', '.about-quote__content--4 .about-quote__content--char'], {
-        //     yPercent: 100,
-        //     opacity: 0,
-        //     stagger: 0.05,
-        //     duration: 1.5,
-        //     delay: 1
-        // })
-
-
-        // Credits
+        // Grid
+        // Sticky horizontal
         gsap.timeline({
             scrollTrigger: {
-                trigger: ".about-credits",
+                trigger: ".about-grid__section-width",
                 //trigger element - viewport
-                start: "top 70%",
-                end: "top 40%",
-                // scrub: true
+                start: "left left",
+                end: "right right",
+                scrub: true,
+                containerAnimation: tMain,
             }
         })
-        .from('.about-credits__title', {
-            opacity: 0,
-            duration: 1,
+        .to('.about-grid__sticky-element', {
+            xPercent: isMobile ? 200 : 100,
+            ease: "none"
         })
-        .from('.about-credits__credits', {
-            opacity: 0,
-            duration: 1
-        }, '<')
+
+        // Desktop only
+        if(isDesktop) {
+
+            // Shapes
+            delay = 0
+            let shapesVisible = gsap.utils.toArray('.about-shape__item--1, .about-shape__item--2, .about-shape__item--3')
+            let shapes = gsap.utils.toArray('.about-shape__item--4, .about-shape__item--5')
+
+            shapesVisible.forEach((shape) => {
+                gsap.timeline({
+                    defaults: {
+                        duration: 1,
+                        ease: "customEase"
+                    },
+                    scrollTrigger: {
+                        trigger: ".about-beauty",
+                        //trigger element - viewport
+                        start: "top 70%",
+                        end: "top center"
+                    }
+                })
+                .fromTo(shape, {
+                    clipPath: 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)'
+                }, {
+                    clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+                    delay: delay,
+                })
+                .from(shape.querySelector('.about-shape__img'), {
+                    scale: 1.4
+                }, '<')
+
+                delay += 0.15
+            })
+
+            shapes.forEach((shape) => {
+                gsap.timeline({
+                    defaults: {
+                        duration: 1,
+                        ease: "customEase"
+                    },
+                    scrollTrigger: {
+                        trigger: shape,
+                        //trigger element - viewport
+                        start: "left right",
+                        end: "left center",
+                        containerAnimation: tMain,
+                    }
+                })
+                .fromTo(shape.querySelector('.about-shape__img-wrapper'), {
+                    clipPath: 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)'
+                }, {
+                    clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+                })
+                .from(shape.querySelector('.about-shape__img'), {
+                    scale: 1.4
+                }, '<')
+            })
+
+
+
+            // // Image 2
+            // gsap.timeline({
+            //     defaults: { 
+            //         duration: 2
+            //     },
+            //     scrollTrigger: {
+            //         trigger: ".about-grid__section-width",
+            //         //trigger element - viewport
+            //         start: "40% left",
+            //         end: "55% left",
+            //         scrub: 1,
+            //         containerAnimation: tMain,
+            //     }
+            // })
+            // .to('.about-grid__img-wrapper--1 .about-grid__img', {
+            //     opacity: 0,
+            //     scale: 1.3,
+            // })
+            // .from('.about-grid__img-wrapper--2 .about-grid__img', {
+            //     scale: 1.3,
+            // }, '<')
+
+
+            // SplitType.create('.about-quote__content', {types: 'chars', charClass: "about-quote__content--char"});
+
+            // gsap.timeline({
+            //     scrollTrigger: {
+            //         trigger: ".about-quote",
+            //         //trigger element - viewport
+            //         start: "top 65%",
+            //         end: "top 15%",
+            //         scrub: true
+            //     }
+            // })
+            // .from(['.about-quote__content--1 .about-quote__content--char', '.about-quote__content--2 .about-quote__content--char'], {
+            //     yPercent: 100,
+            //     opacity: 0,
+            //     stagger: 0.05,
+            //     duration: 1.5,
+            // })
+            // .from(['.about-quote__content--3 .about-quote__content--char', '.about-quote__content--4 .about-quote__content--char'], {
+            //     yPercent: 100,
+            //     opacity: 0,
+            //     stagger: 0.05,
+            //     duration: 1.5,
+            //     delay: 1
+            // })
+
+
+            // Credits
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".about-credits",
+                    //trigger element - viewport
+                    start: "top 70%",
+                    end: "top 40%",
+                    // scrub: true
+                }
+            })
+            .from('.about-credits__title', {
+                opacity: 0,
+                duration: 1,
+            })
+            .from('.about-credits__credits', {
+                opacity: 0,
+                duration: 1
+            }, '<')
+
+            // end of is desktop only
+        }
 
         
 
