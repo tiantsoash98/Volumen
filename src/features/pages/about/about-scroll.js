@@ -17,7 +17,13 @@ function aboutScroll(){
     });
 
     // Symphony
-    SplitType.create('.about-symphony__title', {types: 'lines, words', lineClass: 'about-symphony__title--line', wordClass: "about-symphony__title--word"});
+    SplitType
+        .create('.about-symphony__title', 
+        {
+            types: 'lines, words', 
+            lineClass: 'about-symphony__title--line', 
+            wordClass: "about-symphony__title--word"
+        });
 
     let delay = 0
     let symphonyLines = gsap.utils.toArray('.about-symphony__title--line')
@@ -74,10 +80,16 @@ function aboutScroll(){
 
     // Grid
     // Title
-    SplitType.create('.about-grid__title', {types: 'lines, words', lineClass: 'about-grid__title--line', wordClass: "about-grid__title--word"});
+    SplitType.create('.about-grid__title', 
+    {
+        types: 'lines, words', 
+        lineClass: 'about-grid__title--line', 
+        wordClass: 'about-grid__title--word'
+    });
 
     delay = 0;
     let gridTitleLines = gsap.utils.toArray('.about-grid__title--line');
+
     let titleTL = gsap.timeline({
         defaults: { duration: 2, ease: "customEase" },
         scrollTrigger: {
@@ -116,7 +128,7 @@ function aboutScroll(){
     })
 
     
-    // Image 1
+    // Image
     gsap.timeline({
         scrollTrigger: {
             trigger: ".about-grid__section-width",
