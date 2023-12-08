@@ -25,9 +25,7 @@ import aboutAnimation from './src/features/pages/about/about-animation';
 
 gsap.registerPlugin(ScrollTrigger, CustomEase);
 
-const body = document.body;
 const select = (e) => document.querySelector(e);
-const selectAll = (e) => document.querySelectorAll(e);
 const defaultEase = getComputedStyle(document.body).getPropertyValue('--default-ease');
 CustomEase.create("customEase", defaultEase);
 
@@ -63,6 +61,7 @@ function initPageTransitions(){
       async once() {
         loader()
         initScroll();
+        initCursor();
         initScript();
         await initLoader();
       },
@@ -187,9 +186,13 @@ function initScript(){
   header()
   headerScroll()
   footer()
-  cursor()
   textReveal()
   imageScroll()
+}
+
+// Init cursor
+function initCursor(){
+  cursor()
 }
 
 // Init scroll
