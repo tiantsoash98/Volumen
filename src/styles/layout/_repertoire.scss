@@ -19,7 +19,7 @@
         display: grid;
         grid-template-columns: repeat(12, minmax(0, 1fr));
         column-gap: responsive-size(var(--space-sm));
-        row-gap: responsive-size(var(--space-md));
+        row-gap: responsive-size(var(--space-xxl));
 
         @include media(small, portrait){
             grid-template-columns: 1fr;
