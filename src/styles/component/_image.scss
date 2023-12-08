@@ -16,6 +16,7 @@
         opacity: 0;
 
         &--loaded {
+            transition: opacity 1s var(--alias-default-ease);
             opacity: 1;
         }
     }

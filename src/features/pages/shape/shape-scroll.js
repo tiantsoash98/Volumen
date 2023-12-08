@@ -25,11 +25,13 @@ function shapeScroll(){
     .to('.shape-hero__img-overlay', {
         opacity: 0.9
     })
-    // .to('.shape-hero__img', {
-    //     yPercent: 30,
-    // }, '<')
+    .to('.shape-hero__img', {
+        yPercent: 20,
+        ease: "none"
+    }, '<')
     .to('.shape-hero__scroll', {
         xPercent: 100,
+        ease: "none"
     })
 
 
@@ -94,7 +96,7 @@ function shapeScroll(){
             trigger: ".shape-content__img-track",
             //trigger element - viewport
             start: "top top",
-            end: "10% top",
+            end: "5% top",
         }
     })
     .from('.shape-content__by', {
