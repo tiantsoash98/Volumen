@@ -8,8 +8,6 @@ function shapeScroll(){
 
     const defaultEase = getComputedStyle(document.body).getPropertyValue('--default-ease');
     CustomEase.create("customEase", defaultEase);
-    let showNavMenuBreakpoint = getComputedStyle(document.body).getPropertyValue('--default-show-nav-menu-breakpoint');
-    let matchMedia = gsap.matchMedia();
 
     // Header
     gsap.timeline({
@@ -148,8 +146,11 @@ function shapeScroll(){
     }, '<')
 
     
-    // Mobile
-    matchMedia.add(`(min-width : ${showNavMenuBreakpoint})`, () => {
+    let webBreakpoint = getComputedStyle(document.body).getPropertyValue('--br-min-width-sm');
+    let matchMedia = gsap.matchMedia();
+
+    // Web only
+    matchMedia.add(`(min-width : ${webBreakpoint})`, () => {
 
         // Visual label
         // gsap.timeline({

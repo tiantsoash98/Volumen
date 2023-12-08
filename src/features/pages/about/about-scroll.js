@@ -85,7 +85,7 @@ function aboutScroll(){
         }
     })
     .to('.about-grid__sticky-element', {
-        xPercent: 75,
+        xPercent: 100,
         ease: "none"
     })
 
@@ -99,7 +99,7 @@ function aboutScroll(){
         scrollTrigger: {
             trigger: ".about-grid__section-width",
             //trigger element - viewport
-            start: "2% left",
+            start: "10% left",
             end: "25% left",
             containerAnimation: tMain,
             scrub: true,
@@ -110,15 +110,16 @@ function aboutScroll(){
         titleTL.from(line.querySelectorAll('.about-grid__title--word'), {
             opacity: 0,
             yPercent: 100,
+            delay: delay
         }, '<+0.15s')
 
-        delay+=0.15
+        delay+=0.3
     })
 
     titleTL.from('.about-grid__description', {
         opacity: 0,
         duration: 4
-    }, '+=0.5s')
+    }, '+=1s')
 
     
     // Image 1
@@ -182,10 +183,11 @@ function aboutScroll(){
     })
 
 
-    let showNavMenuBreakpoint = getComputedStyle(document.body).getPropertyValue('--default-show-nav-menu-breakpoint');
+    let webBreakpoint = getComputedStyle(document.body).getPropertyValue('--br-min-width-sm');
     let matchMedia = gsap.matchMedia();
 
-    matchMedia.add(`(min-width : ${showNavMenuBreakpoint})`, () => {
+    // Web only
+    matchMedia.add(`(min-width : ${webBreakpoint})`, () => {
 
         // Shapes
         delay = 0
