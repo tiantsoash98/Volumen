@@ -35,31 +35,16 @@ function aboutAnimation(){
         delay+=0.15
     })
 
-    let descriptionLines = gsap.utils.toArray('.about-main__text--line')
-
-    if(descriptionLines.length == 0) {
-        // Hero text
-        SplitType.create('.about-main__text', 
-        {
-            types: 'lines, words', 
-            lineClass: 'about-main__text--line', 
-            wordClass: 'about-main__text--word'
-        });
-
-        descriptionLines = gsap.utils.toArray('.about-main__text--line')
-    }
-
-    descriptionLines.forEach((line) => {
-        gsap.timeline({
-            defaults: { duration: 1, ease: "customEase" },
-        })
-        .from(line.querySelectorAll('.about-main__text--word'), {
-            opacity: 0,
-            yPercent: 100,
-            delay: delay
-        })
-
-        delay+=0.15
+    gsap.timeline({
+        defaults: { duration: 1.5, ease: "customEase" },
+    })
+    .fromTo('.about-main__text', {
+        opacity: 0,
+        yPercent: 50,
+    }, {
+        opacity: 1,
+        yPercent: 0,
+        delay: delay + 0.5
     })
 
     gsap.timeline({
@@ -68,7 +53,7 @@ function aboutAnimation(){
     .from('.about-main__img-wrapper', {
         yPercent: 10,
         opacity: 0,
-        delay: delay + 0.5
+        delay: delay + 0.8
     })
 }
 
