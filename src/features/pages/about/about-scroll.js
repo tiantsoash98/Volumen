@@ -17,40 +17,24 @@ function aboutScroll(){
     });
 
 
-    let symphonyLines = gsap.utils.toArray('.about-symphony__title--line')
-
-    if(symphonyLines.length == 0) {
-        // Symphony
-        SplitType
-        .create('.about-symphony__title', 
-        {
-            types: 'lines, words', 
-            lineClass: 'about-symphony__title--line', 
-            wordClass: "about-symphony__title--word"
-        });
-
-        symphonyLines = gsap.utils.toArray('.about-symphony__title--line')
-    }
-
-    let delay = 0
-
-    symphonyLines.forEach((line) => {
-        gsap.timeline({
-            defaults: { duration: 1.5, ease: "customEase" },
-            scrollTrigger: {
-                trigger: ".about-symphony",
-                //trigger element - viewport
-                start: "top 90%",
-                end: "top 40%",
-            }
-        })
-        .from(line.querySelectorAll('.about-symphony__title--word'), {
-            opacity: 0,
-            yPercent: 100,
-            delay: delay
-        })
-
-        delay+=0.15
+    gsap.timeline({
+        defaults: { duration: 0.8, ease: "customEase" },
+        scrollTrigger: {
+            trigger: ".about-symphony",
+            //trigger element - viewport
+            start: "top 80%",
+            end: "top 40%",
+        }
+    })
+    .fromTo('.about-symphony__title-line',
+    {
+        opacity: 0,
+        yPercent: 100
+    },
+    {
+        opacity: 1,
+        yPercent: 0,
+        stagger: 0.1
     })
 
     // Horizontal scroll
@@ -85,20 +69,14 @@ function aboutScroll(){
     })
 
     // Grid
-    let gridTitleLines = gsap.utils.toArray('.about-grid__title--line-wrapper');
+    // Title
+    SplitType.create('.about-grid__title', 
+    {
+        types: 'lines', 
+        lineClass: 'about-grid__title--line-wrapper'
+    })
 
-    if(gridTitleLines.length == 0) {
-       // Title
-        SplitType.create('.about-grid__title', 
-        {
-            types: 'lines', 
-            lineClass: 'about-grid__title--line-wrapper'
-        })
-
-
-        $('.about-grid__title').children().wrapInner('<div class="about-grid__title--line"></div>')
-        gridTitleLines = gsap.utils.toArray('.about-grid__title--line-wrapper')
-    }
+    $('.about-grid__title').children().wrapInner('<div class="about-grid__title--line"></div>')
 
     gsap.timeline({
         defaults: { duration: 2 },
@@ -108,8 +86,7 @@ function aboutScroll(){
             start: "10% left",
             end: "20% left",
             containerAnimation: tMain,
-            scrub: true,
-            markers: true
+            scrub: true
         }
     })
     .to('.about-grid__title--line', 
@@ -230,7 +207,7 @@ function aboutScroll(){
         if(isDesktop) {
 
             // Shapes
-            delay = 0
+            let delay = 0
             let shapesVisible = gsap.utils.toArray('.about-shape__item--1, .about-shape__item--2, .about-shape__item--3')
             let shapes = gsap.utils.toArray('.about-shape__item--4, .about-shape__item--5')
 

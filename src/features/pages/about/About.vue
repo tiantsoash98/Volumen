@@ -43,8 +43,12 @@ export default {
             <div class="about-symphony__wrapper">
                 <div class="about-symphony__header">
                     <div class="about-symphony__title-wrapper">
-                        <div class="about-symphony__title about-symphony__title--1">Giving life to the</div>
-                        <div class="about-symphony__title about-symphony__title--2">symphony of shapes</div>
+                        <div class="about-symphony__title about-symphony__title--1">
+                            <div class="about-symphony__title-line">Giving life to the</div>
+                        </div>
+                        <div class="about-symphony__title about-symphony__title--2">
+                            <div class="about-symphony__title-line">symphony of shapes</div>
+                        </div>
                     </div>
                 </div>
                 <div class="about-symphony__content-wrapper">
