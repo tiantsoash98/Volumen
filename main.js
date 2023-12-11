@@ -11,7 +11,6 @@ import shapeScroll from "./src/features/pages/shape/shape-scroll";
 import header from "./src/features/component/header/header";
 import headerScroll from "./src/features/component/header/header-scroll";
 import cursor from "./src/features/component/cursor/cursor";
-import textReveal from "./src/features/component/effects/textReveal";
 import imageScroll from "./src/features/component/effects/imageScroll";
 import footer from './src/features/component/footer/footer';
 import loader from './src/features/component/loader/loader';
@@ -55,7 +54,7 @@ function initPageTransitions(){
     sync: true,
     timeout: 7000,
     preventRunning: true,
-    debug: false,
+    debug: true,
     transitions: [{
       name: 'default-transitions',
       async once() {
@@ -78,7 +77,7 @@ function initPageTransitions(){
         // Reset all scroll triggers
         ScrollTrigger.getAll().forEach(t => t.kill());
       },
-      async beforeEnter(){
+      async beforeEnter(data){
         initScroll();
         initScript();
       },
@@ -186,7 +185,6 @@ function initScript(){
   header()
   headerScroll()
   footer()
-  textReveal()
   imageScroll()
 }
 

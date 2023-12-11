@@ -16,7 +16,7 @@ export default defineConfig({
         pyramid: resolve(__dirname, 'the-pyramid.html'),
         cube: resolve(__dirname, 'the-cube.html'),
         repertoire: resolve(__dirname, 'repertoire.html'),
-        about: resolve(__dirname, 'about.html'),
+        about: resolve(__dirname, 'about.html')
       },
     }
   },

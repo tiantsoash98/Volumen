@@ -16,8 +16,12 @@ function aboutScroll(){
         setTrackHeights();
     });
 
-    // Symphony
-    SplitType
+
+    let symphonyLines = gsap.utils.toArray('.about-symphony__title--line')
+
+    if(symphonyLines.length == 0) {
+        // Symphony
+        SplitType
         .create('.about-symphony__title', 
         {
             types: 'lines, words', 
@@ -25,8 +29,10 @@ function aboutScroll(){
             wordClass: "about-symphony__title--word"
         });
 
+        symphonyLines = gsap.utils.toArray('.about-symphony__title--line')
+    }
+
     let delay = 0
-    let symphonyLines = gsap.utils.toArray('.about-symphony__title--line')
 
     symphonyLines.forEach((line) => {
         gsap.timeline({
@@ -79,19 +85,23 @@ function aboutScroll(){
     })
 
     // Grid
-    // Title
-    SplitType.create('.about-grid__title', 
-    {
-        types: 'lines, words', 
-        lineClass: 'about-grid__title--line', 
-        wordClass: 'about-grid__title--word'
-    });
+    let gridTitleLines = gsap.utils.toArray('.about-grid__title--line-wrapper');
 
-    delay = 0;
-    let gridTitleLines = gsap.utils.toArray('.about-grid__title--line');
+    if(gridTitleLines.length == 0) {
+       // Title
+        SplitType.create('.about-grid__title', 
+        {
+            types: 'lines', 
+            lineClass: 'about-grid__title--line-wrapper'
+        })
 
-    let titleTL = gsap.timeline({
-        defaults: { duration: 2, ease: "customEase" },
+
+        $('.about-grid__title').children().wrapInner('<div class="about-grid__title--line"></div>')
+        gridTitleLines = gsap.utils.toArray('.about-grid__title--line-wrapper')
+    }
+
+    gsap.timeline({
+        defaults: { duration: 2 },
         scrollTrigger: {
             trigger: ".about-grid__section-width",
             //trigger element - viewport
@@ -99,21 +109,19 @@ function aboutScroll(){
             end: "20% left",
             containerAnimation: tMain,
             scrub: true,
+            markers: true
         }
     })
-
-    gridTitleLines.forEach((line) => {
-        titleTL.from(line.querySelectorAll('.about-grid__title--word'), {
-            opacity: 0,
-            yPercent: 100,
-            delay: delay
-        }, '<+0.15s')
-
-        delay+=0.3
+    .to('.about-grid__title--line', 
+    {
+        opacity: 1,
+        yPercent: -100,
+        ease: "none", 
+        stagger: 0.3
     })
 
     gsap.timeline({
-        defaults: { duration: 2, ease: "customEase" },
+        defaults: { duration: 2 },
         scrollTrigger: {
             trigger: ".about-grid__section-width",
             //trigger element - viewport
@@ -123,8 +131,10 @@ function aboutScroll(){
             scrub: true,
         }
     })
-    .from('.about-grid__description', {
+    .fromTo('.about-grid__description', {
         opacity: 0,
+    }, {
+        opacity: 1
     })
 
     

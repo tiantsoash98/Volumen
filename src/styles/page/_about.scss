@@ -313,8 +313,12 @@
         &__title {
             @include h2;
 
-            &--line {
+            &--line-wrapper {
                 overflow: hidden;
+            }
+            &--line {
+                transform: translateY(100%);
+                opacity: 0;
             }
         }
         &__description {
