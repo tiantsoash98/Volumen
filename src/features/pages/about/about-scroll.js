@@ -262,23 +262,23 @@ function aboutScroll(){
             })
 
             // Credits
-            gsap.timeline({
-                scrollTrigger: {
-                    trigger: ".about-credits",
-                    //trigger element - viewport
-                    start: "top 70%",
-                    end: "top 40%",
-                    // scrub: true
-                }
-            })
-            .from('.about-credits__title', {
-                opacity: 0,
-                duration: 1,
-            })
-            .from('.about-credits__credits', {
-                opacity: 0,
-                duration: 1
-            }, '<')
+            // gsap.timeline({
+            //     scrollTrigger: {
+            //         trigger: ".about-credits",
+            //         //trigger element - viewport
+            //         start: "top 70%",
+            //         end: "top 40%",
+            //         // scrub: true
+            //     }
+            // })
+            // .from('.about-credits__title', {
+            //     opacity: 0,
+            //     duration: 1,
+            // })
+            // .from('.about-credits__credits', {
+            //     opacity: 0,
+            //     duration: 1
+            // }, '<')
 
             // end of is desktop only
         }
