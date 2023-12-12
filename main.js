@@ -54,7 +54,7 @@ function initPageTransitions(){
     sync: true,
     timeout: 7000,
     preventRunning: true,
-    debug: true,
+    debug: false,
     transitions: [{
       name: 'default-transitions',
       async once() {
