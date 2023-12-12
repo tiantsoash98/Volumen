@@ -89,6 +89,7 @@
         }
         &__scroll {
             transition: transform .5s var(--alias-default-ease);
+            width: 100%;
 
             &--second {
                 position: absolute;
