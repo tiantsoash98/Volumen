@@ -44,7 +44,7 @@ function aboutAnimation(){
     }, {
         opacity: 1,
         yPercent: 0,
-        delay: delay + 0.5
+        delay: delay + 0.6
     })
 
     gsap.timeline({
@@ -53,7 +53,7 @@ function aboutAnimation(){
     .from('.about-main__img-wrapper', {
         yPercent: 10,
         opacity: 0,
-        delay: delay + 0.8
+        delay: delay + 1.2
     })
 }
 

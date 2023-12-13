@@ -23,7 +23,7 @@ function aboutScroll(){
             trigger: ".about-symphony",
             //trigger element - viewport
             start: "top 80%",
-            end: "top 40%",
+            end: "top 40%"
         }
     })
     .fromTo('.about-symphony__title-line',
@@ -79,7 +79,7 @@ function aboutScroll(){
     $('.about-grid__title').children().wrapInner('<div class="about-grid__title--line"></div>')
 
     gsap.timeline({
-        defaults: { duration: 2 },
+        defaults: { duration: 2, ease: "customEase" },
         scrollTrigger: {
             trigger: ".about-grid__section-width",
             //trigger element - viewport
@@ -93,7 +93,6 @@ function aboutScroll(){
     {
         opacity: 1,
         yPercent: -100,
-        ease: "none", 
         stagger: 0.3
     })
 
